@@ -50,7 +50,7 @@ const androidProjects = [
 
 const technicalSkills = [
   { name: "Python", confidence: 90, icon: <FaPython /> },
-  { name: "Java", confidence: 80, icon: <FaJava /> },
+  { name: "J", confidence: 80, icon: <FaJava /> },
   { name: "Machine Learning", confidence: 75, icon: <FaBrain /> },
   { name: "C", confidence: 90, icon: <FaCuttlefish /> }, // Close alternative
   { name: "C++", confidence: 75, icon: <SiCplusplus /> },
