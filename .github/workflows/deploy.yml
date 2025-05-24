@@ -5,6 +5,9 @@ on:
     branches:
       - main     # Change if your default branch is 'master' or other
 
+permissions:
+  contents: write  # <-- Add this line to allow pushing to branches
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
