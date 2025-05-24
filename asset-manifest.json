@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/my_port/static/css/main.685a8393.css",
-    "main.js": "/my_port/static/js/main.e75a08b4.js",
+    "main.js": "/my_port/static/js/main.f27b591b.js",
     "static/media/kalmandal.jpg": "/my_port/static/media/kalmandal.e1b124db8b1a820ad8cb.jpg",
     "index.html": "/my_port/index.html",
     "main.685a8393.css.map": "/my_port/static/css/main.685a8393.css.map",
-    "main.e75a08b4.js.map": "/my_port/static/js/main.e75a08b4.js.map"
+    "main.f27b591b.js.map": "/my_port/static/js/main.f27b591b.js.map"
   },
   "entrypoints": [
     "static/css/main.685a8393.css",
-    "static/js/main.e75a08b4.js"
+    "static/js/main.f27b591b.js"
   ]
 }
