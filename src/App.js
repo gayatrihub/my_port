@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaEnvelope,FaLinkedin,FaPhone } from 'react-icons/fa';
 import kalmandalImg from './assets/images/kalmandal.jpg';
-
 import {
   FaPython,
   FaJava,
