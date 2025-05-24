@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaEnvelope,FaLinkedin,FaPhone } from 'react-icons/fa';
 import kalmandalImg from './assets/images/kalmandal.jpg';
+import appImg from './assets/images/app.jpg';
 import {
   FaPython,
   FaJava,
@@ -29,7 +30,7 @@ const androidProjects = [
   {
     title: "Profile Card App",
     description: "It displays a user’s photo, name, role, and contact info in a clean UI.Created as a demo during Android sessions to teach juniors the basics of Compose",
-    image: kalmandalImg,
+    image: appImg,
   }
 ];
 
