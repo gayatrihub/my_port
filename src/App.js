@@ -157,7 +157,7 @@ function App() {
         </div>
 
         <motion.img
-          src="bg2.jpg"
+          src="profile.jpg"
           alt="Gayatri"
           className="w-56 h-72 md:w-64 md:h-80 object-cover rounded-3xl border-4 border-yellow-400 shadow-lg flex-shrink-0"
           initial={{ scale: 0 }}
