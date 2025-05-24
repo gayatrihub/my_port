@@ -25,13 +25,26 @@ const androidProjects = [
     title: "KalMandal",
     description: "Android app that lets users draw and save to gallery with description.",
     image: kalmandalImg,
-  }];
+  },
+  {
+    title: "Profile Card App",
+    description: "It displays a user’s photo, name, role, and contact info in a clean UI.Created as a demo during Android sessions to teach juniors the basics of Compose",
+    image: kalmandalImg,
+  }
+];
+
 // Projects categorized by domain
 /*const webProjects = [
   {
     title: "Drawing App",
     description: "Android app that lets users draw and save to gallery with description.",
     image: "https://via.placeholder.com/300x180.png?text=Drawing+App",
+  },
+  {
+    title: "Profile Card App",
+    description: "It displays a user’s photo, name, role, and contact info in a clean UI.
+Created as a demo during Android sessions to teach juniors the basics of Compose.",
+    image: kalmandalImg,
   }
 ];*/
 
