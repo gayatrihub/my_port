@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/my_port/static/css/main.685a8393.css",
-    "main.js": "/my_port/static/js/main.146c937c.js",
-    "static/media/app.jpg": "/my_port/static/media/app.662ee9935d201d30878b.jpg",
+    "main.js": "/my_port/static/js/main.7b52fb04.js",
     "static/media/kalmandal.jpg": "/my_port/static/media/kalmandal.e1b124db8b1a820ad8cb.jpg",
+    "static/media/app.jpg": "/my_port/static/media/app.838178958905df0074d3.jpg",
     "index.html": "/my_port/index.html",
     "main.685a8393.css.map": "/my_port/static/css/main.685a8393.css.map",
-    "main.146c937c.js.map": "/my_port/static/js/main.146c937c.js.map"
+    "main.7b52fb04.js.map": "/my_port/static/js/main.7b52fb04.js.map"
   },
   "entrypoints": [
     "static/css/main.685a8393.css",
-    "static/js/main.146c937c.js"
+    "static/js/main.7b52fb04.js"
   ]
 }
