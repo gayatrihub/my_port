@@ -24,7 +24,7 @@ const androidProjects = [
   {
     title: "KalMandal",
     description: "Android app that lets users draw and save to gallery with description.",
-    image: "kalmandal.jpg",
+    image: kalmandalImg,
   }];
 // Projects categorized by domain
 /*const webProjects = [
