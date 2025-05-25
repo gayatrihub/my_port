@@ -1,21 +1,42 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { FaEnvelope,FaLinkedin,FaPhone } from 'react-icons/fa';
+import kalmandalImg from './assets/images/kalmandal.jpg';
+
 import {
   FaPython,
-  FaReact,
-  FaAndroid,
-  FaDatabase,
-  FaGitAlt,
+  FaJava,
   FaBrain,
-  FaUsers,
-  FaLightbulb,
-  FaTrophy,
-  FaEnvelope,
-  FaPhone,
-  FaLinkedin,
+  FaGitAlt,
+  FaAndroid,
+  FaJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaDatabase,
+  FaCode,
+  FaCuttlefish, // Used for 'C' (closest)
 } from "react-icons/fa";
+import { SiCplusplus } from "react-icons/si";
+import { FaUsers, FaLightbulb } from "react-icons/fa6";  
+import { FaTrophy } from "react-icons/fa";
 
-const projects = [
+
+const androidProjects = [
+  {
+    title: "KalMandal",
+    description: "Android app that lets users draw and save to gallery with description.",
+    image: "kalmandal.jpg",
+  }];
+// Projects categorized by domain
+/*const webProjects = [
+  {
+    title: "Drawing App",
+    description: "Android app that lets users draw and save to gallery with description.",
+    image: "https://via.placeholder.com/300x180.png?text=Drawing+App",
+  }
+];*/
+
+/*const mlProjects = [
   {
     title: "AI Image Classifier",
     description: "Built using TensorFlow and Keras to classify images into multiple categories.",
@@ -25,25 +46,22 @@ const projects = [
     title: "Chatbot with Transformers",
     description: "Conversational chatbot using HuggingFace transformers and PyTorch.",
     image: "https://via.placeholder.com/300x180.png?text=Chatbot",
-  },
-  {
-    title: "Drawing App",
-    description: "Android app that lets users draw and save to gallery with description.",
-    image: "https://via.placeholder.com/300x180.png?text=Drawing+App",
-  },
-];
+  }
+];*/
 
 const technicalSkills = [
-  { name: "Python", confidence: 90, icon: <FaPython />, domain: "AI/ML" },
-  { name: "TensorFlow", confidence: 80, icon: <FaBrain />, domain: "AI/ML" },
-  { name: "Machine Learning", confidence: 75, icon: <FaBrain />, domain: "AI/ML" },
-  { name: "React", confidence: 85, icon: <FaReact />, domain: "Web" },
-  { name: "Tailwind CSS", confidence: 85, icon: <FaReact />, domain: "Web" },
-  { name: "Git", confidence: 80, icon: <FaGitAlt />, domain: "Tools" },
-  { name: "Data Analysis", confidence: 70, icon: <FaDatabase />, domain: "Data" },
-  { name: "Android Development", confidence: 88, icon: <FaAndroid />, domain: "Mobile" },
+  { name: "Python", confidence: 90, icon: <FaPython /> },
+  { name: "Java", confidence: 80, icon: <FaJava /> },
+  { name: "Machine Learning", confidence: 75, icon: <FaBrain /> },
+  { name: "C", confidence: 90, icon: <FaCuttlefish /> }, // Close alternative
+  { name: "C++", confidence: 75, icon: <SiCplusplus /> },
+  { name: "Git", confidence: 70, icon: <FaGitAlt /> },
+  { name: "Front End Development", confidence: 90, icon: <FaHtml5 /> }, // HTML icon
+  { name: "Android Development", confidence: 88, icon: <FaAndroid /> },
+  { name: "JavaScript", confidence: 85, icon: <FaJs /> },
+  { name: "SQL", confidence: 85, icon: <FaDatabase /> },
+  { name: "DSA", confidence: 85, icon: <FaCode /> }, // Generic code icon for DSA
 ];
-
 const softSkills = [
   { name: "Leadership", icon: <FaUsers /> },
   { name: "Creativity", icon: <FaLightbulb /> },
@@ -53,19 +71,60 @@ const softSkills = [
 
 const achievements = [
   "Class Representative since 2022 (continuing)",
-  "Student Innovator at AIMERS Club (CSM Club inaugural year)",
+  "Student Innovator at AIMERS Club",
   "Team selected for Smart India Hackathon Finale",
   "Android Developer at GDG On Campus",
   "Finalist at Smart India Hackathon 2023",
-  "Top 5 in Tribal Welfare Hackathon, Andhra University",
+  "Top 5 in Tribal Welfare Hackathon",
   "Certified TensorFlow Developer",
-  "Led Android session at GDG campus (March 2025)",
+  "Led Android session at GDG campus",
   "Completed Full Stack Internship at ExcelR",
 ];
 
-function ProfileSection() {
+function ProjectSection({ title, projects }) {
   return (
-    <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
+    <div className="mb-12">
+      <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {projects.map((project, i) => (
+          <motion.div
+            key={i}
+            className="bg-gray-900 bg-opacity-60 rounded-xl shadow-lg overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img src={project.image} alt={project.title} className="w-full h-40 object-cover" />
+            <div className="p-4">
+              <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+              <p className="text-gray-300">{project.description}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setContactForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 4000);
+    setContactForm({ name: "", email: "", message: "" });
+  };
+
+  return (
+    <div className="min-h-screen bg-cover bg-center bg-fixed p-6 font-sans" style={{ backgroundImage: "url('bg2.jpg')" }}>
+      {/* Header Section */}
+      <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
         <div className="flex-1 max-w-3xl mx-auto">
           <h1 className="text-5xl font-extrabold text-pink-400 mb-2">Hi, I’m Gayatri 👩‍💻</h1>
@@ -99,7 +158,7 @@ function ProfileSection() {
         </div>
 
         <motion.img
-          src="profile.jpg"
+          src="bg2.jpg"
           alt="Gayatri"
           className="w-56 h-72 md:w-64 md:h-80 object-cover rounded-3xl border-4 border-yellow-400 shadow-lg flex-shrink-0"
           initial={{ scale: 0 }}
@@ -108,194 +167,136 @@ function ProfileSection() {
         />
       </div>
     </section>
-  );
-}
-
-function App() {
-  const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setContactForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    setContactForm({ name: "", email: "", message: "" });
-  };
-
-  return (
-    <div
-      className="min-h-screen bg-cover bg-center bg-fixed p-6 font-sans"
-      style={{ backgroundImage: "url('bg2.jpg')" }}
-    >
-      <ProfileSection />
-
+      {/* Skills */}
       <section className="space-y-12 bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-        <div>
-          <h2 className="text-3xl font-bold text-teal-300 mb-6">🛠 Technical Skills</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {technicalSkills.map((skill, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-between bg-gradient-to-r from-cyan-700 to-blue-900 bg-opacity-50 rounded-lg p-4 shadow-md"
-              >
-                <div className="flex items-center gap-3 text-lg font-semibold text-white">
-                  <div className="text-2xl">{skill.icon}</div>
-                  {skill.name}
-                </div>
-                <div className="relative">
-                  <svg className="w-12 h-12" viewBox="0 0 36 36">
-                    <path
-                      className="text-gray-600"
-                      strokeWidth="4"
-                      stroke="currentColor"
-                      fill="none"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                    /*<path
-                      className="text-green-400"
-                      strokeWidth="4"
-                      strokeDasharray={`${skill.confidence}, 100`}
-                     strokeLinecap="round"
-                      stroke="currentColor"
-                      fill="none"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />*/
-                    <text
-                      x="18"
-                      y="20.35"
-                      className="text-sm fill-white text-center"
-                      textAnchor="middle"
-                    >
-                      {skill.confidence}%
-                    </text>
-                  </svg>
-                </div>
+        <h2 className="text-3xl font-bold text-teal-300 mb-6">🛠 Technical Skills</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {technicalSkills.map((skill, i) => (
+            <div key={i} className="flex items-center justify-between bg-gradient-to-r from-cyan-700 to-blue-900 bg-opacity-50 rounded-lg p-4 shadow-md">
+              <div className="flex items-center gap-3 text-lg font-semibold text-white">
+                <div className="text-2xl">{skill.icon}</div>{skill.name}
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h2 className="text-3xl font-bold text-pink-400 mb-6">🤝 Soft Skills</h2>
-          <div className="flex flex-wrap gap-6 justify-center sm:justify-start">
-            {softSkills.map((skill, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center gap-2 bg-pink-800 bg-opacity-30 rounded-lg p-4 w-32 text-center shadow-inner hover:bg-pink-700 transition"
-              >
-                <div className="text-4xl text-pink-400">{skill.icon}</div>
-                <div className="font-semibold text-white text-lg">{skill.name}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-        <h2 className="text-3xl font-bold text-yellow-400 mb-6">🏆 Achievements</h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {achievements.map((ach, i) => (
-            <div
-              key={i}
-              className="flex items-start gap-3 p-4 bg-yellow-900 bg-opacity-30 text-yellow-100 rounded-xl hover:bg-yellow-800 hover:bg-opacity-50 transition shadow-sm"
-            >
-              <FaTrophy className="text-yellow-300 mt-1" />
-              <span className="text-lg">{ach}</span>
+              <div className="text-white">{skill.confidence}%</div>
             </div>
           ))}
         </div>
       </section>
 
+      {/* Soft Skills */}
       <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-        <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {projects.map((project, i) => (
-            <motion.div
-              key={i}
-              className="bg-gray-900 bg-opacity-60 rounded-xl shadow-lg overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img src={project.image} alt={project.title} className="w-full h-40 object-cover" />
-              <div className="p-4">
-                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-gray-300">{project.description}</p>
-              </div>
-            </motion.div>
+        <h2 className="text-3xl font-bold text-pink-400 mb-6">🤝 Soft Skills</h2>
+        <div className="flex flex-wrap gap-6 justify-center sm:justify-start">
+          {softSkills.map((skill, i) => (
+            <div key={i} className="flex flex-col items-center gap-2 bg-pink-800 bg-opacity-30 rounded-lg p-4 w-32 text-center shadow-inner hover:bg-pink-700 transition">
+              <div className="text-4xl text-pink-400">{skill.icon}</div>
+              <div className="font-semibold text-white text-lg">{skill.name}</div>
+            </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-cyan-400 mb-6 text-center">📬 Contact Me</h2>
-
-        <div className="flex flex-col sm:flex-row justify-around items-center gap-6 mb-8 text-white">
-          <div className="flex items-center gap-2">
-            <FaEnvelope className="text-cyan-400" /> gayatri@example.com
-          </div>
-          <div className="flex items-center gap-2">
-            <FaPhone className="text-cyan-400" /> +91 98765 43210
-          </div>
-          <div className="flex items-center gap-2">
-            <FaLinkedin className="text-cyan-400" />
-            <a
-              href="https://linkedin.com/in/gayatri"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              linkedin.com/in/gayatri
-            </a>
-          </div>
+      {/* Achievements */}
+      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+        <h2 className="text-3xl font-bold text-yellow-400 mb-6">🏆 Achievements</h2>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {achievements.map((ach, i) => (
+            <div key={i} className="flex items-start gap-3 p-4 bg-yellow-900 bg-opacity-30 text-yellow-100 rounded-xl hover:bg-yellow-800 hover:bg-opacity-50 transition shadow-sm">
+              <FaTrophy className="text-yellow-300 mt-1" /><span className="text-lg">{ach}</span>
+            </div>
+          ))}
         </div>
-
-        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={contactForm.name}
-            onChange={handleChange}
-            required
-            className="p-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-cyan-400"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={contactForm.email}
-            onChange={handleChange}
-            required
-            className="p-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-cyan-400"
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            value={contactForm.message}
-            onChange={handleChange}
-            required
-            className="p-3 rounded-lg bg-gray-800 text-white border border-gray-600 resize-none focus:outline-none focus:border-cyan-400"
-          ></textarea>
-          <button
-            type="submit"
-            className="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-3 rounded-lg transition"
-          >
-            Send Message
-          </button>
-        </form>
-        {submitted && (
-          <p className="mt-4 text-green-400 font-semibold text-center">
-            Thank you for reaching out! I will get back to you soon.
-          </p>
-        )}
       </section>
+
+      {/* Projects */}
+      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+        <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
+        <ProjectSection title="📱 Android Development Projects" projects={androidProjects} />
+        </section>
+
+           {/* Contact Form */}
+           
+      <section className="bg-black bg-opacity-40 rounded-3xl p-8 shadow-lg mb-16 max-w-4xl mx-auto">
+  <h2 className="text-3xl font-extrabold text-blue-400 mb-8 text-center">📬 Contact Me</h2>
+
+  <div className="flex flex-col sm:flex-row sm:justify-around sm:items-center gap-2 mb-12 text-white text-lg">
+    <div className="flex items-center gap-3">
+      <FaEnvelope className="text-3xl text-red-400" />
+      <span className="font-semibold">Email:</span>
+      <a
+        href="mailto:gayatritext@gmail.com"
+        className="text-blue-300 hover:underline transition duration-200"
+      >
+        gayatritext@gmail.com
+      </a>
     </div>
+
+    <div className="flex items-center gap-3">
+      <FaPhone className="text-3xl text-green-400" />
+      <span className="font-semibold">Phone:</span>
+      <span className="text-gray-300">+91 7396155453</span>
+    </div>
+
+    <div className="flex items-center gap-3">
+      <FaLinkedin className="text-3xl text-blue-400" />
+      <span className="font-semibold">LinkedIn:</span>
+      <a
+        href="https://www.linkedin.com/in/reddy-gayatri-b57876254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-300 hover:underline transition duration-200"
+      >
+        Gayatri-linkedin-id
+      </a>
+    </div>
+  </div>
+
+  <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto text-white">
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      value={contactForm.name}
+      onChange={handleChange}
+      required
+      className="w-full p-4 rounded-xl bg-gray-900 border border-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-500 transition"
+    />
+    <input
+      type="email"
+      name="email"
+      placeholder="Your Email"
+      value={contactForm.email}
+      onChange={handleChange}
+      required
+      className="w-full p-4 rounded-xl bg-gray-900 border border-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-500 transition"
+    />
+    <textarea
+      name="message"
+      placeholder="Your Message"
+      value={contactForm.message}
+      onChange={handleChange}
+      required
+      className="w-full p-4 rounded-xl bg-gray-900 border border-gray-700 h-36 resize-none focus:outline-none focus:ring-4 focus:ring-blue-500 transition"
+    />
+    <button
+      type="submit"
+      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition duration-300"
+    >
+      Send Message
+    </button>
+    {submitted && (
+      <p className="text-green-400 mt-4 text-center font-semibold">
+        Message sent successfully!
+      </p>
+    )}
+  </form>
+</section>
+
+
+      {/* Footer */}
+      <footer className="text-center text-white text-sm py-6 opacity-70">
+        © {new Date().getFullYear()} Gayatri. Built with  using React + Tailwind + Framer Motion.
+      </footer>
+    </div> 
   );
 }
 
