@@ -41,7 +41,7 @@ const mlProjects = [
     title: "Object Detection on Railway Tracks",
     description:
       "YOLOv5x-based system with Gradio UI to detect obstacles on railway tracks. Includes bounding boxes, audio alerts & styled frontend.",
-    image: "odImg",
+    image: odImg,
     link: "https://drive.google.com/file/d/19vF7PXVtDYfXBQa8ei3oKVotDplhPgdV/view?usp=sharing",
   },
 ];
