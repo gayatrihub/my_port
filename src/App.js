@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaEnvelope, FaLinkedin, FaPhone } from "react-icons/fa";
 import kalmandalImg from "./assets/images/kalmandal.jpg";
 import appImg from "./assets/images/app.jpg";
-import ODImg from "./assets/images/object_detection.png";
+import odImg from "./assets/images/object_detection.png";
 
 import {
   FaPython,
@@ -41,7 +41,7 @@ const mlProjects = [
     title: "Object Detection on Railway Tracks",
     description:
       "YOLOv5x-based system with Gradio UI to detect obstacles on railway tracks. Includes bounding boxes, audio alerts & styled frontend.",
-    image: "ODImg",
+    image: "odImg",
     link: "https://drive.google.com/file/d/19vF7PXVtDYfXBQa8ei3oKVotDplhPgdV/view?usp=sharing",
   },
 ];
