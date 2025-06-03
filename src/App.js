@@ -4,6 +4,7 @@ import { FaEnvelope, FaLinkedin, FaPhone } from "react-icons/fa";
 import kalmandalImg from "./assets/images/kalmandal.jpg";
 import appImg from "./assets/images/app.jpg";
 import odImg from "./assets/images/Object_detection.jpg";
+import onlinereportImg from "./assets/images/online_report.jpg";
 
 import {
   FaPython,
@@ -45,6 +46,16 @@ const mlProjects = [
     link: "https://drive.google.com/file/d/19vF7PXVtDYfXBQa8ei3oKVotDplhPgdV/view?usp=sharing",
   },
 ];
+const webProjects = [
+  {
+    title: "Online Crime Reporting System",
+    description:
+      "The Online Crime Reporting System allows users to submit complaints directly through a web interface built with HTML, CSS, and JavaScript. Once a user fills out and submits the complaint form online, the information is securely sent to the respective police department. The police then review the complaint and update the status, which the user can track using a unique complaint ID. Additionally, the system provides access to a list of wanted persons and displays important emergency contact numbers, making it a useful tool for both crime reporting and public awareness.",
+    image: onlinereportImg,
+    link: "https://drive.google.com/file/d/1Xo3XrpmN6q95TWYKFYlpAjHuwqRfS6Oo/view?usp=sharing",
+  },
+];
+
 
 const technicalSkills = [
   { name: "Pyhon", confidence: 90, icon: <FaPython /> },
@@ -227,6 +238,7 @@ function App() {
         <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
         <ProjectSection title="📱 Android Development Projects" projects={androidProjects} />
         <ProjectSection title="🧠 Machine Learning Projects" projects={mlProjects} />
+        <ProjectSection title="🌐 Web Developing Projects" projects={webProjects} />
       </section>
 
       {/* Contact */}
