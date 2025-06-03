@@ -49,22 +49,22 @@ Created as a demo during Android sessions to teach juniors the basics of Compose
   }
 ];*/
 
-/*const mlProjects = [
+const mlProjects = [
   {
-    title: "AI Image Classifier",
-    description: "Built using TensorFlow and Keras to classify images into multiple categories.",
+    title: "Object Detection on Railway Tracks",
+    description: "This project uses the pretrained YOLOv5x model from Ultralytics for object detection.
+We added a custom frontend using Gradio to allow users to upload multiple railway track images easily.
+A visual bounding box system was integrated using PIL to draw labels on detected objects.
+We implemented an audio alert system that automatically plays a sound if any objects are detected.
+Additionally, we applied custom CSS styling to create a clean, modern, and responsive user interface.
+",
     image: "https://via.placeholder.com/300x180.png?text=AI+Classifier",
-  },
-  {
-    title: "Chatbot with Transformers",
-    description: "Conversational chatbot using HuggingFace transformers and PyTorch.",
-    image: "https://via.placeholder.com/300x180.png?text=Chatbot",
   }
-];*/
+];
 
 const technicalSkills = [
   { name: "Python", confidence: 90, icon: <FaPython /> },
-  { name: "ava", confidence: 80, icon: <FaJava /> },
+  { name: "Java", confidence: 80, icon: <FaJava /> },
   { name: "Machine Learning", confidence: 75, icon: <FaBrain /> },
   { name: "C", confidence: 90, icon: <FaCuttlefish /> }, // Close alternative
   { name: "C++", confidence: 75, icon: <SiCplusplus /> },
@@ -89,7 +89,6 @@ const achievements = [
   "Android Developer at GDG On Campus",
   "Finalist at Smart India Hackathon 2023",
   "Top 5 in Tribal Welfare Hackathon",
-  "Certified TensorFlow Developer",
   "Led Android session at GDG campus",
   "Completed Full Stack Internship at ExcelR",
 ];
@@ -115,6 +114,24 @@ function ProjectSection({ title, projects }) {
               {project.title === "KalMandal" ? (
                 <a
                   href="https://drive.google.com/file/d/1BhXnysi7Skk9Bowd1o99t_98owC_inVr/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xl font-bold text-blue-400 hover:underline mb-2 block"
+                >
+                  {project.title}
+                </a>
+              ) : (
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {project.title}
+                </h3>
+              )}
+              <p className="text-gray-300">{project.description}</p>
+            </div>
+          </motion.div>
+        ))},
+          {project.title === "Object Detection on Railway Tracks" ? (
+                <a
+                  href="https://drive.google.com/file/d/19vF7PXVtDYfXBQa8ei3oKVotDplhPgdV/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xl font-bold text-blue-400 hover:underline mb-2 block"
@@ -242,6 +259,11 @@ function App() {
       <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
         <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
         <ProjectSection title="📱 Android Development Projects" projects={androidProjects} />
+        </section>
+
+      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+        <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
+        <ProjectSection title="📱 Machine Learning Projects" projects={mlProjects} />
         </section>
 
            {/* Contact Form */}
