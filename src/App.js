@@ -47,7 +47,7 @@ const mlProjects = [
 ];
 
 const technicalSkills = [
-  { name: "Python", confidence: 90, icon: <FaPython /> },
+  { name: "Pyhon", confidence: 90, icon: <FaPython /> },
   { name: "Java", confidence: 80, icon: <FaJava /> },
   { name: "Machine Learning", confidence: 75, icon: <FaBrain /> },
   { name: "C", confidence: 90, icon: <FaCuttlefish /> },
