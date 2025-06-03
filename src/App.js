@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaEnvelope, FaLinkedin, FaPhone } from "react-icons/fa";
 import kalmandalImg from "./assets/images/kalmandal.jpg";
 import appImg from "./assets/images/app.jpg";
-import odImg from "./assets/images/object_detection.png";
+import odImg from "./assets/images/Object_detection.png";
 
 import {
   FaPython,
