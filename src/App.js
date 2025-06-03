@@ -5,7 +5,6 @@ import kalmandalImg from "./assets/images/kalmandal.jpg";
 import appImg from "./assets/images/app.jpg";
 import odImg from "./assets/images/Object_detection.jpg";
 import onlinereportImg from "./assets/images/online_report.jpg";
-import websiteImg from "./assets/images/website.jpg";
 
 import {
   FaPython, 
@@ -55,13 +54,7 @@ const webProjects = [
     image: onlinereportImg,
     link: "https://drive.google.com/file/d/1Xo3XrpmN6q95TWYKFYlpAjHuwqRfS6Oo/view?usp=sharing",
   },
-  {
-    title: "College Website",
-    description:
-      "The college website gives a clear and simple view of what the college stands for. It shares the goals, values, and vision that guide its growth. Important achievements and progress are shown to highlight its success. The website is easy to use and helps people find useful information quickly. Its neat design makes it pleasant to visit and explore.",
-    image: websitetImg,
-    link: "https://drive.google.com/file/d/1MxNQ7xJeDx8Cf0Idt0JrIqexDdSFM7Ie/view?usp=sharing",
-  },
+
 ];
 
 
