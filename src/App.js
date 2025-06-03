@@ -168,8 +168,6 @@ function App() {
       </section>
 
       {/* Skills */}
-     </section>
-      {/* Skills */}
       <section className="space-y-12 bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
         <h2 className="text-3xl font-bold text-teal-300 mb-6">🛠 Technical Skills</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
