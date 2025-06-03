@@ -60,7 +60,7 @@ const webProjects = [
     description:
       "The college website gives a clear and simple view of what the college stands for. It shares the goals, values, and vision that guide its growth. Important achievements and progress are shown to highlight its success. The website is easy to use and helps people find useful information quickly. Its neat design makes it pleasant to visit and explore.",
     image: websiteImg,
-    link: "https://drive.google.com/file/d/1Xo3XrpmN6q95TWYKFYlpAjHuwqRfS6Oo/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1MxNQ7xJeDx8Cf0Idt0JrIqexDdSFM7Ie/view?usp=sharing",
   },
 
 ];
