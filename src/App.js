@@ -5,6 +5,7 @@ import kalmandalImg from "./assets/images/kalmandal.jpg";
 import appImg from "./assets/images/app.jpg";
 import odImg from "./assets/images/Object_detection.jpg";
 import onlinereportImg from "./assets/images/online_report.jpg";
+import websiteImg from "./assets/images/website.jpg";
 
 import {
   FaPython, 
@@ -52,6 +53,13 @@ const webProjects = [
     description:
       "The Online Crime Reporting System allows users to submit complaints directly through a web interface built with HTML, CSS, and JavaScript. Once a user fills out and submits the complaint form online, the information is securely sent to the respective police department. The police then review the complaint and update the status, which the user can track using a unique complaint ID. Additionally, the system provides access to a list of wanted persons and displays important emergency contact numbers, making it a useful tool for both crime reporting and public awareness.",
     image: onlinereportImg,
+    link: "https://drive.google.com/file/d/1Xo3XrpmN6q95TWYKFYlpAjHuwqRfS6Oo/view?usp=sharing",
+  },
+   {
+    title: "College Website",
+    description:
+      "The college website gives a clear and simple view of what the college stands for. It shares the goals, values, and vision that guide its growth. Important achievements and progress are shown to highlight its success. The website is easy to use and helps people find useful information quickly. Its neat design makes it pleasant to visit and explore.",
+    image: websiteImg,
     link: "https://drive.google.com/file/d/1Xo3XrpmN6q95TWYKFYlpAjHuwqRfS6Oo/view?usp=sharing",
   },
 
