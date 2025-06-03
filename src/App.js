@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { FaEnvelope, FaLinkedin, FaPhone } from "react-icons/fa";
 import kalmandalImg from "./assets/images/kalmandal.jpg";
 import appImg from "./assets/images/app.jpg";
+import ODImg from "./assets/images/object_detection.png";
+
 import {
   FaPython,
   FaJava,
@@ -30,6 +32,7 @@ const androidProjects = [
     title: "Profile Card App",
     description: "Displays photo, name, role & contact info. Built using Jetpack Compose.",
     image: appImg,
+    link:"https://drive.google.com/file/d/1Xl_5E3abL-aCGYMKWLI5WFfa5hDy7FcW/view?usp=sharing",
   },
 ];
 
@@ -38,7 +41,7 @@ const mlProjects = [
     title: "Object Detection on Railway Tracks",
     description:
       "YOLOv5x-based system with Gradio UI to detect obstacles on railway tracks. Includes bounding boxes, audio alerts & styled frontend.",
-    image: "https://via.placeholder.com/300x180.png?text=AI+Classifier",
+    image: "ODImg",
     link: "https://drive.google.com/file/d/19vF7PXVtDYfXBQa8ei3oKVotDplhPgdV/view?usp=sharing",
   },
 ];
