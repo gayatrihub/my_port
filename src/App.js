@@ -168,17 +168,15 @@ function App() {
       </section>
 
       {/* Skills */}
+     </section>
+      {/* Skills */}
       <section className="space-y-12 bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
         <h2 className="text-3xl font-bold text-teal-300 mb-6">🛠 Technical Skills</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {technicalSkills.map((skill, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-between bg-gradient-to-r from-cyan-700 to-blue-900 bg-opacity-50 rounded-lg p-4 shadow-md"
-            >
+            <div key={i} className="flex items-center justify-between bg-gradient-to-r from-cyan-700 to-blue-900 bg-opacity-50 rounded-lg p-4 shadow-md">
               <div className="flex items-center gap-3 text-lg font-semibold text-white">
-                <div className="text-2xl">{skill.icon}</div>
-                {skill.name}
+                <div className="text-2xl">{skill.icon}</div>{skill.name}
               </div>
               <div className="text-white">{skill.confidence}%</div>
             </div>
@@ -191,10 +189,7 @@ function App() {
         <h2 className="text-3xl font-bold text-pink-400 mb-6">🤝 Soft Skills</h2>
         <div className="flex flex-wrap gap-6 justify-center sm:justify-start">
           {softSkills.map((skill, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center gap-2 bg-pink-800 bg-opacity-30 rounded-lg p-4 w-32 text-center shadow-inner hover:bg-pink-700 transition"
-            >
+            <div key={i} className="flex flex-col items-center gap-2 bg-pink-800 bg-opacity-30 rounded-lg p-4 w-32 text-center shadow-inner hover:bg-pink-700 transition">
               <div className="text-4xl text-pink-400">{skill.icon}</div>
               <div className="font-semibold text-white text-lg">{skill.name}</div>
             </div>
@@ -207,12 +202,8 @@ function App() {
         <h2 className="text-3xl font-bold text-yellow-400 mb-6">🏆 Achievements</h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {achievements.map((ach, i) => (
-            <div
-              key={i}
-              className="flex items-start gap-3 p-4 bg-yellow-900 bg-opacity-30 text-yellow-100 rounded-xl hover:bg-yellow-800 hover:bg-opacity-50 transition shadow-sm"
-            >
-              <FaTrophy className="text-yellow-300 mt-1" />
-              <span className="text-lg">{ach}</span>
+            <div key={i} className="flex items-start gap-3 p-4 bg-yellow-900 bg-opacity-30 text-yellow-100 rounded-xl hover:bg-yellow-800 hover:bg-opacity-50 transition shadow-sm">
+              <FaTrophy className="text-yellow-300 mt-1" /><span className="text-lg">{ach}</span>
             </div>
           ))}
         </div>
