@@ -145,15 +145,27 @@ function App() {
             </p>
             <div className="text-gray-300 leading-relaxed text-lg">
               <h2 className="text-3xl font-bold text-purple-300 mb-4">💫 About Me</h2>
-              <p className="mb-4">
-                Passionate about Android dev, ML, and combining logic + creativity through tech and art.
-              </p>
-              <p className="mb-4">
-                I’ve led GDG sessions, been a finalist in Smart India Hackathon, and built solutions for real-world problems.
-              </p>
-              <p className="mb-4">
-                I also love mandala art, and blend design with functionality in all my creations.
-              </p>
+               <p className="mb-4">
+              Hi, I’m Gayatri, a dedicated Computer Science (AIML) student with a passion for technology and creativity.
+              As a developer and visual thinker, I love building intuitive Android applications, exploring machine
+              learning models, and bringing digital experiences to life.
+            </p>
+            <p className="mb-4">
+              I'm an Android Developer and core member of the Google Developer Group (GDG) on campus, where I’ve led
+              workshops and mentoring sessions to support peer learning. I was honored to be a finalist in the Smart
+              India Hackathon 2023, and I’ve actively participated in university hackathons, creating solutions for
+              real-world challenges.
+            </p>
+            <p className="mb-4">
+              Beyond tech, I’m also a mandala art enthusiast and skilled drawing artist, with a strong eye for detail
+              and aesthetics. I bring my creativity not just to code, but also to visual storytelling through art —
+              blending logic and design in everything I create.
+            </p>
+            <p>
+              I’ve completed hands-on internships across AI/ML, full-stack development, networking, and Python, and
+              continue to upskill through projects and certifications. I believe in lifelong learning and thrive at the
+              intersection of innovation and design.
+            </p>
             </div>
           </div>
           <motion.img
