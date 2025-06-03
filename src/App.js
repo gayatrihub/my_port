@@ -7,7 +7,7 @@ import odImg from "./assets/images/Object_detection.jpg";
 import onlinereportImg from "./assets/images/online_report.jpg";
 
 import {
-  FaPython,
+  FaPython, 
   FaJava,
   FaBrain,
   FaGitAlt,
