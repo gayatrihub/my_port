@@ -188,44 +188,21 @@ function App() {
 
   {/* Name with Color in First Line */}
 <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
-  <TypeAnimation
-    sequence={[
-      () => {
-        document.getElementById("animated-text").innerHTML =
-          'Hi, I’m <span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻';
-      },
-      2000,
-      () => {
-        document.getElementById("animated-text").innerHTML = "";
-      },
-      200,
-      () => {
-        document.getElementById("animated-text").innerHTML =
-          'Android Developer @ GDG 🚀';
-      },
-      2000,
-      () => {
-        document.getElementById("animated-text").innerHTML = "";
-      },
-      200,
-      () => {
-        document.getElementById("animated-text").innerHTML =
-          'AIML Student | SIH Finalist 🎯';
-      },
-      2000,
-      () => {
-        document.getElementById("animated-text").innerHTML = "";
-      },
-      200,
-    ]}
-    speed={60}
-    repeat={Infinity}
-    cursor={true}
-  />
-  <span
-    id="animated-text"
-    className="inline-block mt-2"
-  ></span>
+  <span className="inline-block">
+    <Typewriter
+      words={[
+        `Hi, I’m <span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻`,
+        'Android Developer @ GDG 🚀',
+        'AIML Student | SIH Finalist 🎯',
+      ]}
+      loop={0} // infinite
+      cursor
+      cursorStyle="|"
+      typeSpeed={60}
+      deleteSpeed={40}
+      delaySpeed={1500}
+    />
+  </span>
 </h1>
 
 
