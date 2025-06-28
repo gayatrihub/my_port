@@ -162,7 +162,7 @@ function App() {
   {/* Topbar */}
   <nav className="flex flex-wrap justify-between items-center px-6 py-4 bg-black bg-opacity-50 rounded-2xl shadow-lg mb-8">
     <div className="text-3xl font-bold">
-      <span className="text-pink-500">Gay</span><span className="text-white">atri</span>
+      <span className="text-white-500">Gayatri</span>
     </div>
     <ul className="flex flex-wrap gap-6 text-white font-medium text-lg">
       <li><a href="#hero" className="hover:text-pink-400">Home</a></li>
@@ -186,10 +186,23 @@ function App() {
     transition={{ duration: 1 }}
   />
 
-  <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
-    Hi, I’m <span className="text-pink-400">Gay</span><span className="text-purple-400">atri</span> 👩‍💻
+   <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
+    <TypeAnimation
+      sequence={[
+        'Hi, I’m ',
+        100,
+       'Hi, I’m <span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻';
+        2000,
+        'Android Developer @ GDG 🚀',
+        2000,
+        'AIML Student | SIH Finalist 🎯',
+        2000
+      ]}
+      speed={50}
+      repeat={Infinity}
+      wrapper="span"
+    />
   </h1>
-
   <p className="text-gray-300 mt-4 text-lg sm:text-xl text-center">
     Computer Science (AIML) Student passionate about Android & AI.
   </p>
