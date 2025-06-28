@@ -157,24 +157,27 @@ function App() {
       className="min-h-screen bg-cover bg-center bg-fixed p-6 font-sans"
       style={{ backgroundImage: "url('bg2.jpg')" }}
     >
-    {/* Topbar */}
-     <nav className="flex justify-between items-center px-6 py-4 bg-black bg-opacity-60 rounded-3xl shadow-lg mb-6">
-        <div className="text-2xl font-bold">
-          <span className="text-pink-500">Gay</span><span className="text-white">atri</span>
-        </div>
-        <ul className="flex gap-6 text-white font-semibold">
-         <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#achievements">Achievements</a></li>
-          <li><a href="#projects">Projects</a></li>
-        </ul>
-        <a href="#contact" className="bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-bold py-2 px-4 rounded-full shadow hover:opacity-90">
-          Connect With Me
-        </a>
-      </nav>
-   {/* Hero Profile Section */}
-<section className="bg-black bg-opacity-40 rounded-3xl shadow-lg p-8 mb-16 text-center max-w-3xl mx-auto">
+    {/* Topbar + HeroSection Combined */}
+<section className="bg-black bg-opacity-40 rounded-3xl shadow-lg p-8 mb-16 max-w-6xl mx-auto">
+
+  {/* Topbar */}
+  <nav className="flex justify-between items-center px-6 py-4 bg-black bg-opacity-50 rounded-2xl shadow-lg mb-8">
+    <div className="text-3xl font-bold">
+      <span className="text-pink-500">Gay</span><span className="text-white">atri</span>
+    </div>
+    <ul className="flex gap-6 text-white font-medium text-lg">
+      <li><a href="#hero" className="hover:text-pink-400">Home</a></li>
+      <li><a href="#about" className="hover:text-pink-400">About Me</a></li>
+      <li><a href="#skills" className="hover:text-pink-400">Skills</a></li>
+      <li><a href="#achievements" className="hover:text-pink-400">Achievements</a></li>
+      <li><a href="#projects" className="hover:text-pink-400">Projects</a></li>
+    </ul>
+    <a href="#contact" className="bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-bold py-2 px-4 rounded-full shadow hover:opacity-90">
+      Connect With Me
+    </a>
+  </nav>
+
+  {/* Hero Profile Section */}
   <motion.img
     src="circle_profile.png"
     alt="Gayatri"
@@ -184,36 +187,41 @@ function App() {
     transition={{ duration: 1 }}
   />
 
-  {/* Animated intro line with colored name */}
-  <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-white">
+  <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-white text-center">
     <TypeAnimation
       sequence={[
-        'Hi, I’m', 1000,
-        'Android Developer @ GDG 🚀', 2000,
-        'AIML Student | SIH Finalist 🎯', 2000,
+        () => {
+          document.getElementById("animated-text").innerHTML =
+            'Hi, I’m <span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻';
+        },
+        2000,
+        'Android Developer @ GDG 🚀',
+        2000,
+        'AIML Student | SIH Finalist 🎯',
+        2000,
       ]}
       speed={50}
-      repeat={Infinity}
       wrapper="span"
+      repeat={Infinity}
     />
-    <span className="ml-3">
-      <span className="text-pink-500">Gay</span>
-      <span className="text-purple-400">atri</span> 👩‍💻
-    </span>
+    <span id="animated-text" />
   </h1>
 
-  <p className="text-gray-300 mt-4 text-lg sm:text-xl">
+  <p className="text-gray-300 mt-4 text-lg sm:text-xl text-center">
     Computer Science (AIML) Student passionate about Android & AI.
   </p>
 
-  <a
-    href="/Gayatri_Resume.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-block mt-8 px-8 py-5 bg-gray-800 text-white text-xl font-semibold rounded-2xl shadow-lg hover:bg-gray-700 transition"
-  >
-    Download Resume
-  </a>
+  {/* Resume Button Styled Like Alex Portfolio */}
+  <div className="text-center">
+    <a
+      href="/Gayatri_Resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block mt-8 px-10 py-5 text-white text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 rounded-2xl shadow-md hover:scale-105 transition duration-300"
+    >
+      📄 Download Resume
+    </a>
+  </div>
 </section>
 
 
