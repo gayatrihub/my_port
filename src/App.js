@@ -173,6 +173,30 @@ function App() {
           Connect With Me
         </a>
       </nav>
+    {/* Hero Section */}
+<section className="text-center mb-12">
+  <motion.img
+    src="profile.jpg"
+    alt="Gayatri"
+    className="w-40 h-40 rounded-full mx-auto border-4 border-yellow-400 shadow-lg object-cover"
+    initial={{ opacity: 0, scale: 0 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 1 }}
+  />
+  <h1 className="mt-4 text-4xl font-extrabold text-white">Hi, I'm <span className="text-pink-400">Gayatri</span></h1>
+  <p className="text-gray-300 mt-2 text-lg">
+    Computer Science (AIML) Student | Android Developer @ GDG | ML Enthusiast
+  </p>
+  <a
+    href="/Gayatri_Resume.pdf"  // Replace with your actual resume path
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block mt-6 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-full shadow-lg hover:opacity-90 transition"
+  >
+    📄 Download Resume
+  </a>
+</section>
+
       {/* Header Section */}
       <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
         <div className="flex flex-col md:flex-row items-center gap-8">
