@@ -178,18 +178,23 @@ function App() {
 
   {/* Hero Section */}
 <div className="relative w-64 h-64 mx-auto mt-10">
-  {/* Animated Aqua Gradient Border */}
-  <div className="absolute inset-0 rounded-full p-[6px] bg-gradient-to-r from-cyan-400 via-teal-500 to-blue-500 animate-spin-slow">
-    <div className="w-full h-full bg-black rounded-full flex items-center justify-center">
-      {/* Profile Image */}
-      <img
-        src="circle_profile.png"
-        alt="Gayatri"
-        className="w-60 h-60 object-cover rounded-full border-4 border-black"
-      />
+  {/* Rotating gradient border only */}
+  <div className="absolute inset-0 flex items-center justify-center animate-spin-slow">
+    <div className="w-full h-full rounded-full p-[5px] bg-gradient-to-tr from-rose-400 via-fuchsia-500 to-pink-600">
+      <div className="w-full h-full bg-black rounded-full"></div>
     </div>
   </div>
+
+  {/* Static profile image on top */}
+  <div className="absolute inset-0 flex items-center justify-center">
+    <img
+      src="circle_profile.png"
+      alt="Gayatri"
+      className="w-60 h-60 object-cover rounded-full border-[5px] border-black"
+    />
+  </div>
 </div>
+
 
 
   {/* Name with Color in First Line */}
