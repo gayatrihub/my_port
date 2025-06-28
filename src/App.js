@@ -178,12 +178,12 @@ function App() {
 
   {/* Hero Section */}
 <div className="relative w-64 h-64 mx-auto mt-10">
-  {/* Fast Rotating Gradient Border with Blur */}
-  <div className="absolute inset-0 animate-spin-medium rounded-full">
-    <div className="w-full h-full rounded-full p-[5px] bg-gradient-to-r from-pink-400 via-fuchsia-600 to-rose-500 blur-sm shadow-[0_0_15px_rgba(255,105,180,0.6)]"></div>
+  {/* Rotating Gradient Border */}
+  <div className="absolute inset-0 animate-spin-slow rounded-full">
+    <div className="w-full h-full rounded-full p-[5px] bg-gradient-to-tr from-rose-400 via-fuchsia-500 to-pink-600"></div>
   </div>
 
-  {/* Static Image */}
+  {/* Static Inner Circle & Profile Image */}
   <div className="absolute inset-[5px] rounded-full overflow-hidden bg-black flex items-center justify-center">
     <img
       src="circle_profile.png"
@@ -192,6 +192,7 @@ function App() {
     />
   </div>
 </div>
+
 
   {/* Name with Color in First Line */}
 <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
@@ -258,33 +259,21 @@ function App() {
  <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 max-w-3xl mx-auto">
-            <h1 className="text-5xl font-extrabold text-pink-400 mb-2">Hi, I’m Gayatri 👩‍💻</h1>
-            <p className="text-lg text-gray-300 mb-6">
-              Computer Science (AIML) Student | Android Developer @ GDG | ML Enthusiast | Hackathon Finalist
-            </p>
             <div className="text-gray-300 leading-relaxed text-lg">
               <h2 className="text-3xl font-bold text-purple-300 mb-4">💫 About Me</h2>
-               <p className="mb-4">
-              Hi, I’m Gayatri, a dedicated Computer Science (AIML) student with a passion for technology and creativity.
-              As a developer and visual thinker, I love building intuitive Android applications, exploring machine
-              learning models, and bringing digital experiences to life.
-            </p>
-            <p className="mb-4">
-              I'm an Android Developer and core member of the Google Developer Group (GDG) on campus, where I’ve led
-              workshops and mentoring sessions to support peer learning. I was honored to be a finalist in the Smart
-              India Hackathon 2023, and I’ve actively participated in university hackathons, creating solutions for
-              real-world challenges.
-            </p>
-            <p className="mb-4">
-              Beyond tech, I’m also a mandala art enthusiast and skilled drawing artist, with a strong eye for detail
-              and aesthetics. I bring my creativity not just to code, but also to visual storytelling through art —
-              blending logic and design in everything I create.
-            </p>
-            <p>
-              I’ve completed hands-on internships across AI/ML, full-stack development, networking, and Python, and
-              continue to upskill through projects and certifications. I believe in lifelong learning and thrive at the
-              intersection of innovation and design.
-            </p>
+              <p className="mb-4">
+  Hi, I’m Gayatri — a Computer Science (AIML) student passionate about technology, design, and innovation. I enjoy building intuitive Android apps, experimenting with machine learning, and crafting meaningful digital experiences.
+</p>
+<p className="mb-4">
+  As an Android Developer and core member of the GDG on campus, I’ve led workshops and mentored peers. I was a finalist in Smart India Hackathon 2023 and have built real-world solutions at various university hackathons.
+</p>
+<p className="mb-4">
+  I’m also a mandala art enthusiast and visual storyteller, blending creativity with logic in both code and design.
+</p>
+<p>
+  With internships in AI/ML, full-stack development, networking, and Python, I’m continuously learning and growing at the intersection of tech and creativity.
+</p>
+
             </div>
           </div>
           <motion.img
