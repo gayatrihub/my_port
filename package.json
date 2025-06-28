@@ -1,5 +1,5 @@
 {"homepage": "https://gayatrihub.github.io/my_port/",
-  "name": "my_port",
+   "name": "my_port",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -7,7 +7,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
     "react-scripts": "5.0.1",
-    "react-type-animation": "^2.1.1"
+    "react-type-animation": "^2.1.1",
+    "framer-motion": "^10.16.1"
   },
   "scripts": {
     "start": "react-scripts start",
