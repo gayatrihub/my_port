@@ -173,7 +173,7 @@ function App() {
           Connect With Me
         </a>
       </nav>
-    {/* Hero Profile Section */}
+   {/* Hero Profile Section */}
 <section className="bg-black bg-opacity-40 rounded-3xl shadow-lg p-8 mb-16 text-center max-w-3xl mx-auto">
   <motion.img
     src="circle_profile.png"
@@ -184,28 +184,23 @@ function App() {
     transition={{ duration: 1 }}
   />
 
-  <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold text-white leading-snug">
+  {/* Animated intro line with colored name */}
+  <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-white">
     <TypeAnimation
       sequence={[
-        'Hi, I’m ',
-        1000,
-        'Hi, I’m Gayatri 👩‍💻',
-        2000,
-        'Android Developer @ GDG 🚀',
-        2000,
-        'AIML Student | SIH Finalist 🎯',
-        2000,
+        'Hi, I’m', 1000,
+        'Android Developer @ GDG 🚀', 2000,
+        'AIML Student | SIH Finalist 🎯', 2000,
       ]}
       speed={50}
       repeat={Infinity}
       wrapper="span"
     />
+    <span className="ml-3">
+      <span className="text-pink-500">Gay</span>
+      <span className="text-purple-400">atri</span> 👩‍💻
+    </span>
   </h1>
-
-  <div className="text-5xl font-extrabold mt-2">
-    <span className="text-pink-500">Gay</span>
-    <span className="text-purple-400">atri</span>
-  </div>
 
   <p className="text-gray-300 mt-4 text-lg sm:text-xl">
     Computer Science (AIML) Student passionate about Android & AI.
@@ -220,6 +215,7 @@ function App() {
     Download Resume
   </a>
 </section>
+
 
     <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
         <div className="flex flex-col md:flex-row items-center gap-8">
@@ -254,7 +250,7 @@ function App() {
             </div>
           </div>
           <motion.img
-            src="profile.jpg"
+            src="profile2.jpg"
             alt="Gayatri"
             className="w-56 h-72 md:w-64 md:h-80 object-cover rounded-3xl border-4 border-yellow-400 shadow-lg"
             initial={{ scale: 0 }}
