@@ -178,13 +178,14 @@ function App() {
 
   {/* Hero Section */}
   <motion.img
-    src="circle_profile.png"
-    alt="Gayatri"
-    className="w-40 h-40 sm:w-48 sm:h-48 rounded-full mx-auto border-4 border-yellow-400 shadow-lg object-cover"
-    initial={{ opacity: 0, scale: 0 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 1 }}
-  />
+  src="circle_profile.png"
+  alt="Gayatri"
+  className="w-56 h-56 sm:w-64 sm:h-64 rounded-full mx-auto border-4 border-yellow-400 border-dashed shadow-lg object-cover"
+  initial={{ opacity: 0, scale: 0 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1 }}
+/>
+
 
   {/* Name with Color in First Line */}
 <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
