@@ -178,7 +178,7 @@ function App() {
 
   {/* Hero Section */}
 <div className="relative w-64 h-64 mx-auto mt-10">
-  {/* Rotating segmented gradient ring */}
+  {/* Rotating segmented gradient ring with tighter radius and new colors */}
   <div className="absolute inset-0 animate-spin-slow flex items-center justify-center">
     <svg
       viewBox="0 0 100 100"
@@ -189,23 +189,23 @@ function App() {
       <circle
         cx="50"
         cy="50"
-        r="48"
+        r="45"
         stroke="url(#gradient)"
         strokeWidth="4"
-        strokeDasharray="18 6 4 6" 
+        strokeDasharray="18 6 4 6"
         strokeLinecap="round"
       />
       <defs>
         <linearGradient id="gradient" x1="0" y1="0" x2="100" y2="0">
-          <stop offset="0%" stopColor="#fb7185" />   {/* soft pink */}
-          <stop offset="100%" stopColor="#c084fc" /> {/* light violet */}
+          <stop offset="0%" stopColor="#3b82f6" />   {/* Blue-500 */}
+          <stop offset="100%" stopColor="#06b6d4" /> {/* Cyan-400 */}
         </linearGradient>
       </defs>
     </svg>
   </div>
 
-  {/* Static Image */}
-  <div className="absolute inset-[8px] rounded-full overflow-hidden bg-black">
+  {/* Profile Image */}
+  <div className="absolute inset-[10px] rounded-full overflow-hidden bg-black">
     <img
       src="circle_profile.png"
       alt="Gayatri"
@@ -213,6 +213,7 @@ function App() {
     />
   </div>
 </div>
+
 
   {/* Name with Color in First Line */}
 <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
