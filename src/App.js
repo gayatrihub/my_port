@@ -157,12 +157,14 @@ function App() {
       className="min-h-screen bg-cover bg-center bg-fixed p-6 font-sans"
       style={{ backgroundImage: "url('bg2.jpg')" }}
     >
-   <section className="bg-black bg-opacity-40 rounded-3xl shadow-lg p-8 mb-16 w-full">
+   import { TypeAnimation } from 'react-type-animation';
+import { motion } from 'framer-motion';
 
+<section className="bg-black bg-opacity-40 rounded-3xl shadow-lg p-8 mb-16 w-full">
   {/* Topbar */}
   <nav className="flex flex-wrap justify-between items-center px-6 py-4 bg-black bg-opacity-50 rounded-2xl shadow-lg mb-8">
-    <div className="text-3xl font-bold">
-      <span className="text-white-500">Gayatri</span>
+    <div className="text-3xl font-bold text-white">
+      <span className="text-pink-500">Gay</span><span className="text-purple-400">atri</span>
     </div>
     <ul className="flex flex-wrap gap-6 text-white font-medium text-lg">
       <li><a href="#hero" className="hover:text-pink-400">Home</a></li>
@@ -186,39 +188,46 @@ function App() {
     transition={{ duration: 1 }}
   />
 
-   <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
+  {/* Name with Color in First Line */}
+  <div className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
     <TypeAnimation
       sequence={[
-        'Hi, I’m ',
-        100,
-       '<span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻';,
+        () => {
+          const el = document.getElementById("name-type");
+          if (el) {
+            el.innerHTML = `Hi, I’m <span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻`;
+          }
+        },
         2000,
         'Android Developer @ GDG 🚀',
         2000,
         'AIML Student | SIH Finalist 🎯',
-        2000
+        2000,
       ]}
       speed={50}
-      repeat={Infinity}
       wrapper="span"
+      repeat={Infinity}
     />
-  </h1>
+    <div id="name-type" className="inline-block"></div>
+  </div>
+
   <p className="text-gray-300 mt-4 text-lg sm:text-xl text-center">
     Computer Science (AIML) Student passionate about Android & AI.
   </p>
 
   {/* Resume Button */}
-  <div className="text-center">
-    <a
-      href="/Gayatri_Resume.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-block mt-8 px-10 py-5 text-white text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 rounded-2xl shadow-md hover:scale-105 transition duration-300"
-    >
-      📄 Download Resume
-    </a>
-  </div>
+ <div className="text-center">
+  <a
+    href="/Gayatri_Resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block mt-8 px-8 py-3 text-white border border-white rounded-full text-base font-medium hover:bg-white hover:text-black transition duration-300"
+  >
+    My resume
+  </a>
+</div>
 </section>
+
  <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 max-w-3xl mx-auto">
