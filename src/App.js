@@ -6,6 +6,7 @@ import appImg from "./assets/images/app.jpg";
 import odImg from "./assets/images/Object_detection.jpg";
 import onlinereportImg from "./assets/images/online_report.jpg";
 import websiteImg from "./assets/images/website.jpg";
+import { TypeAnimation } from 'react-type-animation';
 
 import {
   FaPython,
@@ -173,8 +174,8 @@ function App() {
           Connect With Me
         </a>
       </nav>
-    {/* Hero Section */}
-<section className="text-center mb-12">
+    {/* Hero Profile Section */}
+<section className="bg-black bg-opacity-40 rounded-3xl shadow-lg p-8 mb-16 text-center max-w-3xl mx-auto">
   <motion.img
     src="profile.jpg"
     alt="Gayatri"
@@ -183,22 +184,39 @@ function App() {
     animate={{ opacity: 1, scale: 1 }}
     transition={{ duration: 1 }}
   />
-  <h1 className="mt-4 text-4xl font-extrabold text-white">Hi, I'm <span className="text-pink-400">Gayatri</span></h1>
-  <p className="text-gray-300 mt-2 text-lg">
-    Computer Science (AIML) Student | Android Developer @ GDG | ML Enthusiast
+
+  <h1 className="mt-6 text-4xl font-bold text-white">
+    <TypeAnimation
+      sequence={[
+        'Hi, I’m Gayatri 👩‍💻', // text to type
+        2000,                   // wait 2s
+        '',                    // delete everything
+        'Android Developer @ GDG 🚀',
+        2000,
+        '',
+        'AIML Student | SIH Finalist 🎯',
+        2000
+      ]}
+      wrapper="span"
+      speed={50}
+      repeat={Infinity}
+    />
+  </h1>
+
+  <p className="text-gray-300 mt-4 text-lg">
+    Computer Science (AIML) Student passionate about Android & AI.
   </p>
+
   <a
-    href="/Gayatri_Resume.pdf"  // Replace with your actual resume path
+    href="/Gayatri_Resume.pdf"
     target="_blank"
     rel="noopener noreferrer"
-    className="inline-block mt-6 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-full shadow-lg hover:opacity-90 transition"
+    className="inline-block mt-6 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold rounded-full shadow-lg hover:opacity-90 transition"
   >
     📄 Download Resume
   </a>
 </section>
-
-      {/* Header Section */}
-      <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
+    <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 max-w-3xl mx-auto">
             <h1 className="text-5xl font-extrabold text-pink-400 mb-2">Hi, I’m Gayatri 👩‍💻</h1>
