@@ -156,9 +156,7 @@ function App() {
     <div
       className="min-h-screen bg-cover bg-center bg-fixed p-6 font-sans"
       style={{ backgroundImage: "url('bg2.jpg')" }}
-    >
-   import { TypeAnimation } from 'react-type-animation';
-import { motion } from 'framer-motion';
+  >
 
 <section className="bg-black bg-opacity-40 rounded-3xl shadow-lg p-8 mb-16 w-full">
   {/* Topbar */}
