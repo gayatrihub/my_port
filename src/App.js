@@ -163,7 +163,7 @@ function App() {
           <span className="text-pink-500">Gay</span><span className="text-white">atri</span>
         </div>
         <ul className="flex gap-6 text-white font-semibold">
-          <li><a href="#">Home</a></li>
+         <li><a href="#hero">Home</a></li>
           <li><a href="#about">About Me</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#achievements">Achievements</a></li>
