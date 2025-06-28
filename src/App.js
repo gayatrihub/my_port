@@ -190,20 +190,33 @@ function App() {
 <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
   <TypeAnimation
     sequence={[
-      'Hi, I’m <span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻',
+      // Animated string with colored spans (as JSX, not HTML string)
+      () => {
+        const el = document.getElementById("name-type");
+        if (el) {
+          el.innerHTML = `Hi, I’m <span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻`;
+        }
+      },
       2000,
-      'Android Developer @ GDG 🚀',
+      () => {
+        const el = document.getElementById("name-type");
+        if (el) el.textContent = 'Android Developer @ GDG 🚀';
+      },
       2000,
-      'AIML Student | SIH Finalist 🎯',
+      () => {
+        const el = document.getElementById("name-type");
+        if (el) el.textContent = 'AIML Student | SIH Finalist 🎯';
+      },
       2000,
     ]}
     speed={50}
     repeat={Infinity}
     wrapper="span"
-    className="inline-block"
     style={{ display: "inline-block" }}
   />
+  <div id="name-type" className="inline-block"></div>
 </h1>
+
 <p className="text-gray-300 mt-4 text-lg sm:text-xl text-center">
   Computer Science (AIML) Student passionate about Android & AI.
 </p>
