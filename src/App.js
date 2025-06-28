@@ -177,14 +177,19 @@ function App() {
   </nav>
 
   {/* Hero Section */}
-  <motion.img
-  src="circle_profile.png"
-  alt="Gayatri"
-  className="w-56 h-56 sm:w-64 sm:h-64 rounded-full mx-auto border-4 border-yellow-400 border-dashed shadow-lg object-cover"
-  initial={{ opacity: 0, scale: 0 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 1 }}
-/>
+<div className="relative w-64 h-64 mx-auto mt-10">
+  {/* Animated Aqua Gradient Border */}
+  <div className="absolute inset-0 rounded-full p-[6px] bg-gradient-to-r from-cyan-400 via-teal-500 to-blue-500 animate-spin-slow">
+    <div className="w-full h-full bg-black rounded-full flex items-center justify-center">
+      {/* Profile Image */}
+      <img
+        src="circle_profile.png"
+        alt="Gayatri"
+        className="w-60 h-60 object-cover rounded-full border-4 border-black"
+      />
+    </div>
+  </div>
+</div>
 
 
   {/* Name with Color in First Line */}
