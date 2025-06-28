@@ -178,7 +178,7 @@ function App() {
 
   {/* Hero Section */}
 <div className="relative w-64 h-64 mx-auto mt-10">
-  {/* Rotating Dotted Ring */}
+  {/* Rotating segmented gradient ring */}
   <div className="absolute inset-0 animate-spin-slow flex items-center justify-center">
     <svg
       viewBox="0 0 100 100"
@@ -192,19 +192,19 @@ function App() {
         r="48"
         stroke="url(#gradient)"
         strokeWidth="4"
-        strokeDasharray="10 10"
+        strokeDasharray="18 6 4 6" 
         strokeLinecap="round"
       />
       <defs>
         <linearGradient id="gradient" x1="0" y1="0" x2="100" y2="0">
-          <stop offset="0%" stopColor="#ec4899" />
-          <stop offset="100%" stopColor="#8b5cf6" />
+          <stop offset="0%" stopColor="#fb7185" />   {/* soft pink */}
+          <stop offset="100%" stopColor="#c084fc" /> {/* light violet */}
         </linearGradient>
       </defs>
     </svg>
   </div>
 
-  {/* Inner Image */}
+  {/* Static Image */}
   <div className="absolute inset-[8px] rounded-full overflow-hidden bg-black">
     <img
       src="circle_profile.png"
@@ -213,8 +213,6 @@ function App() {
     />
   </div>
 </div>
-
-
 
   {/* Name with Color in First Line */}
 <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
