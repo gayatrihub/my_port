@@ -192,7 +192,7 @@ function App() {
         r="45"
         stroke="url(#pinkGradient)"
         strokeWidth="4"
-        strokeDasharray="15 20"  {/* <-- Segment length = 15, gap = 20 */}
+        strokeDasharray="15 20"  /* <-- Segment length = 15, gap = 20 */
         strokeLinecap="round"
       />
       <defs>
