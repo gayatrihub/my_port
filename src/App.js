@@ -191,7 +191,7 @@ function App() {
       sequence={[
         'Hi, I’m ',
         100,
-       'Hi, I’m <span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻';
+       '<span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻';,
         2000,
         'Android Developer @ GDG 🚀',
         2000,
