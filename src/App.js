@@ -188,6 +188,11 @@ function App() {
 
   {/* Name with Color in First Line */}
 <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
+  <span
+    id="animated-text"
+    className="inline-block"
+  ></span>
+
   <TypeAnimation
     sequence={[
       () => {
@@ -220,7 +225,7 @@ function App() {
     ]}
     speed={60}
     repeat={Infinity}
-    cursor={false} // Turn off default blinking cursor
+    cursor={false}
   />
 </h1>
 
