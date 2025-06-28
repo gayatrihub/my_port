@@ -187,21 +187,7 @@ function App() {
   />
 
   <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
-    <TypeAnimation
-      sequence={[
-        'Hi, I’m ',
-        100,
-        'Hi, I’m Gayatri 👩‍💻',
-        2000,
-        'Android Developer @ GDG 🚀',
-        2000,
-        'AIML Student | SIH Finalist 🎯',
-        2000
-      ]}
-      speed={50}
-      repeat={Infinity}
-      wrapper="span"
-    />
+    Hi, I’m <span className="text-pink-400">Gay</span><span className="text-purple-400">atri</span> 👩‍💻
   </h1>
 
   <p className="text-gray-300 mt-4 text-lg sm:text-xl text-center">
@@ -220,7 +206,7 @@ function App() {
     </a>
   </div>
 </section>
-    <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
+ <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 max-w-3xl mx-auto">
             <h1 className="text-5xl font-extrabold text-pink-400 mb-2">Hi, I’m Gayatri 👩‍💻</h1>
