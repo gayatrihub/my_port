@@ -178,56 +178,49 @@ function App() {
   <motion.img
     src="circle_profile.png"
     alt="Gayatri"
-    className="w-40 h-40 rounded-full mx-auto border-4 border-yellow-400 shadow-lg object-cover"
+    className="w-40 h-40 sm:w-48 sm:h-48 rounded-full mx-auto border-4 border-yellow-400 shadow-lg object-cover"
     initial={{ opacity: 0, scale: 0 }}
     animate={{ opacity: 1, scale: 1 }}
     transition={{ duration: 1 }}
   />
 
-  <h1 className="mt-6 text-5xl sm:text-6xl font-extrabold text-white leading-snug">
-  <TypeAnimation
-    sequence={[
-      // First message
-      () => {
-        document.getElementById("name-color").innerHTML = '<span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span>';
-      },
-      'Hi, I’m ',
-      0,
-      () => {},
-      2000,
-      '',
+  <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold text-white leading-snug">
+    <TypeAnimation
+      sequence={[
+        'Hi, I’m ',
+        1000,
+        'Hi, I’m Gayatri 👩‍💻',
+        2000,
+        'Android Developer @ GDG 🚀',
+        2000,
+        'AIML Student | SIH Finalist 🎯',
+        2000,
+      ]}
+      speed={50}
+      repeat={Infinity}
+      wrapper="span"
+    />
+  </h1>
 
-      // Second message
-      'Android Developer @ GDG 🚀',
-      2000,
-      '',
+  <div className="text-5xl font-extrabold mt-2">
+    <span className="text-pink-500">Gay</span>
+    <span className="text-purple-400">atri</span>
+  </div>
 
-      // Third message
-      'AIML Student | SIH Finalist 🎯',
-      2000
-    ]}
-    speed={50}
-    wrapper="span"
-    repeat={Infinity}
-  />
-  <span id="name-color" className="ml-2"></span>
-</h1>
-
-
-  <p className="text-gray-300 mt-4 text-lg">
+  <p className="text-gray-300 mt-4 text-lg sm:text-xl">
     Computer Science (AIML) Student passionate about Android & AI.
   </p>
 
   <a
-  href="/Gayatri_Resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block mt-8 px-8 py-5 bg-gray-800 text-white text-xl font-semibold rounded-2xl shadow-lg hover:bg-gray-700 transition"
->
-  📄 Download Resume
-</a>
-
+    href="/Gayatri_Resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block mt-8 px-8 py-5 bg-gray-800 text-white text-xl font-semibold rounded-2xl shadow-lg hover:bg-gray-700 transition"
+  >
+    Download Resume
+  </a>
 </section>
+
     <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 max-w-3xl mx-auto">
