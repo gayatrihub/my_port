@@ -184,36 +184,49 @@ function App() {
     transition={{ duration: 1 }}
   />
 
-  <h1 className="mt-6 text-4xl font-bold text-white">
-    <TypeAnimation
-      sequence={[
-        'Hi, I’m Gayatri 👩‍💻', // text to type
-        2000,                   // wait 2s
-        '',                    // delete everything
-        'Android Developer @ GDG 🚀',
-        2000,
-        '',
-        'AIML Student | SIH Finalist 🎯',
-        2000
-      ]}
-      wrapper="span"
-      speed={50}
-      repeat={Infinity}
-    />
-  </h1>
+  <h1 className="mt-6 text-5xl sm:text-6xl font-extrabold text-white leading-snug">
+  <TypeAnimation
+    sequence={[
+      // First message
+      () => {
+        document.getElementById("name-color").innerHTML = '<span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span>';
+      },
+      'Hi, I’m ',
+      0,
+      () => {},
+      2000,
+      '',
+
+      // Second message
+      'Android Developer @ GDG 🚀',
+      2000,
+      '',
+
+      // Third message
+      'AIML Student | SIH Finalist 🎯',
+      2000
+    ]}
+    speed={50}
+    wrapper="span"
+    repeat={Infinity}
+  />
+  <span id="name-color" className="ml-2"></span>
+</h1>
+
 
   <p className="text-gray-300 mt-4 text-lg">
     Computer Science (AIML) Student passionate about Android & AI.
   </p>
 
   <a
-    href="/Gayatri_Resume.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-block mt-6 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold rounded-full shadow-lg hover:opacity-90 transition"
-  >
-    📄 Download Resume
-  </a>
+  href="/Gayatri_Resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block mt-8 px-8 py-5 bg-gray-800 text-white text-xl font-semibold rounded-2xl shadow-lg hover:bg-gray-700 transition"
+>
+  📄 Download Resume
+</a>
+
 </section>
     <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
         <div className="flex flex-col md:flex-row items-center gap-8">
