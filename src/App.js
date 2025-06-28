@@ -177,15 +177,14 @@ function App() {
   </nav>
 
   {/* Hero Section */}
-  
-  {/* Profile Image (Inside Circle) */}
- <div className="border-rotate mx-auto w-44 h-44 sm:w-52 sm:h-52 rounded-full">
+ <div className="rotating-border-wrapper mx-auto w-44 h-44 sm:w-52 sm:h-52 rounded-full">
   <img
     src="circle_profile.png"
     alt="Gayatri"
-    className="w-full h-full object-cover rounded-full border-4 border-white"
+    className="w-full h-full object-cover rounded-full border-4 border-white shadow-xl"
   />
 </div>
+
 
 
 
