@@ -177,7 +177,7 @@ function App() {
   </nav>
 
   {/* Hero Section */}
-<div className="relative w-64 h-64 mx-auto mt-10">
+<<div className="relative w-64 h-64 mx-auto mt-10">
   {/* Rotating gradient border only */}
   <div className="absolute inset-0 flex items-center justify-center animate-spin-slow">
     <div className="w-full h-full rounded-full p-[5px] bg-gradient-to-tr from-rose-400 via-fuchsia-500 to-pink-600">
@@ -194,9 +194,6 @@ function App() {
     />
   </div>
 </div>
-
-
-
   {/* Name with Color in First Line */}
 <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
   <span
