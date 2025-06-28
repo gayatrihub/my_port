@@ -178,7 +178,7 @@ function App() {
 
   {/* Hero Section */}
 <div className="relative w-64 h-64 mx-auto mt-10">
-  {/* Rotating segmented gradient ring with tighter radius and new colors */}
+  {/* Rotating segmented ring */}
   <div className="absolute inset-0 animate-spin-slow flex items-center justify-center">
     <svg
       viewBox="0 0 100 100"
@@ -190,21 +190,21 @@ function App() {
         cx="50"
         cy="50"
         r="45"
-        stroke="url(#gradient)"
+        stroke="url(#pinkGradient)"
         strokeWidth="4"
-        strokeDasharray="18 6 4 6"
+        strokeDasharray="15 20"  {/* <-- Segment length = 15, gap = 20 */}
         strokeLinecap="round"
       />
       <defs>
-        <linearGradient id="gradient" x1="0" y1="0" x2="100" y2="0">
-          <stop offset="0%" stopColor="#3b82f6" />   {/* Blue-500 */}
-          <stop offset="100%" stopColor="#06b6d4" /> {/* Cyan-400 */}
+        <linearGradient id="pinkGradient" x1="0" y1="0" x2="100" y2="0">
+          <stop offset="0%" stopColor="#f472b6" />   {/* Pink-400 */}
+          <stop offset="100%" stopColor="#ec4899" /> {/* Pink-500 */}
         </linearGradient>
       </defs>
     </svg>
   </div>
 
-  {/* Profile Image */}
+  {/* Circular Image */}
   <div className="absolute inset-[10px] rounded-full overflow-hidden bg-black">
     <img
       src="circle_profile.png"
