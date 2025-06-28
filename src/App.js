@@ -100,6 +100,32 @@ const achievements = [
 
 function ProjectSection({ title, projects }) {
   return (
+    <header className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-40 backdrop-blur-md shadow-md">
+  <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    {/* Logo / Name */}
+    <h1 className="text-white text-2xl font-bold">
+      <span className="text-pink-500">Gaya</span>tri
+    </h1>
+
+    {/* Nav Links */}
+    <nav className="hidden md:flex gap-8 text-white font-medium">
+      <a href="#home" className="hover:text-pink-400 transition duration-300">Home</a>
+      <a href="#about" className="hover:text-pink-400 transition duration-300">About Me</a>
+      <a href="#skills" className="hover:text-pink-400 transition duration-300">Skills</a>
+      <a href="#achievements" className="hover:text-pink-400 transition duration-300">Achievements</a>
+      <a href="#projects" className="hover:text-pink-400 transition duration-300">Projects</a>
+    </nav>
+
+    {/* Connect With Me Button */}
+    <a
+      href="#contact"
+      className="ml-4 bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-400 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
+    >
+      Connect With Me
+    </a>
+  </div>
+</header>
+
     <div className="mb-12">
       <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
