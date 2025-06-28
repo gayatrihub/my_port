@@ -226,13 +226,13 @@ function App() {
   </div>
 
   {/* Profile Image (Inside Circle) */}
-  <div className="absolute inset-[12px] rounded-full overflow-hidden shadow-lg bg-black">
-    <img
-      src="circle_profile.png"
-      alt="Gayatri"
-      className="w-full h-full object-cover rounded-full"
-    />
-  </div>
+ <div className="border-rotate mx-auto w-44 h-44 sm:w-52 sm:h-52 rounded-full">
+  <img
+    src="circle_profile.png"
+    alt="Gayatri"
+    className="w-full h-full object-cover rounded-full border-4 border-white"
+  />
+</div>
 </div>
 
 
