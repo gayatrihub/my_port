@@ -1,14 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaLinkedin, FaPhone } from "react-icons/fa";
-import kalmandalImg from "./assets/images/kalmandal.jpg";
-import appImg from "./assets/images/app.jpg";
-import odImg from "./assets/images/Object_detection.jpg";
-import onlinereportImg from "./assets/images/online_report.jpg";
-import websiteImg from "./assets/images/website.jpg";
-
 import {
-  FaPython, 
+  FaEnvelope,
+  FaLinkedin,
+  FaPhone,
+  FaPython,
   FaJava,
   FaBrain,
   FaGitAlt,
@@ -23,6 +19,12 @@ import {
 import { SiCplusplus } from "react-icons/si";
 import { FaUsers, FaLightbulb, FaTrophy } from "react-icons/fa6";
 
+import kalmandalImg from "./assets/images/kalmandal.jpg";
+import appImg from "./assets/images/app.jpg";
+import odImg from "./assets/images/Object_detection.jpg";
+onlinereportImg from "./assets/images/online_report.jpg";
+import websiteImg from "./assets/images/website.jpg";
+
 const androidProjects = [
   {
     title: "KalMandal",
@@ -34,47 +36,43 @@ const androidProjects = [
     title: "Profile Card App",
     description: "Displays photo, name, role & contact info. Built using Jetpack Compose.",
     image: appImg,
-    link:"https://drive.google.com/file/d/1Xl_5E3abL-aCGYMKWLI5WFfa5hDy7FcW/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1Xl_5E3abL-aCGYMKWLI5WFfa5hDy7FcW/view?usp=sharing",
   },
 ];
 
 const mlProjects = [
   {
     title: "Object Detection on Railway Tracks",
-    description:
-      "YOLOv5x-based system with Gradio UI to detect obstacles on railway tracks. Includes bounding boxes, audio alerts & styled frontend.",
+    description: "YOLOv5x-based system with Gradio UI to detect obstacles on railway tracks. Includes bounding boxes, audio alerts & styled frontend.",
     image: odImg,
     link: "https://drive.google.com/file/d/19vF7PXVtDYfXBQa8ei3oKVotDplhPgdV/view?usp=sharing",
   },
 ];
+
 const webProjects = [
   {
     title: "Online Crime Reporting System",
-    description:
-      "The Online Crime Reporting System allows users to submit complaints directly through a web interface built with HTML, CSS, and JavaScript. Once a user fills out and submits the complaint form online, the information is securely sent to the respective police department. The police then review the complaint and update the status, which the user can track using a unique complaint ID. Additionally, the system provides access to a list of wanted persons and displays important emergency contact numbers, making it a useful tool for both crime reporting and public awareness.",
+    description: "Allows users to report crimes online and track status. Includes wanted persons and emergency contacts.",
     image: onlinereportImg,
     link: "https://drive.google.com/file/d/1Xo3XrpmN6q95TWYKFYlpAjHuwqRfS6Oo/view?usp=sharing",
   },
-   {
+  {
     title: "College Website",
-    description:
-      "The college website gives a clear and simple view of what the college stands for. It shares the goals, values, and vision that guide its growth. Important achievements and progress are shown to highlight its success. The website is easy to use and helps people find useful information quickly. Its neat design makes it pleasant to visit and explore.",
+    description: "A simple, clean and informative college website showing vision, mission, and achievements.",
     image: websiteImg,
     link: "https://drive.google.com/file/d/1MxNQ7xJeDx8Cf0Idt0JrIqexDdSFM7Ie/view?usp=sharing",
   },
-
 ];
 
-
 const technicalSkills = [
-  { name: "Pyhon", confidence: 90, icon: <FaPython /> },
+  { name: "Python", confidence: 90, icon: <FaPython /> },
   { name: "Java", confidence: 80, icon: <FaJava /> },
   { name: "Machine Learning", confidence: 75, icon: <FaBrain /> },
   { name: "C", confidence: 90, icon: <FaCuttlefish /> },
   { name: "C++", confidence: 75, icon: <SiCplusplus /> },
   { name: "Git", confidence: 70, icon: <FaGitAlt /> },
-  { name: "Front End Development", confidence: 90, icon: <FaHtml5 /> },
-  { name: "Android Development", confidence: 88, icon: <FaAndroid /> },
+  { name: "Front End", confidence: 90, icon: <FaHtml5 /> },
+  { name: "Android", confidence: 88, icon: <FaAndroid /> },
   { name: "JavaScript", confidence: 85, icon: <FaJs /> },
   { name: "SQL", confidence: 85, icon: <FaDatabase /> },
   { name: "DSA", confidence: 85, icon: <FaCode /> },
@@ -88,11 +86,10 @@ const softSkills = [
 ];
 
 const achievements = [
-  "Class Representative since 2022 (continuing)",
+  "Class Representative since 2022",
   "Student Innovator at AIMERS Club",
-  "Team selected for Smart India Hackathon Finale",
-  "Android Developer at GDG On Campus",
-  "Finalist at Smart India Hackathon 2023",
+  "Smart India Hackathon Finalist",
+  "Android Developer @ GDG On Campus",
   "Top 5 in Tribal Welfare Hackathon",
   "Led Android session at GDG campus",
   "Completed Full Stack Internship at ExcelR",
@@ -110,25 +107,17 @@ function ProjectSection({ title, projects }) {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-40 object-cover"
-            />
+            <img src={project.image} alt={project.title} className="w-full h-40 object-cover" />
             <div className="p-4">
-              {project.link ? (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xl font-bold text-blue-400 hover:underline mb-2 block"
-                >
-                  {project.title}
-                </a>
-              ) : (
-                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-              )}
-              <p className="text-gray-300">{project.description}</p>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl font-bold text-pink-400 hover:underline mb-2 block"
+              >
+                {project.title}
+              </a>
+              <p className="text-gray-300 text-sm">{project.description}</p>
             </div>
           </motion.div>
         ))}
@@ -155,132 +144,63 @@ function App() {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center bg-fixed p-6 font-sans"
+      className="min-h-screen bg-cover bg-center bg-fixed font-sans text-white"
       style={{ backgroundImage: "url('bg2.jpg')" }}
     >
-      {/* Header Section */}
-      <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-1 max-w-3xl mx-auto">
-            <h1 className="text-5xl font-extrabold text-pink-400 mb-2">Hi, I’m Gayatri 👩‍💻</h1>
-            <p className="text-lg text-gray-300 mb-6">
-              Computer Science (AIML) Student | Android Developer @ GDG | ML Enthusiast | Hackathon Finalist
-            </p>
-            <div className="text-gray-300 leading-relaxed text-lg">
-              <h2 className="text-3xl font-bold text-purple-300 mb-4">💫 About Me</h2>
-               <p className="mb-4">
-              Hi, I’m Gayatri, a dedicated Computer Science (AIML) student with a passion for technology and creativity.
-              As a developer and visual thinker, I love building intuitive Android applications, exploring machine
-              learning models, and bringing digital experiences to life.
-            </p>
-            <p className="mb-4">
-              I'm an Android Developer and core member of the Google Developer Group (GDG) on campus, where I’ve led
-              workshops and mentoring sessions to support peer learning. I was honored to be a finalist in the Smart
-              India Hackathon 2023, and I’ve actively participated in university hackathons, creating solutions for
-              real-world challenges.
-            </p>
-            <p className="mb-4">
-              Beyond tech, I’m also a mandala art enthusiast and skilled drawing artist, with a strong eye for detail
-              and aesthetics. I bring my creativity not just to code, but also to visual storytelling through art —
-              blending logic and design in everything I create.
-            </p>
-            <p>
-              I’ve completed hands-on internships across AI/ML, full-stack development, networking, and Python, and
-              continue to upskill through projects and certifications. I believe in lifelong learning and thrive at the
-              intersection of innovation and design.
-            </p>
-            </div>
-          </div>
-          <motion.img
-            src="profile.jpg"
-            alt="Gayatri"
-            className="w-56 h-72 md:w-64 md:h-80 object-cover rounded-3xl border-4 border-yellow-400 shadow-lg"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 1 }}
-          />
-        </div>
+      {/* Floating Top Right Button */}
+      <a
+        href="#contact"
+        className="fixed top-6 right-6 bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-400 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform duration-300 z-50"
+      >
+        Connect With Me
+      </a>
+
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center text-center p-16">
+        <img
+          src="profile.jpg"
+          alt="Gayatri"
+          className="w-40 h-40 rounded-full border-4 border-pink-500 shadow-xl mb-4"
+        />
+        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">
+          I'm Gayatri, CSE-AIML Student
+        </h1>
+        <p className="text-lg text-gray-200 max-w-xl mt-4">
+          Android Developer @ GDG | Finalist @ Smart India Hackathon | Passionate about ML, Design & Innovation.
+        </p>
       </section>
 
-      {/* Skills */}
-      <section className="space-y-12 bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-        <h2 className="text-3xl font-bold text-teal-300 mb-6">🛠 Technical Skills</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {/* Skills Section */}
+      <section className="px-6 py-12 bg-black bg-opacity-40 rounded-3xl mx-4 mb-12">
+        <h2 className="text-3xl font-bold text-pink-400 mb-6">Skills</h2>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           {technicalSkills.map((skill, i) => (
-            <div key={i} className="flex items-center justify-between bg-gradient-to-r from-cyan-700 to-blue-900 bg-opacity-50 rounded-lg p-4 shadow-md">
-              <div className="flex items-center gap-3 text-lg font-semibold text-white">
-                <div className="text-2xl">{skill.icon}</div>{skill.name}
+            <div key={i} className="flex items-center justify-between p-4 bg-gray-800 rounded-xl">
+              <div className="flex items-center gap-3 text-lg">
+                <div className="text-2xl">{skill.icon}</div>
+                {skill.name}
               </div>
-              <div className="text-white">{skill.confidence}%</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Soft Skills */}
-      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-        <h2 className="text-3xl font-bold text-pink-400 mb-6">🤝 Soft Skills</h2>
-        <div className="flex flex-wrap gap-6 justify-center sm:justify-start">
-          {softSkills.map((skill, i) => (
-            <div key={i} className="flex flex-col items-center gap-2 bg-pink-800 bg-opacity-30 rounded-lg p-4 w-32 text-center shadow-inner hover:bg-pink-700 transition">
-              <div className="text-4xl text-pink-400">{skill.icon}</div>
-              <div className="font-semibold text-white text-lg">{skill.name}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Achievements */}
-      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-        <h2 className="text-3xl font-bold text-yellow-400 mb-6">🏆 Achievements</h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {achievements.map((ach, i) => (
-            <div key={i} className="flex items-start gap-3 p-4 bg-yellow-900 bg-opacity-30 text-yellow-100 rounded-xl hover:bg-yellow-800 hover:bg-opacity-50 transition shadow-sm">
-              <FaTrophy className="text-yellow-300 mt-1" /><span className="text-lg">{ach}</span>
+              <div>{skill.confidence}%</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Projects */}
-      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-        <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
-        <ProjectSection title="📱 Android Development Projects" projects={androidProjects} />
-        <ProjectSection title="🧠 Machine Learning Projects" projects={mlProjects} />
-        <ProjectSection title="🌐 Web Developing Projects" projects={webProjects} />
+      <section className="px-6 py-12 bg-black bg-opacity-30 rounded-3xl mx-4 mb-12">
+        <h2 className="text-3xl font-bold text-green-400 mb-6">Projects</h2>
+        <ProjectSection title="Android" projects={androidProjects} />
+        <ProjectSection title="Machine Learning" projects={mlProjects} />
+        <ProjectSection title="Web" projects={webProjects} />
       </section>
 
       {/* Contact */}
-      <section className="bg-black bg-opacity-40 rounded-3xl p-8 shadow-lg mb-16 max-w-4xl mx-auto">
+      <section
+        id="contact"
+        className="bg-black bg-opacity-40 rounded-3xl p-8 shadow-lg mb-16 max-w-4xl mx-auto"
+      >
         <h2 className="text-3xl font-extrabold text-blue-400 mb-8 text-center">📬 Contact Me</h2>
-        <div className="flex flex-col sm:flex-row sm:justify-around sm:items-center gap-2 mb-12 text-white text-lg">
-          <div className="flex items-center gap-3">
-            <FaEnvelope className="text-3xl text-red-400" />
-            <span className="font-semibold">Email:</span>
-            <a href="mailto:gayatritext@gmail.com" className="text-blue-300 hover:underline">
-              gayatritext@gmail.com
-            </a>
-          </div>
-          <div className="flex items-center gap-3">
-            <FaPhone className="text-3xl text-green-400" />
-            <span className="font-semibold">Phone:</span>
-            <span className="text-gray-300">+91 7396155453</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <FaLinkedin className="text-3xl text-blue-400" />
-            <span className="font-semibold">LinkedIn:</span>
-            <a
-              href="https://www.linkedin.com/in/reddy-gayatri-b57876254"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-300 hover:underline"
-            >
-              Gayatri-linkedin-id
-            </a>
-          </div>
-        </div>
-
-        <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto text-white">
+        <form onSubmit={handleSubmit} className="space-y-6 text-white">
           <input
             type="text"
             name="name"
@@ -309,7 +229,7 @@ function App() {
           />
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg"
+            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 rounded-xl shadow-lg"
           >
             Send Message
           </button>
