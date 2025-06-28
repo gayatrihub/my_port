@@ -177,54 +177,7 @@ function App() {
   </nav>
 
   {/* Hero Section */}
-<div className="relative w-64 h-64 mx-auto mt-10">
-  {/* Rotating arc with spaced gradient segments and dots */}
-  <div className="absolute inset-0 animate-spin-slow flex items-center justify-center">
-    <svg
-      viewBox="0 0 100 100"
-      className="w-full h-full"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {/* Arc segments */}
-      <circle
-        cx="50"
-        cy="50"
-        r="44"
-        stroke="url(#pinkGradient)"
-        strokeWidth="5"
-        strokeDasharray="10 18"
-        strokeLinecap="round"
-      />
-
-      {/* Dots between segments */}
-      {[...Array(12)].map((_, i) => {
-        const angle = (i * 30 + 15) * (Math.PI / 180); // 15° offset to sit between arcs
-        const x = 50 + 44 * Math.cos(angle);
-        const y = 50 + 44 * Math.sin(angle);
-        return (
-          <circle
-            key={i}
-            cx={x}
-            cy={y}
-            r="1.8"
-            fill="#f9a8d4" // pink-300
-            stroke="#f472b6"
-            strokeWidth="0.5"
-          />
-        );
-      })}
-
-      {/* Gradient definition */}
-      <defs>
-        <linearGradient id="pinkGradient" x1="0" y1="0" x2="100" y2="0">
-          <stop offset="0%" stopColor="#f472b6" /> {/* pink-400 */}
-          <stop offset="100%" stopColor="#ec4899" /> {/* pink-500 */}
-        </linearGradient>
-      </defs>
-    </svg>
-  </div>
-
+  
   {/* Profile Image (Inside Circle) */}
  <div className="border-rotate mx-auto w-44 h-44 sm:w-52 sm:h-52 rounded-full">
   <img
@@ -233,7 +186,7 @@ function App() {
     className="w-full h-full object-cover rounded-full border-4 border-white"
   />
 </div>
-</div>
+
 
 
   {/* Name with Color in First Line */}
