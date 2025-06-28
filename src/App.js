@@ -176,7 +176,7 @@ function App() {
     {/* Hero Profile Section */}
 <section className="bg-black bg-opacity-40 rounded-3xl shadow-lg p-8 mb-16 text-center max-w-3xl mx-auto">
   <motion.img
-    src="profile1.png"
+    src="circle_profile.png"
     alt="Gayatri"
     className="w-40 h-40 rounded-full mx-auto border-4 border-yellow-400 shadow-lg object-cover"
     initial={{ opacity: 0, scale: 0 }}
