@@ -188,26 +188,46 @@ function App() {
 
   {/* Name with Color in First Line */}
 <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
- <TypeAnimation
-  sequence={[
-    // First: the styled name (colored)
-    `Hi, I’m <span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻`,
-    2000,
-    // Then the other lines (plain text)
-    'Android Developer @ GDG 🚀',
-    2000,
-    'AIML Student | SIH Finalist 🎯',
-    2000,
-  ]}
-  speed={50}
-  repeat={Infinity}
-  cursor={true}
-  wrapper="span"
-  className="inline-block text-center"
-  style={{ display: 'inline-block' }}
-/>
- <div id="name-type" className="inline-block"></div>
+  <TypeAnimation
+    sequence={[
+      () => {
+        document.getElementById("animated-text").innerHTML =
+          'Hi, I’m <span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻';
+      },
+      2000,
+      () => {
+        document.getElementById("animated-text").innerHTML = "";
+      },
+      200,
+      () => {
+        document.getElementById("animated-text").innerHTML =
+          'Android Developer @ GDG 🚀';
+      },
+      2000,
+      () => {
+        document.getElementById("animated-text").innerHTML = "";
+      },
+      200,
+      () => {
+        document.getElementById("animated-text").innerHTML =
+          'AIML Student | SIH Finalist 🎯';
+      },
+      2000,
+      () => {
+        document.getElementById("animated-text").innerHTML = "";
+      },
+      200,
+    ]}
+    speed={60}
+    repeat={Infinity}
+    cursor={true}
+  />
+  <span
+    id="animated-text"
+    className="inline-block mt-2"
+  ></span>
 </h1>
+
 
 <p className="text-gray-300 mt-4 text-lg sm:text-xl text-center">
   Computer Science (AIML) Student passionate about Android & AI.
