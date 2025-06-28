@@ -1,39 +1,5 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@keyframes rotate-gradient {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
-.rotating-border-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.rotating-border-wrapper::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  width: calc(100% + 16px);
-  height: calc(100% + 16px);
-  border-radius: 9999px;
-  z-index: -1;
-
-  background: conic-gradient(
-    from 0deg,
-    #f9a8d4,
-    #f472b6,
-    #d946ef,
-    #c084fc,
-    #f9a8d4
-  );
   
-  animation: rotate-gradient 6s linear infinite;
-  filter: drop-shadow(0 0 10px #f472b6aa);
-}
