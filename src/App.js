@@ -16,7 +16,6 @@ import {
   FaAndroid,
   FaJs,
   FaHtml5,
-  FaCss3Alt,
   FaDatabase,
   FaCode,
   FaCuttlefish,
