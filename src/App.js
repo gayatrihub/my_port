@@ -178,13 +178,34 @@ function App() {
 
   {/* Hero Section */}
 <div className="relative w-64 h-64 mx-auto mt-10">
-  {/* Rotating Gradient Border */}
-  <div className="absolute inset-0 animate-spin-slow rounded-full">
-    <div className="w-full h-full rounded-full p-[5px] bg-gradient-to-tr from-rose-400 via-fuchsia-500 to-pink-600"></div>
+  {/* Rotating Dotted Ring */}
+  <div className="absolute inset-0 animate-spin-slow flex items-center justify-center">
+    <svg
+      viewBox="0 0 100 100"
+      className="w-full h-full"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="48"
+        stroke="url(#gradient)"
+        strokeWidth="4"
+        strokeDasharray="10 10"
+        strokeLinecap="round"
+      />
+      <defs>
+        <linearGradient id="gradient" x1="0" y1="0" x2="100" y2="0">
+          <stop offset="0%" stopColor="#ec4899" />
+          <stop offset="100%" stopColor="#8b5cf6" />
+        </linearGradient>
+      </defs>
+    </svg>
   </div>
 
-  {/* Static Inner Circle & Profile Image */}
-  <div className="absolute inset-[5px] rounded-full overflow-hidden bg-black flex items-center justify-center">
+  {/* Inner Image */}
+  <div className="absolute inset-[8px] rounded-full overflow-hidden bg-black">
     <img
       src="circle_profile.png"
       alt="Gayatri"
@@ -192,6 +213,7 @@ function App() {
     />
   </div>
 </div>
+
 
 
   {/* Name with Color in First Line */}
