@@ -188,24 +188,23 @@ function App() {
 
   {/* Name with Color in First Line */}
   <div className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
-    <TypeAnimation
-      sequence={[
-        () => {
-          const el = document.getElementById("name-type");
-          if (el) {
-            el.innerHTML = `Hi, I’m <span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻`;
-          }
-        },
-        2000,
-        'Android Developer @ GDG 🚀',
-        2000,
-        'AIML Student | SIH Finalist 🎯',
-        2000,
-      ]}
-      speed={50}
-      wrapper="span"
-      repeat={Infinity}
-    />
+   <TypeAnimation
+  sequence={[
+    // Display the full colored line
+    'Hi, I’m <span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻',
+    2000,
+    'Android Developer @ GDG 🚀',
+    2000,
+    'AIML Student | SIH Finalist 🎯',
+    2000,
+  ]}
+  speed={50}
+  repeat={Infinity}
+  wrapper="span"
+  className="inline-block"
+  style={{ display: "inline-block" }}
+/>
+
     <div id="name-type" className="inline-block"></div>
   </div>
 
