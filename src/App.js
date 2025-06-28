@@ -178,7 +178,7 @@ function App() {
 
   {/* Hero Section */}
 <div className="relative w-64 h-64 mx-auto mt-10">
-  {/* Rotating segmented ring */}
+  {/* Rotating segmented ring with dots */}
   <div className="absolute inset-0 animate-spin-slow flex items-center justify-center">
     <svg
       viewBox="0 0 100 100"
@@ -186,25 +186,37 @@ function App() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      {/* Dashed pink arc */}
       <circle
         cx="50"
         cy="50"
         r="45"
         stroke="url(#pinkGradient)"
         strokeWidth="4"
-        strokeDasharray="15 20"  /* <-- Segment length = 15, gap = 20 */
+        strokeDasharray="12 16"
         strokeLinecap="round"
       />
+      
+      {/* Dot positions */}
+      {[...Array(12)].map((_, i) => {
+        const angle = (i * 30) * (Math.PI / 180); // every 30 degrees
+        const x = 50 + 45 * Math.cos(angle);
+        const y = 50 + 45 * Math.sin(angle);
+        return (
+          <circle key={i} cx={x} cy={y} r="1.5" fill="#f9a8d4" /> // pink-300
+        );
+      })}
+
       <defs>
         <linearGradient id="pinkGradient" x1="0" y1="0" x2="100" y2="0">
-          <stop offset="0%" stopColor="#f472b6" />   {/* Pink-400 */}
-          <stop offset="100%" stopColor="#ec4899" /> {/* Pink-500 */}
+          <stop offset="0%" stopColor="#f472b6" /> {/* pink-400 */}
+          <stop offset="100%" stopColor="#ec4899" /> {/* pink-500 */}
         </linearGradient>
       </defs>
     </svg>
   </div>
 
-  {/* Circular Image */}
+  {/* Profile image */}
   <div className="absolute inset-[10px] rounded-full overflow-hidden bg-black">
     <img
       src="circle_profile.png"
