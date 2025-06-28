@@ -157,27 +157,26 @@ function App() {
       className="min-h-screen bg-cover bg-center bg-fixed p-6 font-sans"
       style={{ backgroundImage: "url('bg2.jpg')" }}
     >
-    {/* Topbar + HeroSection Combined */}
-<section className="bg-black bg-opacity-40 rounded-3xl shadow-lg p-8 mb-16 max-w-6xl mx-auto">
+   <section className="bg-black bg-opacity-40 rounded-3xl shadow-lg p-8 mb-16 w-full">
 
   {/* Topbar */}
-  <nav className="flex justify-between items-center px-6 py-4 bg-black bg-opacity-50 rounded-2xl shadow-lg mb-8">
+  <nav className="flex flex-wrap justify-between items-center px-6 py-4 bg-black bg-opacity-50 rounded-2xl shadow-lg mb-8">
     <div className="text-3xl font-bold">
       <span className="text-pink-500">Gay</span><span className="text-white">atri</span>
     </div>
-    <ul className="flex gap-6 text-white font-medium text-lg">
+    <ul className="flex flex-wrap gap-6 text-white font-medium text-lg">
       <li><a href="#hero" className="hover:text-pink-400">Home</a></li>
       <li><a href="#about" className="hover:text-pink-400">About Me</a></li>
       <li><a href="#skills" className="hover:text-pink-400">Skills</a></li>
       <li><a href="#achievements" className="hover:text-pink-400">Achievements</a></li>
       <li><a href="#projects" className="hover:text-pink-400">Projects</a></li>
     </ul>
-    <a href="#contact" className="bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-bold py-2 px-4 rounded-full shadow hover:opacity-90">
+    <a href="#contact" className="mt-4 sm:mt-0 bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-bold py-2 px-4 rounded-full shadow hover:opacity-90 transition">
       Connect With Me
     </a>
   </nav>
 
-  {/* Hero Profile Section */}
+  {/* Hero Section */}
   <motion.img
     src="circle_profile.png"
     alt="Gayatri"
@@ -187,31 +186,29 @@ function App() {
     transition={{ duration: 1 }}
   />
 
-  <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-white text-center">
+  <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-snug text-center text-white">
     <TypeAnimation
       sequence={[
-        () => {
-          document.getElementById("animated-text").innerHTML =
-            'Hi, I’m <span class="text-pink-500">Gay</span><span class="text-purple-400">atri</span> 👩‍💻';
-        },
+        'Hi, I’m ',
+        100,
+        'Hi, I’m Gayatri 👩‍💻',
         2000,
         'Android Developer @ GDG 🚀',
         2000,
         'AIML Student | SIH Finalist 🎯',
-        2000,
+        2000
       ]}
       speed={50}
-      wrapper="span"
       repeat={Infinity}
+      wrapper="span"
     />
-    <span id="animated-text" />
   </h1>
 
   <p className="text-gray-300 mt-4 text-lg sm:text-xl text-center">
     Computer Science (AIML) Student passionate about Android & AI.
   </p>
 
-  {/* Resume Button Styled Like Alex Portfolio */}
+  {/* Resume Button */}
   <div className="text-center">
     <a
       href="/Gayatri_Resume.pdf"
@@ -223,8 +220,6 @@ function App() {
     </a>
   </div>
 </section>
-
-
     <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 max-w-3xl mx-auto">
