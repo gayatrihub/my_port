@@ -204,12 +204,9 @@ function App() {
     style={{ display: "inline-block" }}
   />
 </h1>
-    <div id="name-type" className="inline-block"></div>
-  </div>
-
-  <p className="text-gray-300 mt-4 text-lg sm:text-xl text-center">
-    Computer Science (AIML) Student passionate about Android & AI.
-  </p>
+<p className="text-gray-300 mt-4 text-lg sm:text-xl text-center">
+  Computer Science (AIML) Student passionate about Android & AI.
+</p>
 
   {/* Resume Button */}
  <div className="text-center">
