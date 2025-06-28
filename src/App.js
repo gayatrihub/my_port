@@ -23,7 +23,6 @@ import {
 import { SiCplusplus } from "react-icons/si";
 import { FaUsers, FaLightbulb, FaTrophy } from "react-icons/fa6";
 
-// --- Projects Data ---
 const androidProjects = [
   {
     title: "KalMandal",
@@ -66,9 +65,8 @@ const webProjects = [
   },
 ];
 
-// --- Skills & Achievements ---
 const technicalSkills = [
-  { name: "Python", confidence: 90, icon: <FaPython /> },
+  { name: "Pyhon", confidence: 90, icon: <FaPython /> },
   { name: "Java", confidence: 80, icon: <FaJava /> },
   { name: "Machine Learning", confidence: 75, icon: <FaBrain /> },
   { name: "C", confidence: 90, icon: <FaCuttlefish /> },
@@ -99,7 +97,6 @@ const achievements = [
   "Completed Full Stack Internship at ExcelR",
 ];
 
-// --- ProjectSection Component ---
 function ProjectSection({ title, projects }) {
   return (
     <div className="mb-12">
@@ -139,7 +136,6 @@ function ProjectSection({ title, projects }) {
   );
 }
 
-// --- Main App Component ---
 function App() {
   const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -157,44 +153,193 @@ function App() {
   };
 
   return (
-    <>
-      {/* --- Top Navigation Bar --- */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-40 backdrop-blur-md shadow-md">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-white text-2xl font-bold">
-            <span className="text-pink-500">Gaya</span>tri
-          </h1>
-
-          <nav className="hidden md:flex gap-8 text-white font-medium">
-            <a href="#home" className="hover:text-pink-400 transition duration-300">Home</a>
-            <a href="#about" className="hover:text-pink-400 transition duration-300">About Me</a>
-            <a href="#skills" className="hover:text-pink-400 transition duration-300">Skills</a>
-            <a href="#achievements" className="hover:text-pink-400 transition duration-300">Achievements</a>
-            <a href="#projects" className="hover:text-pink-400 transition duration-300">Projects</a>
-          </nav>
-
-          <a
-            href="#contact"
-            className="ml-4 bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-400 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
-          >
-            Connect With Me
-          </a>
+    <div
+      className="min-h-screen bg-cover bg-center bg-fixed p-6 font-sans"
+      style={{ backgroundImage: "url('bg2.jpg')" }}
+    >
+    {/* Topbar */}
+     <nav className="flex justify-between items-center px-6 py-4 bg-black bg-opacity-60 rounded-3xl shadow-lg mb-6">
+        <div className="text-2xl font-bold">
+          <span className="text-pink-500">Gay</span><span className="text-white">atri</span>
         </div>
-      </header>
+        <ul className="flex gap-6 text-white font-semibold">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+        <a href="#contact" className="bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-bold py-2 px-4 rounded-full shadow hover:opacity-90">
+          Connect With Me
+        </a>
+      </nav>
+      {/* Header Section */}
+      <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="flex-1 max-w-3xl mx-auto">
+            <h1 className="text-5xl font-extrabold text-pink-400 mb-2">Hi, I’m Gayatri 👩‍💻</h1>
+            <p className="text-lg text-gray-300 mb-6">
+              Computer Science (AIML) Student | Android Developer @ GDG | ML Enthusiast | Hackathon Finalist
+            </p>
+            <div className="text-gray-300 leading-relaxed text-lg">
+              <h2 className="text-3xl font-bold text-purple-300 mb-4">💫 About Me</h2>
+               <p className="mb-4">
+              Hi, I’m Gayatri, a dedicated Computer Science (AIML) student with a passion for technology and creativity.
+              As a developer and visual thinker, I love building intuitive Android applications, exploring machine
+              learning models, and bringing digital experiences to life.
+            </p>
+            <p className="mb-4">
+              I'm an Android Developer and core member of the Google Developer Group (GDG) on campus, where I’ve led
+              workshops and mentoring sessions to support peer learning. I was honored to be a finalist in the Smart
+              India Hackathon 2023, and I’ve actively participated in university hackathons, creating solutions for
+              real-world challenges.
+            </p>
+            <p className="mb-4">
+              Beyond tech, I’m also a mandala art enthusiast and skilled drawing artist, with a strong eye for detail
+              and aesthetics. I bring my creativity not just to code, but also to visual storytelling through art —
+              blending logic and design in everything I create.
+            </p>
+            <p>
+              I’ve completed hands-on internships across AI/ML, full-stack development, networking, and Python, and
+              continue to upskill through projects and certifications. I believe in lifelong learning and thrive at the
+              intersection of innovation and design.
+            </p>
+            </div>
+          </div>
+          <motion.img
+            src="profile.jpg"
+            alt="Gayatri"
+            className="w-56 h-72 md:w-64 md:h-80 object-cover rounded-3xl border-4 border-yellow-400 shadow-lg"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1 }}
+          />
+        </div>
+      </section>
 
-      {/* --- Page Content --- */}
-      <div
-        className="pt-24 min-h-screen bg-cover bg-center bg-fixed p-6 font-sans"
-        style={{ backgroundImage: "url('bg2.jpg')" }}
-      >
-        {/* Include your sections here (Header, Skills, Projects, etc.) */}
-        {/* Keep the same layout you already had in your working code */}
+      {/* Skills */}
+      <section className="space-y-12 bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+        <h2 className="text-3xl font-bold text-teal-300 mb-6">🛠 Technical Skills</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {technicalSkills.map((skill, i) => (
+            <div key={i} className="flex items-center justify-between bg-gradient-to-r from-cyan-700 to-blue-900 bg-opacity-50 rounded-lg p-4 shadow-md">
+              <div className="flex items-center gap-3 text-lg font-semibold text-white">
+                <div className="text-2xl">{skill.icon}</div>{skill.name}
+              </div>
+              <div className="text-white">{skill.confidence}%</div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        {/* You can now safely paste the rest of your previous layout here */}
+      {/* Soft Skills */}
+      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+        <h2 className="text-3xl font-bold text-pink-400 mb-6">🤝 Soft Skills</h2>
+        <div className="flex flex-wrap gap-6 justify-center sm:justify-start">
+          {softSkills.map((skill, i) => (
+            <div key={i} className="flex flex-col items-center gap-2 bg-pink-800 bg-opacity-30 rounded-lg p-4 w-32 text-center shadow-inner hover:bg-pink-700 transition">
+              <div className="text-4xl text-pink-400">{skill.icon}</div>
+              <div className="font-semibold text-white text-lg">{skill.name}</div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        {/* ...Header Section, Skills, Soft Skills, Achievements, Projects, Contact Form, Footer... */}
-      </div>
-    </>
+      {/* Achievements */}
+      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+        <h2 className="text-3xl font-bold text-yellow-400 mb-6">🏆 Achievements</h2>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {achievements.map((ach, i) => (
+            <div key={i} className="flex items-start gap-3 p-4 bg-yellow-900 bg-opacity-30 text-yellow-100 rounded-xl hover:bg-yellow-800 hover:bg-opacity-50 transition shadow-sm">
+              <FaTrophy className="text-yellow-300 mt-1" /><span className="text-lg">{ach}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+        <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
+        <ProjectSection title="📱 Android Development Projects" projects={androidProjects} />
+        <ProjectSection title="🧠 Machine Learning Projects" projects={mlProjects} />
+        <ProjectSection title="🌐 Web Developing Projects" projects={webProjects} />
+      </section>
+
+      {/* Contact */}
+      <section className="bg-black bg-opacity-40 rounded-3xl p-8 shadow-lg mb-16 max-w-4xl mx-auto">
+        <h2 className="text-3xl font-extrabold text-blue-400 mb-8 text-center">📬 Contact Me</h2>
+        <div className="flex flex-col sm:flex-row sm:justify-around sm:items-center gap-2 mb-12 text-white text-lg">
+          <div className="flex items-center gap-3">
+            <FaEnvelope className="text-3xl text-red-400" />
+            <span className="font-semibold">Email:</span>
+            <a href="mailto:gayatritext@gmail.com" className="text-blue-300 hover:underline">
+              gayatritext@gmail.com
+            </a>
+          </div>
+          <div className="flex items-center gap-3">
+            <FaPhone className="text-3xl text-green-400" />
+            <span className="font-semibold">Phone:</span>
+            <span className="text-gray-300">+91 7396155453</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <FaLinkedin className="text-3xl text-blue-400" />
+            <span className="font-semibold">LinkedIn:</span>
+            <a
+              href="https://www.linkedin.com/in/reddy-gayatri-b57876254"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-300 hover:underline"
+            >
+              Gayatri-linkedin-id
+            </a>
+          </div>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto text-white">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={contactForm.name}
+            onChange={handleChange}
+            required
+            className="w-full p-4 rounded-xl bg-gray-900 border border-gray-700"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={contactForm.email}
+            onChange={handleChange}
+            required
+            className="w-full p-4 rounded-xl bg-gray-900 border border-gray-700"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            value={contactForm.message}
+            onChange={handleChange}
+            required
+            className="w-full p-4 rounded-xl bg-gray-900 border border-gray-700 h-36 resize-none"
+          />
+          <button
+            type="submit"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg"
+          >
+            Send Message
+          </button>
+          {submitted && (
+            <p className="text-green-400 mt-4 text-center font-semibold">
+              Message sent successfully!
+            </p>
+          )}
+        </form>
+      </section>
+
+      <footer className="text-center text-white text-sm py-6 opacity-70">
+        © {new Date().getFullYear()} Gayatri. Built using React + Tailwind + Framer Motion.
+      </footer>
+    </div>
   );
 }
 
