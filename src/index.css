@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@keyframes rotate-full {
+@keyframes rotate-gradient {
   0% {
     transform: rotate(0deg);
   }
@@ -10,29 +10,30 @@
   }
 }
 
-.border-rotate {
+.rotating-border-wrapper {
   position: relative;
+  display: inline-block;
 }
 
-.border-rotate::before {
+.rotating-border-wrapper::before {
   content: '';
   position: absolute;
-  top: -10px;
-  left: -10px;
-  width: calc(100% + 20px);
-  height: calc(100% + 20px);
-  border: 4px dotted transparent;
+  top: -8px;
+  left: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
   border-radius: 9999px;
-  background-image: conic-gradient(
-    from 0deg,
-    #f9a8d4 0%,
-    #ec4899 25%,
-    #db2777 50%,
-    #f472b6 75%,
-    #f9a8d4 100%
-  );
-  -webkit-mask: repeating-conic-gradient(#000 0deg 2deg, transparent 2deg 8deg);
-  mask: repeating-conic-gradient(#000 0deg 2deg, transparent 2deg 8deg);
-  animation: rotate-full 6s linear infinite;
   z-index: -1;
+
+  background: conic-gradient(
+    from 0deg,
+    #f9a8d4,
+    #f472b6,
+    #d946ef,
+    #c084fc,
+    #f9a8d4
+  );
+  
+  animation: rotate-gradient 6s linear infinite;
+  filter: drop-shadow(0 0 10px #f472b6aa);
 }
