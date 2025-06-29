@@ -536,13 +536,16 @@ function App() {
         viewport={{ once: true }}
         className="group relative flex flex-col items-center justify-center text-center transition-all duration-500 transform hover:-translate-y-2"
       >
-        {/* 🔷 Hexagon Achievement Container */}
-        <div className="relative w-40 h-44 bg-yellow-300 hexagon-shape shadow-xl flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-500">
-          <img
-            src={ach.image}
-            alt={ach.title}
-            className="w-20 h-20 object-contain z-10"
-          />
+        {/* ⭐ Star-Shaped Container */}
+        <div className="relative w-40 h-40 bg-yellow-300 star-shape shadow-xl flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-500">
+          {/* 🔵 Circular Image Inside Star */}
+          <div className="w-20 h-20 rounded-full border-4 border-white bg-black flex items-center justify-center overflow-hidden shadow-md z-10">
+            <img
+              src={ach.image}
+              alt={ach.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
 
         {/* 🏷️ Title */}
@@ -555,7 +558,7 @@ function App() {
           {ach.title}
         </motion.div>
 
-        {/* 🌟 Background Glows */}
+        {/* ✨ Background Glows */}
         <div className="absolute w-28 h-28 bg-yellow-300 opacity-10 rounded-full blur-3xl animate-ping -top-6 -right-6 z-0" />
         <div className="absolute w-20 h-20 bg-yellow-500 opacity-10 rounded-full blur-2xl animate-pulse bottom-0 left-0 z-0" />
       </motion.div>
