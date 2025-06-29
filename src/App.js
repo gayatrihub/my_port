@@ -617,72 +617,83 @@ function App() {
 
       {/* Selected Project Details Container */}
       {selectedProject && (
-       <section className="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-xl mb-12 border border-white/10">
-  <div className="flex flex-col md:flex-row gap-8">
-    {/* 🎬 Project Preview */}
-    <div className="flex-1">
-      <div className="overflow-hidden rounded-2xl border-2 border-green-500 shadow-lg">
-        {/* Option 1: Local Video (placed in /public/videos/my_project.mp4) */}
-        <video
-          controls
-          className="w-full h-64 md:h-96 rounded-xl"
-          poster="/thumbnails/project_thumb.jpg" // Optional: thumbnail preview
-        >
-          <source src="/videos/my_project.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      {/* 🔗 External Video Link */}
-      <div className="mt-3 text-center">
-        <a
-          href={selectedProject.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block text-green-300 underline hover:text-green-400 transition text-sm"
-        >
-          📎 View Full Video or Download
-        </a>
-      </div>
-    </div>
-
-    {/* 📋 Project Details */}
-    <div className="flex-1 flex flex-col gap-5 text-white">
-      <h3 className="text-3xl font-extrabold text-green-300">{selectedProject.title}</h3>
-
-      <p className="text-white/90 text-md leading-relaxed">
-        {selectedProject.description}
-      </p>
-
-      {/* 🧰 Tech Stack */}
-      <div>
-        <h4 className="text-lg font-semibold text-green-200 mb-2">Tech Stack:</h4>
-        <div className="flex flex-wrap gap-3">
-          {selectedProject.techStack.map((tech, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-2 px-3 py-1 bg-green-800/30 text-green-100 rounded-full border border-green-500 shadow hover:scale-105 transition"
+  <section className="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-xl mb-12 border border-white/10">
+    <div className="flex flex-col md:flex-row gap-8">
+      
+      {/* 🎬 Project Preview */}
+      <div className="flex-1">
+        <div className="overflow-hidden rounded-2xl border-2 border-green-500 shadow-lg">
+          {selectedProject.video ? (
+            <video
+              controls
+              className="w-full h-64 md:h-96 rounded-xl"
+              poster="/thumbnails/project_thumb.jpg" // Optional thumbnail
             >
-              {getIconForTech(tech)}
-              <span className="text-sm font-medium">{tech}</span>
-            </div>
-          ))}
+              <source src={`/videos/${selectedProject.video}`} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          ) : selectedProject.link ? (
+            <iframe
+              src={selectedProject.link}
+              title="Project Video"
+              className="w-full h-64 md:h-96"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <p className="text-white text-center p-4">⚠️ No video or link available for this project.</p>
+          )}
         </div>
+
+        {/* 🔗 Optional Link Display Below Video */}
+        {selectedProject.link && (
+          <div className="mt-3 text-center">
+            <a
+              href={selectedProject.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-green-300 underline hover:text-green-400 transition text-sm"
+            >
+              📎 View Full Video or Download
+            </a>
+          </div>
+        )}
       </div>
 
-      {/* ❌ Close Button */}
-      <button
-        onClick={() => setSelectedProject(null)}
-        className="self-start mt-4 px-5 py-2 bg-gradient-to-r from-green-500 to-teal-500 text-white font-semibold rounded-full shadow-lg hover:opacity-90 transition"
-      >
-        Close
-      </button>
+      {/* 📋 Project Details */}
+      <div className="flex-1 flex flex-col gap-5 text-white">
+        <h3 className="text-3xl font-extrabold text-green-300">{selectedProject.title}</h3>
+
+        <p className="text-white/90 text-md leading-relaxed">
+          {selectedProject.description}
+        </p>
+
+        {/* 🧰 Tech Stack */}
+        <div>
+          <h4 className="text-lg font-semibold text-green-200 mb-2">Tech Stack:</h4>
+          <div className="flex flex-wrap gap-3">
+            {selectedProject.techStack.map((tech, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-2 px-3 py-1 bg-green-800/30 text-green-100 rounded-full border border-green-500 shadow hover:scale-105 transition"
+              >
+                {getIconForTech(tech)}
+                <span className="text-sm font-medium">{tech}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ❌ Close Button */}
+        <button
+          onClick={() => setSelectedProject(null)}
+          className="self-start mt-4 px-5 py-2 bg-gradient-to-r from-green-500 to-teal-500 text-white font-semibold rounded-full shadow-lg hover:opacity-90 transition"
+        >
+          Close
+        </button>
+      </div>
     </div>
-  </div>
-</section>
-
-
-      )}
+  </section>
+)}
     
       {/* Contact */}
       <section className="bg-black bg-opacity-40 rounded-3xl p-8 shadow-lg mb-16 max-w-4xl mx-auto">
