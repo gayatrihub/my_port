@@ -541,7 +541,7 @@ function App() {
         <motion.img
           src={ach.image}
           alt={ach.title}
-          className="w-20 h-20 object-contain rounded-full border-4 border-yellow-400 shadow-lg group-hover:scale-110 transition-transform duration-500"
+          className="w-full h-40 object-cover rounded-xl mb-4 shadow-md transition-transform duration-500 group-hover:scale-105"
           animate={{
             y: [0, -4, 0],
             rotate: [0, 1, -1, 0],
