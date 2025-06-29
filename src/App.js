@@ -520,40 +520,49 @@ function App() {
 </section>
 
       {/* Achievements */}
-<section className="bg-black bg-opacity-30 rounded-3xl p-4 shadow-md mb-12">
-  <h2 className="text-3xl font-bold text-yellow-400 mb-8 text-center">
+<section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+  <h2 className="text-3xl font-bold text-yellow-400 mb-10 text-center">
     🏆 My Achievements
   </h2>
 
-  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 place-items-center">
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 place-items-center">
     {achievements.map((ach, i) => (
       <motion.div
         key={i}
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: i * 0.1, type: "spring", stiffness: 70 }}
+        transition={{ delay: i * 0.15, type: "spring", stiffness: 60 }}
         viewport={{ once: true }}
-        className="flex flex-col items-center"
+        className="group relative flex flex-col items-center"
       >
-        {/* 🟡 Compact Hexagon with Circle Image */}
-        <div className="relative w-24 h-28 hexagon-shape bg-yellow-300 shadow-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
-          {/* ✨ Shimmer */}
-          <div className="absolute inset-0 shimmer z-0 pointer-events-none"></div>
+        {/* 🌟 Animated Hexagon */}
+        <div className="relative w-32 h-36 hexagon-shape bg-gradient-to-br from-yellow-500/40 to-yellow-300/20 shadow-2xl transition-transform duration-500 group-hover:scale-105 overflow-hidden">
+          {/* ✨ Hover Shine Animation */}
+          <div className="absolute inset-0 shimmer pointer-events-none"></div>
 
-          {/* 🖼️ Circle Image */}
+          {/* 🔘 Circular Image Inside */}
           <div className="flex items-center justify-center w-full h-full relative z-10">
             <img
               src={ach.image}
               alt={ach.title}
-              className="w-14 h-14 object-cover rounded-full border-2 border-white shadow-md group-hover:scale-110 transition duration-300"
+              className="w-20 h-20 object-cover rounded-full border-4 border-white shadow-md transition-transform duration-300 group-hover:scale-110"
             />
           </div>
         </div>
 
-        {/* 🏷️ Title */}
-        <div className="mt-2 text-yellow-100 text-sm text-center font-medium leading-tight group-hover:text-white transition duration-300">
+        {/* 🏷️ Achievement Title */}
+        <motion.div
+          className="mt-3 text-yellow-100 font-semibold text-center text-base leading-tight group-hover:text-white transition duration-300"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.3 + 0.3, duration: 0.5 }}
+        >
           {ach.title}
-        </div>
+        </motion.div>
+
+        {/* 💫 Subtle Background Glow */}
+        <div className="absolute w-28 h-28 bg-yellow-400 opacity-10 rounded-full blur-3xl animate-ping -top-4 -right-4 z-0" />
+        <div className="absolute w-24 h-24 bg-yellow-600 opacity-10 rounded-full blur-2xl animate-pulse bottom-0 left-0 z-0" />
       </motion.div>
     ))}
   </div>
