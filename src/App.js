@@ -525,58 +525,35 @@ function App() {
     🏆 My Achievements
   </h2>
 
-  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-items-center">
     {achievements.map((ach, i) => (
       <motion.div
         key={i}
-        initial={{ opacity: 0, scale: 0.9, y: 30 }}
-        whileInView={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{
-          delay: i * 0.1,
-          duration: 0.6,
-          type: "spring",
-          stiffness: 80,
-        }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: i * 0.15, type: "spring", stiffness: 70 }}
         viewport={{ once: true }}
-        className="group relative flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-2"
+        className="group relative w-32 h-36 hexagon-shape bg-yellow-300 shadow-xl hover:shadow-yellow-300/50 transform transition-transform duration-500 hover:-translate-y-1 hover:rotate-[1deg]"
       >
-        {/* 🏆 Trophy SVG Container */}
-        <div className="relative w-36 h-36 flex items-center justify-center animate-bounce-slow">
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-full text-yellow-300"
-          >
-            <path
-              fill="currentColor"
-              d="M32 2C27.6 2 24 5.6 24 10V20C24 23.3 21.3 26 18 26H16C13.8 26 12 24.2 12 22V14C12 12.9 11.1 12 10 12S8 12.9 8 14V22C8 27.5 12.5 32 18 32C18 38.6 22.9 44 29 45.7V50H20C18.9 50 18 50.9 18 52S18.9 54 20 54H44C45.1 54 46 53.1 46 52S45.1 50 44 50H35V45.7C41.1 44 46 38.6 46 32C51.5 32 56 27.5 56 22V14C56 12.9 55.1 12 54 12S52 12.9 52 14V22C52 24.2 50.2 26 48 26H46C42.7 26 40 23.3 40 20V10C40 5.6 36.4 2 32 2Z"
-            />
-          </svg>
-
-          {/* 🔵 Circular Image perfectly centered inside trophy */}
-          <div className="absolute w-16 h-16 rounded-full border-4 border-white bg-black z-10 flex items-center justify-center shadow-md">
+        {/* 💫 3D Tilt on Hover */}
+        <div className="w-full h-full flex items-center justify-center relative overflow-hidden group perspective-1000">
+          <div className="transform transition-transform duration-500 group-hover:rotate-x-6 group-hover:rotate-y-6">
+            {/* 🌟 Circular Image */}
             <img
               src={ach.image}
               alt={ach.title}
-              className="w-full h-full object-cover rounded-full"
+              className="w-20 h-20 object-cover rounded-full border-4 border-white shadow-md z-10 transition-transform duration-500 group-hover:scale-105"
             />
+
+            {/* ✨ Shimmer Effect */}
+            <div className="shimmer absolute inset-0 z-0 pointer-events-none"></div>
           </div>
         </div>
 
         {/* 🏷️ Title */}
-        <motion.div
-          className="mt-5 text-yellow-100 font-semibold text-sm md:text-base leading-tight group-hover:text-white transition duration-300 z-10"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: i * 0.1 + 0.3, duration: 0.4 }}
-        >
+        <div className="absolute bottom-[-2rem] w-full text-center text-yellow-100 font-semibold text-sm group-hover:text-white transition">
           {ach.title}
-        </motion.div>
-
-        {/* 🌟 Glow Circles */}
-        <div className="absolute w-24 h-24 bg-yellow-400 opacity-10 rounded-full blur-3xl animate-ping -top-4 -right-4 z-0" />
-        <div className="absolute w-16 h-16 bg-yellow-500 opacity-10 rounded-full blur-2xl animate-pulse bottom-0 left-0 z-0" />
+        </div>
       </motion.div>
     ))}
   </div>
