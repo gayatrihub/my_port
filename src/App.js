@@ -244,22 +244,22 @@ function App() {
   </nav>
 
   {/* Hero Section */}
-<div className="relative mx-auto mt-6 w-44 h-44 sm:w-52 sm:h-52 rounded-full group animate-float">
-  {/* 🔄 Rotating Gradient Ring */}
-  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-500 via-purple-500 to-yellow-400 animate-spin-slow blur-md opacity-80 group-hover:blur-lg" />
+<div className="relative group mx-auto mt-10 w-52 h-52 sm:w-60 sm:h-60 rounded-full overflow-visible animate-float">
+  {/* ✨ Glowing rotating border ring */}
+  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 via-yellow-400 to-purple-500 animate-spin-slow opacity-70 blur-md group-hover:blur-lg"></div>
 
-  {/* ⚫ Inner Dark Circle */}
-  <div className="absolute inset-1 rounded-full bg-black border-4 border-white/10 z-10" />
+  {/* 🌀 Shimmering animated pulse ring */}
+  <div className="absolute inset-1 rounded-full border-4 border-white/10 bg-black bg-opacity-40 backdrop-blur-md animate-pulse z-10"></div>
 
   {/* 🖼 Profile Image */}
   <img
-    src="circle_profile.png"
+    src="/circle_profile.png"
     alt="Gayatri"
     className="relative z-20 w-full h-full object-cover rounded-full border-4 border-white shadow-2xl group-hover:scale-105 transition-transform duration-700 ease-in-out"
   />
 
-  {/* 💫 Glowing Ping Dot */}
-  <div className="absolute -top-2 -right-2 w-5 h-5 bg-pink-500 rounded-full blur-md opacity-80 animate-ping z-20" />
+  {/* 💖 Accent animated dot */}
+  <div className="absolute -top-2 -left-2 w-4 h-4 bg-pink-400 rounded-full blur-md opacity-80 animate-ping z-20" />
 </div>
 
 
