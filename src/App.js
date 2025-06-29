@@ -520,38 +520,38 @@ function App() {
 </section>
 
       {/* Achievements */}
-<section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-  <h2 className="text-3xl font-bold text-yellow-400 mb-10 text-center">
+<section className="bg-black bg-opacity-30 rounded-3xl p-4 shadow-md mb-12">
+  <h2 className="text-3xl font-bold text-yellow-400 mb-8 text-center">
     🏆 My Achievements
   </h2>
 
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-items-center">
+  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 place-items-center">
     {achievements.map((ach, i) => (
       <motion.div
         key={i}
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: i * 0.15, type: "spring", stiffness: 70 }}
+        transition={{ delay: i * 0.1, type: "spring", stiffness: 70 }}
         viewport={{ once: true }}
-        className="group relative w-32 h-36 hexagon-shape bg-yellow-300 shadow-xl hover:shadow-yellow-300/50 transform transition-transform duration-500 hover:-translate-y-1 hover:rotate-[1deg]"
+        className="flex flex-col items-center"
       >
-        {/* 💫 3D Tilt on Hover */}
-        <div className="w-full h-full flex items-center justify-center relative overflow-hidden group perspective-1000">
-          <div className="transform transition-transform duration-500 group-hover:rotate-x-6 group-hover:rotate-y-6">
-            {/* 🌟 Circular Image */}
+        {/* 🟡 Compact Hexagon with Circle Image */}
+        <div className="relative w-24 h-28 hexagon-shape bg-yellow-300 shadow-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
+          {/* ✨ Shimmer */}
+          <div className="absolute inset-0 shimmer z-0 pointer-events-none"></div>
+
+          {/* 🖼️ Circle Image */}
+          <div className="flex items-center justify-center w-full h-full relative z-10">
             <img
               src={ach.image}
               alt={ach.title}
-              className="w-20 h-20 object-cover rounded-full border-4 border-white shadow-md z-10 transition-transform duration-500 group-hover:scale-105"
+              className="w-14 h-14 object-cover rounded-full border-2 border-white shadow-md group-hover:scale-110 transition duration-300"
             />
-
-            {/* ✨ Shimmer Effect */}
-            <div className="shimmer absolute inset-0 z-0 pointer-events-none"></div>
           </div>
         </div>
 
         {/* 🏷️ Title */}
-        <div className="absolute bottom-[-2rem] w-full text-center text-yellow-100 font-semibold text-sm group-hover:text-white transition">
+        <div className="mt-2 text-yellow-100 text-sm text-center font-medium leading-tight group-hover:text-white transition duration-300">
           {ach.title}
         </div>
       </motion.div>
