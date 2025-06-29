@@ -315,6 +315,33 @@ function App() {
     My resume
   </a>
 </div>
+{/* 🔢 Stats Section Inside Hero Container */}
+<div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 text-white text-center">
+  {/* Experience */}
+  <div className="border-r border-gray-500 px-4">
+    <h3 className="text-5xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-400 to-orange-400 bg-clip-text text-transparent animate-pulse">
+      10+
+    </h3>
+    <p className="mt-2 text-lg font-semibold uppercase tracking-wide">Years of Experience</p>
+  </div>
+
+  {/* Projects */}
+  <div className="border-r border-gray-500 px-4">
+    <h3 className="text-5xl font-extrabold bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-500 bg-clip-text text-transparent animate-pulse">
+      90+
+    </h3>
+    <p className="mt-2 text-lg font-semibold uppercase tracking-wide">Projects Completed</p>
+  </div>
+
+  {/* Clients */}
+  <div className="px-4">
+    <h3 className="text-5xl font-extrabold bg-gradient-to-r from-purple-500 via-orange-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
+      15+
+    </h3>
+    <p className="mt-2 text-lg font-semibold uppercase tracking-wide">Happy Clients</p>
+  </div>
+</div>
+
 </section>
 
 
