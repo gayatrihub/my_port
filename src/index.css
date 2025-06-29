@@ -3,17 +3,25 @@
 @tailwind utilities;
 
 /* Custom Hexagon Shape for Achievement Cards */
-.hexagon-shape {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ⭐ Custom Star Shape */
+.star-shape {
   clip-path: polygon(
-    25% 6.7%,
-    75% 6.7%,
-    100% 50%,
-    75% 93.3%,
-    25% 93.3%,
-    0% 50%
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
   );
 }
-
 /* Optional: Add smooth animation and glow effect */
 @keyframes pulse-glow {
   0% {
