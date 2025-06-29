@@ -596,7 +596,7 @@ function App() {
       {/* Projects */}
     
       {/* Projects Section */}
-     <section className="bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg mb-12 border border-white/10">
+     <section className="bg-black bg-opacity-40 rounded-3xl p-6 shadow-inner mb-12">
         <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
         <ProjectSection
           title="📱 Android Development Projects"
