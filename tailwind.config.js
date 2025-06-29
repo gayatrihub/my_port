@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       animation: {
         'spin-slow': 'spin 6s linear infinite',
+         'ping-slow': 'ping 6s cubic-bezier(0, 0, 0.2, 1) infinite',
         tilt: 'tilt 10s infinite linear',
       },
       keyframes: {
