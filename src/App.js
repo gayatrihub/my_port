@@ -317,11 +317,12 @@ function App() {
 </div>
 </section>
 
-<section className="p-10 rounded-3xl shadow-xl text-white mb-16 bg-black bg-opacity-30 relative overflow-hidden border border-white/10 backdrop-blur-md">
-  {/* Subtle floating blobs (no strong background color) */}
-  <div className="absolute w-32 h-32 bg-purple-400 opacity-10 rounded-full blur-3xl top-10 left-10 animate-pulse" />
-  <div className="absolute w-24 h-24 bg-cyan-300 opacity-10 rounded-full blur-2xl bottom-10 right-20 animate-ping" />
-  <div className="absolute w-40 h-40 bg-pink-300 opacity-5 rounded-full blur-2xl bottom-0 left-1/2 animate-pulse" />
+
+<section className="p-10 rounded-3xl shadow-xl text-white mb-16 bg-black bg-opacity-30 relative overflow-hidden border border-white/10">
+  {/* Floating colored blobs (very subtle) */}
+  <div className="absolute w-32 h-32 bg-purple-500 opacity-10 rounded-full blur-3xl top-10 left-10 animate-pulse" />
+  <div className="absolute w-24 h-24 bg-blue-300 opacity-10 rounded-full blur-2xl bottom-10 right-20 animate-ping" />
+  <div className="absolute w-40 h-40 bg-pink-400 opacity-10 rounded-full blur-2xl bottom-0 left-1/2 animate-pulse" />
 
   <motion.div
     className="relative flex flex-col md:flex-row justify-between items-center gap-10 z-10"
@@ -329,7 +330,7 @@ function App() {
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 1 }}
   >
-    {/* Left: Animated Text */}
+    {/* Left: Colorful Animated Text */}
     <div className="flex-1">
       <motion.h2
         className="text-3xl font-bold text-white mb-6"
@@ -340,27 +341,46 @@ function App() {
         💫 About Me
       </motion.h2>
 
-      {[
-        "Hi, I’m Gayatri — a Computer Science (AIML) student passionate about technology, design, and innovation. I enjoy building Android apps, exploring machine learning, and crafting great user experiences.",
-        "As an Android Developer and GDG campus leader, I’ve led tech sessions and built solutions at Smart India Hackathon and other events.",
-        "I love mandala art, storytelling, and blending logic with creativity in both code and design.",
-        "I’ve interned in AI/ML, full-stack, networking, and Python — always exploring tech at the edge of creativity.",
-      ].map((text, i) => (
-        <motion.p
-          key={i}
-          className="mb-4 text-white/90 leading-relaxed text-lg"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.4 + i * 0.2, duration: 0.5 }}
-        >
-          {text}
-        </motion.p>
-      ))}
+      <motion.p
+        className="mb-4 text-lg text-pink-300 leading-relaxed"
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+      >
+        Hi, I’m Gayatri — a Computer Science (AIML) student passionate about technology, design, and innovation.
+      </motion.p>
+
+      <motion.p
+        className="mb-4 text-lg text-blue-300 leading-relaxed"
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+      >
+        I enjoy building intuitive Android apps, exploring machine learning, and creating meaningful digital experiences.
+      </motion.p>
+
+      <motion.p
+        className="mb-4 text-lg text-teal-300 leading-relaxed"
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+      >
+        As a core GDG campus member and Android Developer, I’ve led tech workshops and mentored fellow students.
+      </motion.p>
+
+      <motion.p
+        className="mb-4 text-lg text-yellow-300 leading-relaxed"
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1.0, duration: 0.6 }}
+      >
+        I'm also a mandala art lover and visual storyteller, blending creativity with logic in both code and design.
+      </motion.p>
     </div>
 
-    {/* Right: Floating Animated Photo */}
+    {/* Right: Animated Profile Photo */}
     <motion.div
-      className="md:w-[18rem] md:h-[24rem] w-52 h-64 rounded-3xl overflow-hidden border-4 border-white/10 shadow-lg relative"
+      className="md:w-[18rem] md:h-[24rem] w-52 h-64 rounded-3xl overflow-hidden border-4 border-white/10 shadow-xl"
       initial={{ scale: 0.8, opacity: 0 }}
       whileInView={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.5, type: "spring" }}
@@ -370,12 +390,7 @@ function App() {
         alt="Gayatri"
         className="w-full h-full object-cover rounded-3xl"
         animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute inset-0 rounded-3xl border-2 border-white/5 animate-pulse blur-sm"
-        animate={{ scale: [1, 1.03, 1] }}
-        transition={{ duration: 3, repeat: Infinity }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
     </motion.div>
   </motion.div>
