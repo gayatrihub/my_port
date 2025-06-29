@@ -317,78 +317,55 @@ function App() {
 </div>
 </section>
 
-<section className="relative bg-black bg-opacity-30 rounded-3xl shadow-lg p-10 mb-16 overflow-hidden">
-  {/* Floating sparkles background (behind photo) */}
-  <div className="absolute inset-0 pointer-events-none z-0">
-    <div className="absolute top-10 left-10 w-32 h-32 bg-pink-400 rounded-full blur-3xl opacity-20 animate-ping" />
-    <div className="absolute bottom-10 right-10 w-24 h-24 bg-purple-400 rounded-full blur-2xl opacity-20 animate-pulse" />
-  </div>
-
-  <div className="relative grid md:grid-cols-[3fr_2fr] gap-10 items-center z-10">
-    {/* Text Block */}
+<section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16">
+  <motion.div
+    className="flex flex-col md:flex-row justify-between items-center gap-12"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+  >
+    {/* Text Area */}
     <motion.div
-      className="space-y-5"
-      initial={{ opacity: 0, x: -80 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ type: "spring", stiffness: 80 }}
+      className="flex-1 text-left"
+      initial={{ x: -50, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1.2 }}
     >
-      <motion.h2
-        className="text-4xl font-extrabold text-purple-300 tracking-wide"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ type: "spring", stiffness: 200 }}
-      >
-        💫 About Me
-      </motion.h2>
-
-      <motion.div
-        className="w-28 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mb-2"
-        initial={{ width: 0 }}
-        animate={{ width: "7rem" }}
-        transition={{ duration: 1 }}
-      />
-
-      {[
-        `Hi, I’m <span class='text-pink-400 font-semibold'>Gayatri</span> — a <span class='text-yellow-300 font-semibold'>Computer Science (AIML)</span> student passionate about technology, design, and innovation.`,
-        `I enjoy building intuitive <span class='text-green-300 font-semibold'>Android apps</span>, experimenting with <span class='text-blue-300 font-semibold'>machine learning</span>, and crafting meaningful digital experiences.`,
-        `I’ve led workshops as a core member of <span class='text-yellow-300 font-semibold'>GDG</span> and reached the finals of <span class='text-pink-300 font-semibold'>Smart India Hackathon 2023</span>.`,
-        `I’m also a <span class='text-purple-300 font-semibold'>mandala artist</span> and <span class='text-yellow-300 font-semibold'>storyteller</span>—blending art and logic in every line of code.`,
-        `My journey includes internships in <span class='text-green-300 font-semibold'>AI/ML</span>, <span class='text-blue-400 font-semibold'>full-stack development</span>, <span class='text-yellow-400 font-semibold'>Python</span>, and <span class='text-pink-400 font-semibold'>networking</span>.`
-      ].map((text, i) => (
-        <motion.p
-          key={i}
-          className="text-gray-300 text-lg leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: i * 0.2 }}
-          dangerouslySetInnerHTML={{ __html: text }}
-        />
-      ))}
+      <h2 className="text-3xl font-bold text-purple-300 mb-6">💫 About Me</h2>
+      <p className="mb-4 text-lg leading-relaxed text-gray-300">
+        Hi, I’m <span className="text-pink-400 font-semibold">Gayatri</span> — a Computer Science (AIML)
+        student passionate about technology, design, and innovation. I enjoy building intuitive Android
+        apps, experimenting with machine learning, and crafting meaningful digital experiences.
+      </p>
+      <p className="mb-4 text-lg leading-relaxed text-gray-300">
+        As an Android Developer and core member of the GDG on campus, I’ve led workshops and mentored
+        peers. I was a finalist in Smart India Hackathon 2023 and have built real-world solutions at
+        various university hackathons.
+      </p>
+      <p className="mb-4 text-lg leading-relaxed text-gray-300">
+        I’m also a mandala art enthusiast and visual storyteller, blending creativity with logic in both
+        code and design.
+      </p>
+      <p className="text-lg leading-relaxed text-gray-300">
+        With internships in AI/ML, full-stack development, networking, and Python, I’m continuously
+        learning and growing at the intersection of tech and creativity.
+      </p>
     </motion.div>
 
-    {/* Profile Image Block */}
+    {/* Profile Image */}
     <motion.div
-      className="flex justify-center md:justify-end relative"
-      initial={{ opacity: 0, x: 80 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
+      className="md:w-[18rem] md:h-[24rem] w-52 h-64 rounded-3xl overflow-hidden border-4 border-yellow-400 shadow-xl"
+      initial={{ scale: 0 }}
+      whileInView={{ scale: 1 }}
+      transition={{ duration: 1 }}
     >
-      {/* Gradient Border Ring Animation */}
-      <motion.div
-        className="absolute -inset-2 rounded-[2rem] bg-gradient-to-tr from-yellow-400 via-pink-400 to-purple-500 blur-xl opacity-50 animate-tilt z-0"
-      />
-      <motion.img
+      <img
         src="profile2.jpg"
         alt="Gayatri"
-        className="relative w-64 h-80 object-cover rounded-3xl border-4 border-yellow-400 shadow-2xl z-10"
-        whileHover={{ scale: 1.05, rotate: 1 }}
-        transition={{ type: "spring", stiffness: 300 }}
+        className="w-full h-full object-cover rounded-3xl hover:scale-105 transition-transform duration-500 ease-in-out"
       />
     </motion.div>
-  </div>
+  </motion.div>
 </section>
 
 
