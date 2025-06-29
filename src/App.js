@@ -245,23 +245,23 @@ function App() {
 
   {/* Hero Section */}
 <div className="relative group mx-auto mt-10 w-60 h-60 sm:w-64 sm:h-64">
-  {/* 🌈 Animated outer glowing gradient ring */}
-  <div className="absolute inset-0 rounded-full animate-spin-slow p-[4px] bg-[conic-gradient(at_top,_#ec4899,#f59e0b,#10b981,#3b82f6,#8b5cf6,#ec4899)] shadow-[0_0_40px_rgba(255,255,255,0.1)]">
-    <div className="w-full h-full rounded-full bg-black bg-opacity-30 backdrop-blur-sm" />
+  {/* 🌈 Hover-only animated gradient border */}
+  <div className="absolute inset-0 rounded-full p-[4px] bg-[conic-gradient(at_top,_#ec4899,#f59e0b,#10b981,#3b82f6,#8b5cf6,#ec4899)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-spin-slower shadow-xl">
+    <div className="w-full h-full rounded-full bg-black bg-opacity-30 backdrop-blur-sm"></div>
   </div>
 
-  {/* 🌟 Inner gradient border around the image */}
-  <div className="relative z-10 w-full h-full rounded-full p-[5px] bg-gradient-to-br from-purple-500 via-pink-500 to-yellow-400 shadow-xl animate-pulse">
+  {/* 🌟 Image with inner gradient border */}
+  <div className="relative z-10 w-full h-full rounded-full p-[5px] bg-gradient-to-br from-purple-500 via-pink-500 to-yellow-400 transition-transform duration-500 group-hover:scale-110 shadow-lg">
     <img
-      src="/circle_profile.png"
+      src="circle_profile.png"
       alt="Gayatri"
-      className="w-full h-full object-cover rounded-full transition-transform duration-700 ease-in-out group-hover:scale-110"
+      className="w-full h-full object-cover rounded-full"
     />
   </div>
 
-  {/* 🌈 Caption with gradient text and pulse */}
-  <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 text-lg text-white font-bold tracking-wide animate-fade-in-up">
-    <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
+  {/* ✨ Gradient Caption */}
+  <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 text-lg font-bold tracking-wide animate-fade-in-up">
+    <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
       Gayatri 👩‍💻
     </span>
   </div>
