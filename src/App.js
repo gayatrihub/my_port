@@ -596,7 +596,7 @@ function App() {
       {/* Projects */}
      <div className="bg-gradient-to-b from-black via-gray-900 to-black min-h-screen text-white p-6">
       {/* Projects Section */}
-      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+     <section className="bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg mb-12 border border-white/10">
         <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
         <ProjectSection
           title="📱 Android Development Projects"
