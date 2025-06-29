@@ -19,7 +19,6 @@
     39% 35%
   );
 }
-
 /* Optional: Add smooth animation and glow effect */
 @keyframes pulse-glow {
   0% {
@@ -32,7 +31,17 @@
     box-shadow: 0 0 0px rgba(250, 204, 21, 0.4);
   }
 }
-
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 3.5s infinite ease-in-out;
+}
 .animate-glow {
   animation: pulse-glow 2.5s ease-in-out infinite;
 }
@@ -51,11 +60,3 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   z-index: 10;
 }
-@keyframes bounce-slow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-.animate-bounce-slow {
-  animation: bounce-slow 3s infinite ease-in-out;
-}
-
