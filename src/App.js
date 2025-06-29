@@ -315,28 +315,45 @@ function App() {
       </section>
 
       {/* Skills */}
-      <section id="skills" className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-  <h2 className="text-3xl font-bold text-teal-300 mb-6">🛠 Technical Skills</h2>
-  <div className="flex flex-wrap gap-6 justify-center">
+     <section id="skills" className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+  <h2 className="text-3xl font-bold text-teal-300 mb-6 text-center">🌟 Skills</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
     {technicalSkills.map((skill, index) => (
-      <SkillCircle key={index} value={skill.confidence} label={skill.name} />
+      <div
+        key={`tech-${index}`}
+        className="flex flex-col items-center justify-center bg-gradient-to-br from-cyan-800 to-blue-900 p-6 rounded-xl shadow-md hover:scale-105 transition transform duration-300"
+      >
+        <div className="w-24 h-24">
+          <CircularProgressbarWithChildren
+            value={skill.confidence}
+            styles={buildStyles({
+              textColor: "#ffffff",
+              pathColor: "rgb(34 211 238)",
+              trailColor: "#1e3a8a",
+              textSize: "16px",
+            })}
+          >
+            <div className="text-white font-bold text-sm">{skill.confidence}%</div>
+          </CircularProgressbarWithChildren>
+        </div>
+        <div className="mt-4 flex items-center gap-2 text-white text-sm font-semibold">
+          <span className="text-xl">{skill.icon}</span>
+          {skill.name}
+        </div>
+      </div>
     ))}
-  </div>
-</section>
-
-
-      {/* Soft Skills */}
-      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-  <h2 className="text-3xl font-bold text-pink-400 mb-6">🤝 Soft Skills</h2>
-  <div className="flex flex-wrap justify-center gap-8">
     {softSkills.map((skill, index) => (
-      <div key={index} className="flex flex-col items-center gap-2 w-28">
-        <div className="text-4xl text-pink-400">{skill.icon}</div>
-        <div className="text-white font-semibold text-center">{skill.name}</div>
+      <div
+        key={`soft-${index}`}
+        className="flex flex-col items-center justify-center bg-pink-900 bg-opacity-30 p-6 rounded-xl shadow-md hover:bg-pink-700 transition"
+      >
+        <div className="text-4xl text-pink-300">{skill.icon}</div>
+        <div className="mt-2 text-white text-sm font-semibold text-center">{skill.name}</div>
       </div>
     ))}
   </div>
 </section>
+
 
 
       {/* Achievements */}
