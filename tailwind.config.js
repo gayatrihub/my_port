@@ -14,6 +14,7 @@ module.exports = {
         glow: 'glow 3s ease-in-out infinite',
         'float-bounce': 'floatBounce 6s ease-in-out infinite',
         'fade-in-up': 'fadeInUp 1s ease-out forwards',
+         'sparkle': 'sparkle 3s linear infinite',
       },
       keyframes: {
         tilt: {
