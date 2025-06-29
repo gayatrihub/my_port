@@ -62,7 +62,7 @@ const webProjects = [
     description:
       "The Online Crime Reporting System allows users to submit complaints directly through a web interface built with HTML, CSS, and JavaScript...",
     image: onlinereportImg,
-    video: "website .mp4",
+    link: "https://drive.google.com/file/d/1Xo3XrpmN6q95TWYKFYlpAjHuwqRfS6Oo/view?usp=sharing",
     techStack: ["HTML", "CSS", "JavaScript"]
   },
   {
@@ -70,7 +70,7 @@ const webProjects = [
     description:
       "The college website gives a clear and simple view of what the college stands for...",
     image: websiteImg,
-   video: "online_report.mp4",
+    link:"https://drive.google.com/file/d/1MxNQ7xJeDx8Cf0Idt0JrIqexDdSFM7Ie/view?usp=sharing",
     techStack: ["HTML", "CSS", "JavaScript"]
   },
 ];
@@ -622,12 +622,27 @@ function App() {
     {/* 🎬 Project Preview */}
     <div className="flex-1">
       <div className="overflow-hidden rounded-2xl border-2 border-green-500 shadow-lg">
-        <iframe
-          src={selectedProject.link}
-          title="Project Video"
-          className="w-full h-64 md:h-96"
-          allowFullScreen
-        ></iframe>
+        {/* Option 1: Local Video (placed in /public/videos/my_project.mp4) */}
+        <video
+          controls
+          className="w-full h-64 md:h-96 rounded-xl"
+          poster="/thumbnails/project_thumb.jpg" // Optional: thumbnail preview
+        >
+          <source src="/videos/my_project.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      {/* 🔗 External Video Link */}
+      <div className="mt-3 text-center">
+        <a
+          href={selectedProject.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-green-300 underline hover:text-green-400 transition text-sm"
+        >
+          📎 View Full Video or Download
+        </a>
       </div>
     </div>
 
@@ -665,6 +680,7 @@ function App() {
     </div>
   </div>
 </section>
+
 
       )}
     
