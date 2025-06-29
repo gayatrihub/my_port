@@ -12,7 +12,6 @@ import {
   buildStyles,
 } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { CircularProgressbarWithChildren, buildStyles } from "react-circular-progressbar";
 import {
   FaPython,
   FaJava,
