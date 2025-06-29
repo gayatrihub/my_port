@@ -245,21 +245,21 @@ function App() {
 
   {/* Hero Section */}
 <div className="relative group mx-auto mt-10 w-60 h-60 sm:w-64 sm:h-64">
-  {/* 🌈 Outer animated border ring */}
-  <div className="absolute inset-0 rounded-full p-[5px] bg-gradient-to-r from-pink-500 via-yellow-400 via-green-400 via-blue-500 to-purple-600 animate-spin-slow shadow-[0_0_30px_10px_rgba(255,255,255,0.1)]">
-    <div className="w-full h-full rounded-full bg-black bg-opacity-20 blur-[1px] backdrop-blur-md"></div>
+  {/* 🌈 Animated outer glowing gradient ring */}
+  <div className="absolute inset-0 rounded-full animate-spin-slow p-[4px] bg-[conic-gradient(at_top,_#ec4899,#f59e0b,#10b981,#3b82f6,#8b5cf6,#ec4899)] shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+    <div className="w-full h-full rounded-full bg-black bg-opacity-30 backdrop-blur-sm" />
   </div>
 
-  {/* 🖼 Image with glowing gradient border */}
-  <div className="relative z-10 w-full h-full rounded-full p-[5px] bg-gradient-to-tr from-blue-500 via-purple-400 to-pink-500 shadow-lg animate-pulse">
+  {/* 🌟 Inner gradient border around the image */}
+  <div className="relative z-10 w-full h-full rounded-full p-[5px] bg-gradient-to-br from-purple-500 via-pink-500 to-yellow-400 shadow-xl animate-pulse">
     <img
-      src="circle_profile.png"
+      src="/circle_profile.png"
       alt="Gayatri"
-      className="w-full h-full object-cover rounded-full transition-transform duration-700 ease-in-out group-hover:scale-110 shadow-[0_0_25px_rgba(255,255,255,0.2)]"
+      className="w-full h-full object-cover rounded-full transition-transform duration-700 ease-in-out group-hover:scale-110"
     />
   </div>
 
-  {/* 🌟 Animated name below the image */}
+  {/* 🌈 Caption with gradient text and pulse */}
   <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 text-lg text-white font-bold tracking-wide animate-fade-in-up">
     <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
       Gayatri 👩‍💻
