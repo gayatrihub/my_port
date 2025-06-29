@@ -383,6 +383,7 @@ function App() {
 
 
 
+
  <section id="skills" className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
   <h2 className="text-3xl font-bold text-teal-300 mb-6">💼 Skills</h2>
 
