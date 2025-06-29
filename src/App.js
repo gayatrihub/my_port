@@ -102,6 +102,7 @@ const achievements = [
 ];
 
 
+
 const SkillCircle = ({
   value,
   label,
@@ -113,14 +114,14 @@ const SkillCircle = ({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div
-      className={`flex flex-col items-center w-32 transition-transform duration-500 ${
-        isHovered ? "animate-spin-slow shadow-[0_0_15px_5px_rgba(255,255,255,0.3)]" : ""
-      }`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="w-28 h-28">
+    <div className="flex flex-col items-center w-32">
+      <div
+        className={`w-28 h-28 rounded-full transition duration-500 ${
+          isHovered ? "animate-spin-slow shadow-[0_0_20px_5px_rgba(255,255,255,0.4)]" : ""
+        }`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <CircularProgressbarWithChildren
           value={value}
           styles={buildStyles({
@@ -137,7 +138,6 @@ const SkillCircle = ({
               </linearGradient>
             </defs>
           </svg>
-
           <div className="text-white text-2xl">{icon}</div>
         </CircularProgressbarWithChildren>
       </div>
