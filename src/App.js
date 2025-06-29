@@ -317,19 +317,20 @@ function App() {
 </div>
 </section>
 
-<section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
-  <div className="flex flex-col md:flex-row items-center gap-10">
-    {/* Left Text Section */}
+<section className="bg-black bg-opacity-30 rounded-3xl shadow-lg p-10 mb-16">
+  <div className="grid md:grid-cols-2 gap-10 items-center">
+    
+    {/* Text Section */}
     <motion.div
-      className="flex-1 max-w-3xl"
+      className="space-y-5"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       transition={{ staggerChildren: 0.2 }}
     >
       <motion.h2
-        className="text-3xl font-bold text-purple-300 mb-4"
-        initial={{ opacity: 0, x: -50 }}
+        className="text-4xl font-bold text-purple-300"
+        initial={{ opacity: 0, x: -40 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
       >
@@ -338,41 +339,48 @@ function App() {
 
       {/* Divider */}
       <motion.div
-        className="w-32 h-1 bg-purple-500 mb-6 rounded-full"
+        className="w-24 h-1 bg-purple-500 rounded-full"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
+        transition={{ duration: 0.6 }}
         style={{ transformOrigin: 'left' }}
       />
 
-      {/* Animated Paragraphs */}
+      {/* Paragraphs */}
       {[
-        "Hi, I’m Gayatri — a Computer Science (AIML) student passionate about technology, design, and innovation. I enjoy building intuitive Android apps, experimenting with machine learning, and crafting meaningful digital experiences.",
-        "As an Android Developer and core member of the GDG on campus, I’ve led workshops and mentored peers. I was a finalist in Smart India Hackathon 2023 and have built real-world solutions at various university hackathons.",
-        "I’m also a mandala art enthusiast and visual storyteller, blending creativity with logic in both code and design.",
-        "With internships in AI/ML, full-stack development, networking, and Python, I’m continuously learning and growing at the intersection of tech and creativity."
-      ].map((para, i) => (
+        `Hi, I’m <span class="text-pink-400 font-semibold">Gayatri</span> — a <span class="text-yellow-300 font-semibold">Computer Science (AIML)</span> student passionate about technology, design, and innovation. I enjoy building intuitive Android apps, experimenting with machine learning, and crafting meaningful digital experiences.`,
+
+        `As an <span class="text-green-300 font-semibold">Android Developer</span> and core member of the <span class="text-blue-300 font-semibold">GDG on campus</span>, I’ve led workshops and mentored peers. I was a finalist in <span class="text-pink-300 font-semibold">Smart India Hackathon 2023</span> and have built real-world solutions at various university hackathons.`,
+
+        `I’m also a <span class="text-purple-300 font-semibold">mandala art</span> enthusiast and <span class="text-yellow-300 font-semibold">visual storyteller</span>, blending creativity with logic in both code and design.`,
+
+        `With internships in <span class="text-green-300 font-semibold">AI/ML</span>, <span class="text-blue-300 font-semibold">full-stack development</span>, <span class="text-yellow-300 font-semibold">networking</span>, and <span class="text-pink-300 font-semibold">Python</span>, I’m continuously learning and growing at the intersection of tech and creativity.`
+      ].map((htmlText, index) => (
         <motion.p
-          key={i}
-          className="mb-4 text-gray-300 leading-relaxed text-lg"
+          key={index}
+          className="text-gray-300 text-lg leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: i * 0.3 }}
-        >
-          {para}
-        </motion.p>
+          transition={{ duration: 0.5, delay: index * 0.3 }}
+          dangerouslySetInnerHTML={{ __html: htmlText }}
+        />
       ))}
     </motion.div>
 
-    {/* Profile Image */}
-    <motion.img
-      src="profile2.jpg"
-      alt="Gayatri"
-      className="w-56 h-72 md:w-64 md:h-80 object-cover rounded-3xl border-4 border-yellow-400 shadow-xl"
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8 }}
-    />
+    {/* Profile Image Right Corner */}
+    <motion.div
+      className="flex justify-center md:justify-end"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+    >
+      <img
+        src="profile2.jpg"
+        alt="Gayatri"
+        className="w-64 h-80 object-cover rounded-3xl border-4 border-yellow-400 shadow-2xl"
+      />
+    </motion.div>
+
   </div>
 </section>
 
