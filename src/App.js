@@ -317,18 +317,22 @@ function App() {
 </div>
 </section>
 
-<section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-2xl text-white mb-16 overflow-hidden">
+<section className="p-10 bg-gradient-to-r from-[#1e1b4b] to-[#312e81] rounded-3xl shadow-2xl text-white mb-16 overflow-hidden relative border border-purple-500/20">
+  {/* Decorative Blobs */}
+  <div className="absolute w-60 h-60 bg-pink-500 opacity-20 rounded-full blur-3xl top-10 -left-10 animate-ping-slow z-0" />
+  <div className="absolute w-48 h-48 bg-cyan-400 opacity-20 rounded-full blur-2xl bottom-0 right-0 animate-pulse z-0" />
+
   <motion.div
-    className="flex flex-col md:flex-row justify-between items-center gap-12"
-    initial={{ opacity: 0, y: 80 }}
+    className="relative flex flex-col md:flex-row justify-between items-center gap-12 z-10"
+    initial={{ opacity: 0, y: 60 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 1, ease: "easeOut" }}
   >
     {/* Text Section */}
     <div className="flex-1">
       <motion.h2
-        className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-6"
-        initial={{ opacity: 0, x: -30 }}
+        className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-yellow-400 to-purple-400 mb-6"
+        initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
@@ -337,13 +341,13 @@ function App() {
 
       {[
         `Hi, I’m Gayatri — a Computer Science (AIML) student passionate about technology, design, and innovation. I enjoy building intuitive Android apps, experimenting with machine learning, and crafting meaningful digital experiences.`,
-        `As an Android Developer and core member of the GDG on campus, I’ve led workshops and mentored peers. I was a finalist in Smart India Hackathon 2023 and have built real-world solutions at various university hackathons.`,
+        `As an Android Developer and core member of GDG on campus, I’ve led workshops and mentored peers. I was a finalist in Smart India Hackathon 2023 and built real-world solutions at university hackathons.`,
         `I’m also a mandala art enthusiast and visual storyteller, blending creativity with logic in both code and design.`,
-        `With internships in AI/ML, full-stack development, networking, and Python, I’m continuously learning and growing at the intersection of tech and creativity.`,
+        `With internships in AI/ML, full-stack development, networking, and Python, I keep learning at the intersection of tech and creativity.`,
       ].map((text, i) => (
         <motion.p
           key={i}
-          className="mb-4 text-lg leading-relaxed text-gray-300"
+          className="mb-4 text-lg leading-relaxed text-white/90 hover:text-white transition-all duration-300"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4 + i * 0.3, duration: 0.6 }}
@@ -355,34 +359,24 @@ function App() {
 
     {/* Animated Image */}
     <motion.div
-      className="relative md:w-[18rem] md:h-[24rem] w-52 h-64 rounded-3xl overflow-hidden border-4 border-yellow-400 shadow-xl"
+      className="relative md:w-[18rem] md:h-[24rem] w-52 h-64 rounded-3xl overflow-hidden border-4 border-pink-400 shadow-xl bg-gradient-to-b from-pink-200/20 to-purple-400/10 backdrop-blur-md"
       initial={{ opacity: 0, scale: 0.7 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.5, duration: 0.9, type: "spring" }}
     >
-      {/* Floating Glow Animation */}
+      {/* Floating Animation */}
       <motion.img
         src="profile2.jpg"
         alt="Gayatri"
         className="w-full h-full object-cover rounded-3xl"
-        animate={{
-          y: [0, -10, 0],
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 4,
-          ease: "easeInOut",
-        }}
+        animate={{ y: [0, -12, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
-      {/* Glow ring */}
+      {/* Glowing Pulse Border */}
       <motion.div
-        className="absolute inset-0 rounded-3xl border-2 border-yellow-200 animate-pulse blur-md opacity-40"
-        animate={{ scale: [1, 1.03, 1] }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+        className="absolute inset-0 rounded-3xl border-2 border-pink-300/40 animate-pulse blur-xl"
+        animate={{ scale: [1, 1.05, 1] }}
+        transition={{ duration: 3, repeat: Infinity }}
       />
     </motion.div>
   </motion.div>
