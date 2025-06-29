@@ -617,40 +617,55 @@ function App() {
 
       {/* Selected Project Details Container */}
       {selectedProject && (
-        <section className="bg-black bg-opacity-40 rounded-3xl p-6 shadow-inner mb-12">
-          <div className="flex flex-col md:flex-row gap-6">
-            <div className="flex-1">
-              <iframe
-                src={selectedProject.link}
-                title="Project Video"
-                className="w-full h-64 md:h-96 rounded-xl border border-green-500"
-                allowFullScreen
-              ></iframe>
+       <section className="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-xl mb-12 border border-white/10">
+  <div className="flex flex-col md:flex-row gap-8">
+    {/* 🎬 Project Preview */}
+    <div className="flex-1">
+      <div className="overflow-hidden rounded-2xl border-2 border-green-500 shadow-lg">
+        <iframe
+          src={selectedProject.link}
+          title="Project Video"
+          className="w-full h-64 md:h-96"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </div>
+
+    {/* 📋 Project Details */}
+    <div className="flex-1 flex flex-col gap-5 text-white">
+      <h3 className="text-3xl font-extrabold text-green-300">{selectedProject.title}</h3>
+
+      <p className="text-white/90 text-md leading-relaxed">
+        {selectedProject.description}
+      </p>
+
+      {/* 🧰 Tech Stack */}
+      <div>
+        <h4 className="text-lg font-semibold text-green-200 mb-2">Tech Stack:</h4>
+        <div className="flex flex-wrap gap-3">
+          {selectedProject.techStack.map((tech, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-2 px-3 py-1 bg-green-800/30 text-green-100 rounded-full border border-green-500 shadow hover:scale-105 transition"
+            >
+              {getIconForTech(tech)}
+              <span className="text-sm font-medium">{tech}</span>
             </div>
-            <div className="flex-1 space-y-4">
-              <h3 className="text-2xl font-bold text-green-300">
-                {selectedProject.title}
-              </h3>
-              <p className="text-green-100">{selectedProject.description}</p>
-              <div>
-                <span className="font-semibold text-green-200">Tech Stack:</span>
-                <ul className="mt-2 space-y-1">
-                  {selectedProject.techStack.map((tech, index) => (
-                    <li key={index} className="flex items-center gap-2 text-green-100">
-                      {getIconForTech(tech)} {tech}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="mt-4 px-4 py-2 bg-green-600 hover:bg-green-700 rounded-xl"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </div>
+
+      {/* ❌ Close Button */}
+      <button
+        onClick={() => setSelectedProject(null)}
+        className="self-start mt-4 px-5 py-2 bg-gradient-to-r from-green-500 to-teal-500 text-white font-semibold rounded-full shadow-lg hover:opacity-90 transition"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</section>
+
       )}
     
       {/* Contact */}
