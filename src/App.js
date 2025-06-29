@@ -40,7 +40,7 @@ const androidProjects = [
     title: "Profile Card App",
     description: "Displays photo, name, role & contact info. Built using Jetpack Compose.",
     image: appImg,
-    link: "https://drive.google.com/file/d/1Xl_5E3abL-aCGYMKWLI5WFfa5hDy7FcW/view?usp=sharing",
+    video: "app_v.mp4",
     techStack: ["Jetpack Compose", "Material Design"]
   },
 ];
@@ -51,7 +51,7 @@ const mlProjects = [
     description:
       "YOLOv5x-based system with Gradio UI to detect obstacles on railway tracks. Includes bounding boxes, audio alerts & styled frontend.",
     image: odImg,
-    link: "https://drive.google.com/file/d/19vF7PXVtDYfXBQa8ei3oKVotDplhPgdV/view?usp=sharing",
+    video: "railway_yolo.mp4",
     techStack: ["YOLOv5", "Gradio", "Python"]
   },
 ];
@@ -62,7 +62,7 @@ const webProjects = [
     description:
       "The Online Crime Reporting System allows users to submit complaints directly through a web interface built with HTML, CSS, and JavaScript...",
     image: onlinereportImg,
-    link: "https://drive.google.com/file/d/1Xo3XrpmN6q95TWYKFYlpAjHuwqRfS6Oo/view?usp=sharing",
+    video: "website .mp4",
     techStack: ["HTML", "CSS", "JavaScript"]
   },
   {
@@ -70,7 +70,7 @@ const webProjects = [
     description:
       "The college website gives a clear and simple view of what the college stands for...",
     image: websiteImg,
-    link: "https://drive.google.com/file/d/1MxNQ7xJeDx8Cf0Idt0JrIqexDdSFM7Ie/view?usp=sharing",
+   video: "online_report.mp4",
     techStack: ["HTML", "CSS", "JavaScript"]
   },
 ];
