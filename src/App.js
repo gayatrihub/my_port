@@ -651,10 +651,11 @@ function App() {
                 Close
               </button>
             </div>
-          </div>
+          
         </section>
       )}
     </div>
+</div>
       {/* Contact */}
       <section className="bg-black bg-opacity-40 rounded-3xl p-8 shadow-lg mb-16 max-w-4xl mx-auto">
         <h2 className="text-3xl font-extrabold text-blue-400 mb-8 text-center">📬 Contact Me</h2>
