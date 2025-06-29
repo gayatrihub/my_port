@@ -91,15 +91,32 @@ const softSkills = [
 ];
 
 const achievements = [
-  "Class Representative since 2022 (continuing)",
-  "Student Innovator at AIMERS Club",
-  "Team selected for Smart India Hackathon Finale",
-  "Android Developer at GDG On Campus",
-  "Finalist at Smart India Hackathon 2023",
-  "Top 5 in Tribal Welfare Hackathon",
-  "Led Android session at GDG campus",
-  "Completed Full Stack Internship at ExcelR",
+  {
+    title: "Class Representative since 2022",
+    image: "/images/leader.png"
+  },
+  {
+    title: "Student Innovator at AIMERS Club",
+    image: "/images/innovation.png"
+  },
+  {
+    title: "Team selected for Smart India Hackathon Finale",
+    image: "/images/sih.png"
+  },
+  {
+    title: "Android Developer at GDG On Campus",
+    image: "/images/android.png"
+  },
+  {
+    title: "Led Android session at GDG campus",
+    image: "/images/gdg.png"
+  },
+  {
+    title: "Completed Full Stack Internship at ExcelR",
+    image: "/images/internship.png"
+  }
 ];
+
 
 const SkillCircle = ({
   value,
@@ -501,6 +518,7 @@ function App() {
 </section>
 
       {/* Achievements */}
+
 <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
   <h2 className="text-3xl font-bold text-yellow-400 mb-6">🏆 Achievements</h2>
 
@@ -514,13 +532,13 @@ function App() {
         viewport={{ once: true }}
         className="group relative flex flex-col items-center text-center p-5 bg-gradient-to-br from-yellow-900/30 to-yellow-800/20 rounded-2xl shadow-lg hover:shadow-yellow-500/30 transition duration-300 overflow-hidden"
       >
-        {/* 🌟 Animated Image */}
+        {/* ✨ Animated Achievement Image */}
         <motion.img
           src={ach.image}
           alt={ach.title}
-          className="w-16 h-16 object-contain mb-4 rounded-full drop-shadow-xl border-2 border-yellow-300 group-hover:scale-110"
+          className="w-16 h-16 object-contain mb-4 rounded-full border-2 border-yellow-400 drop-shadow-md group-hover:scale-110 transition duration-300"
           animate={{
-            y: [0, -6, 0],
+            y: [0, -4, 0],
             rotate: [0, 1, -1, 0],
           }}
           transition={{
@@ -530,12 +548,12 @@ function App() {
           }}
         />
 
-        {/* 🏅 Achievement Title */}
-        <span className="text-yellow-100 text-lg font-semibold group-hover:text-white transition-all duration-300">
+        {/* 🏅 Title Text */}
+        <span className="text-yellow-100 text-lg font-semibold group-hover:text-white transition">
           {ach.title}
         </span>
 
-        {/* 🎆 Optional Glow Background Element */}
+        {/* 🌟 Optional Glow Ping Effect */}
         <div className="absolute w-20 h-20 bg-yellow-400 rounded-full blur-3xl opacity-10 animate-ping bottom-[-1rem] right-[-1rem]"></div>
       </motion.div>
     ))}
