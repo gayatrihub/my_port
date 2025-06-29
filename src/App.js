@@ -318,10 +318,11 @@ function App() {
 </section>
 
 
-<section className="relative bg-black bg-opacity-30 p-10 rounded-3xl shadow-2xl mb-16 text-white overflow-hidden border border-white/10">
-  {/* Animated floating blobs */}
-  <div className="absolute w-32 h-32 bg-pink-500 opacity-10 rounded-full blur-3xl top-5 left-10 animate-pulse" />
-  <div className="absolute w-24 h-24 bg-blue-400 opacity-10 rounded-full blur-2xl bottom-5 right-20 animate-ping" />
+<section className="relative bg-black bg-opacity-30 p-10 rounded-3xl shadow-2xl mb-16 text-white border border-white/10 overflow-hidden">
+  {/* ✨ Background animated blobs */}
+  <div className="absolute w-48 h-48 bg-pink-500 opacity-20 rounded-full blur-3xl top-[-3rem] left-[-3rem] animate-ping" />
+  <div className="absolute w-32 h-32 bg-blue-400 opacity-10 rounded-full blur-2xl bottom-[-2rem] right-[4rem] animate-pulse" />
+  <div className="absolute w-40 h-40 bg-purple-400 opacity-10 rounded-full blur-2xl top-[50%] left-[45%] animate-pulse" />
 
   <motion.div
     className="flex flex-col md:flex-row items-center justify-between gap-12 z-10 relative"
@@ -329,14 +330,14 @@ function App() {
     whileInView="visible"
     viewport={{ once: true }}
     variants={{
-      hidden: { opacity: 0, y: 50 },
+      hidden: { opacity: 0, y: 40 },
       visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.4 } },
     }}
   >
-    {/* Text Section */}
-    <div className="flex-1">
+    {/* 💬 Text Section */}
+    <div className="flex-1 text-lg tracking-wide">
       <motion.h2
-        className="text-4xl font-bold mb-6 tracking-wide"
+        className="text-4xl font-bold mb-6 tracking-wide text-purple-300"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
@@ -345,35 +346,34 @@ function App() {
       </motion.h2>
 
       {[
-        "I’m ",
-        "<pink>Gayatri</pink>, a passionate <blue>Computer Science (AIML)</blue> student who blends logic with design.",
-        "I specialize in <teal>Android Development</teal> and <yellow>AI/ML</yellow>, and I’m proud to be part of <purple>GDG Campus</purple> as a developer.",
-        "Finalist at <pink>Smart India Hackathon 2023</pink> and selected for the <green>Tribal Welfare Hackathon</green>, I build solutions that matter.",
-        "I'm also a <pink>mandala artist</pink> and storyteller, turning creativity into code and canvas.",
-        "I’ve interned in <orange>Full-Stack Development</orange>, <sky>Python</sky>, and <sky>Networking</sky> — and I'm always learning!",
+        "Hey there! I'm <pink>Gayatri</pink> 👋 — a <blue>Computer Science (AIML)</blue> student passionate about innovation and design.",
+        "I'm a proud <teal>Android Developer</teal> @ <purple>GDG Campus</purple> and a <yellow>SIH 2023 Finalist</yellow> 🚀.",
+        "With projects in <green>AI/ML</green>, <orange>Full Stack</orange>, and <sky>Networking</sky>, I thrive at the intersection of <pink>code</pink> and <purple>creativity</purple>.",
+        "I’m also a <pink>mandala artist</pink> who turns imagination into visuals and algorithms.",
+        "Learning, building, leading — that’s my mantra 💡",
       ].map((line, index) => (
         <motion.p
           key={index}
-          className="mb-4 text-lg leading-relaxed"
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
+          className="mb-4 text-white/90"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 + index * 0.3 }}
           dangerouslySetInnerHTML={{
             __html: line
-              .replace(/<pink>(.*?)<\/pink>/g, '<span class="text-pink-400 font-semibold">$1</span>')
-              .replace(/<blue>(.*?)<\/blue>/g, '<span class="text-blue-400 font-semibold">$1</span>')
-              .replace(/<teal>(.*?)<\/teal>/g, '<span class="text-teal-300 font-semibold">$1</span>')
-              .replace(/<yellow>(.*?)<\/yellow>/g, '<span class="text-yellow-300 font-semibold">$1</span>')
-              .replace(/<purple>(.*?)<\/purple>/g, '<span class="text-purple-400 font-semibold">$1</span>')
-              .replace(/<green>(.*?)<\/green>/g, '<span class="text-green-400 font-semibold">$1</span>')
-              .replace(/<orange>(.*?)<\/orange>/g, '<span class="text-orange-300 font-semibold">$1</span>')
-              .replace(/<sky>(.*?)<\/sky>/g, '<span class="text-sky-300 font-semibold">$1</span>'),
+              .replace(/<pink>(.*?)<\/pink>/g, '<span class="text-pink-400 font-bold animate-pulse">$1</span>')
+              .replace(/<blue>(.*?)<\/blue>/g, '<span class="text-blue-400 font-bold animate-glow">$1</span>')
+              .replace(/<teal>(.*?)<\/teal>/g, '<span class="text-teal-300 font-bold animate-glow">$1</span>')
+              .replace(/<yellow>(.*?)<\/yellow>/g, '<span class="text-yellow-300 font-bold animate-pulse">$1</span>')
+              .replace(/<purple>(.*?)<\/purple>/g, '<span class="text-purple-300 font-bold animate-glow">$1</span>')
+              .replace(/<green>(.*?)<\/green>/g, '<span class="text-green-300 font-bold animate-pulse">$1</span>')
+              .replace(/<orange>(.*?)<\/orange>/g, '<span class="text-orange-300 font-bold animate-glow">$1</span>')
+              .replace(/<sky>(.*?)<\/sky>/g, '<span class="text-sky-300 font-bold animate-pulse">$1</span>'),
           }}
         />
       ))}
     </div>
 
-    {/* Profile Image Section */}
+    {/* 🖼️ Animated Image Section */}
     <motion.div
       className="md:w-[18rem] md:h-[24rem] w-52 h-64 rounded-3xl overflow-hidden border-4 border-white/10 shadow-xl"
       initial={{ scale: 0.7, opacity: 0 }}
@@ -388,11 +388,11 @@ function App() {
           y: [0, -10, 0],
           boxShadow: [
             "0 0 0px rgba(255, 255, 255, 0.2)",
-            "0 0 25px rgba(255, 105, 180, 0.5)",
+            "0 0 25px rgba(255, 105, 180, 0.4)",
             "0 0 0px rgba(255, 255, 255, 0.2)",
           ],
         }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />
     </motion.div>
   </motion.div>
