@@ -317,36 +317,65 @@ function App() {
 </div>
 </section>
 
- <section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-1 max-w-3xl mx-auto">
-            <div className="text-gray-300 leading-relaxed text-lg">
-              <h2 className="text-3xl font-bold text-purple-300 mb-4">💫 About Me</h2>
-              <p className="mb-4">
-  Hi, I’m Gayatri — a Computer Science (AIML) student passionate about technology, design, and innovation. I enjoy building intuitive Android apps, experimenting with machine learning, and crafting meaningful digital experiences.
-</p>
-<p className="mb-4">
-  As an Android Developer and core member of the GDG on campus, I’ve led workshops and mentored peers. I was a finalist in Smart India Hackathon 2023 and have built real-world solutions at various university hackathons.
-</p>
-<p className="mb-4">
-  I’m also a mandala art enthusiast and visual storyteller, blending creativity with logic in both code and design.
-</p>
-<p>
-  With internships in AI/ML, full-stack development, networking, and Python, I’m continuously learning and growing at the intersection of tech and creativity.
-</p>
+<section className="p-8 bg-black bg-opacity-30 rounded-3xl shadow-lg text-white mb-16 min-h-[28rem]">
+  <div className="flex flex-col md:flex-row items-center gap-10">
+    {/* Left Text Section */}
+    <motion.div
+      className="flex-1 max-w-3xl"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ staggerChildren: 0.2 }}
+    >
+      <motion.h2
+        className="text-3xl font-bold text-purple-300 mb-4"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        💫 About Me
+      </motion.h2>
 
-            </div>
-          </div>
-          <motion.img
-            src="profile2.jpg"
-            alt="Gayatri"
-            className="w-56 h-72 md:w-64 md:h-80 object-cover rounded-3xl border-4 border-yellow-400 shadow-lg"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 1 }}
-          />
-        </div>
-      </section>
+      {/* Divider */}
+      <motion.div
+        className="w-32 h-1 bg-purple-500 mb-6 rounded-full"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        style={{ transformOrigin: 'left' }}
+      />
+
+      {/* Animated Paragraphs */}
+      {[
+        "Hi, I’m Gayatri — a Computer Science (AIML) student passionate about technology, design, and innovation. I enjoy building intuitive Android apps, experimenting with machine learning, and crafting meaningful digital experiences.",
+        "As an Android Developer and core member of the GDG on campus, I’ve led workshops and mentored peers. I was a finalist in Smart India Hackathon 2023 and have built real-world solutions at various university hackathons.",
+        "I’m also a mandala art enthusiast and visual storyteller, blending creativity with logic in both code and design.",
+        "With internships in AI/ML, full-stack development, networking, and Python, I’m continuously learning and growing at the intersection of tech and creativity."
+      ].map((para, i) => (
+        <motion.p
+          key={i}
+          className="mb-4 text-gray-300 leading-relaxed text-lg"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: i * 0.3 }}
+        >
+          {para}
+        </motion.p>
+      ))}
+    </motion.div>
+
+    {/* Profile Image */}
+    <motion.img
+      src="profile2.jpg"
+      alt="Gayatri"
+      className="w-56 h-72 md:w-64 md:h-80 object-cover rounded-3xl border-4 border-yellow-400 shadow-xl"
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8 }}
+    />
+  </div>
+</section>
+
 
  <section id="skills" className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
   <h2 className="text-3xl font-bold text-teal-300 mb-6">💼 Skills</h2>
