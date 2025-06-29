@@ -316,17 +316,28 @@ function App() {
       </section>
 
       {/* Skills */}
-    <section id="skills" className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-  <h2 className="text-3xl font-bold text-teal-300 mb-6 text-center">💼 Skills</h2>
+ <h2 className="text-3xl font-bold text-teal-300 mb-6 text-center">💼 Skills</h2>
+
+{/* Technical Skills */}
+<div className="mb-8">
+  <h3 className="text-2xl font-semibold text-white mb-4 text-center">🛠 Technical Skills</h3>
   <div className="flex flex-wrap gap-10 justify-center">
     {technicalSkills.map((skill, index) => (
       <SkillCircle key={`tech-${index}`} value={skill.confidence} label={skill.name} />
     ))}
+  </div>
+</div>
+
+{/* Soft Skills */}
+<div>
+  <h3 className="text-2xl font-semibold text-pink-400 mb-4 text-center">🤝 Soft Skills</h3>
+  <div className="flex flex-wrap gap-10 justify-center">
     {softSkills.map((skill, index) => (
-      <SkillCircle key={`soft-${index}`} value={skill.confidence} label={skill.name} />
+      <SkillCircle key={`soft-${index}`} value={100} label={skill.name} />
     ))}
   </div>
-</section>
+</div>
+
 
 
 
