@@ -93,27 +93,27 @@ const softSkills = [
 const achievements = [
   {
     title: "Class Representative since 2022",
-    image: "leader.png"
+    image: process.env.PUBLIC_URL + "/images/leader.png"
   },
   {
     title: "Student Innovator at AIMERS Club",
-    image: "/images/innovation.png"
+    image: process.env.PUBLIC_URL + "/images/innovation.png"
   },
   {
     title: "Team selected for Smart India Hackathon Finale",
-    image: "/images/sih.png"
+    image: process.env.PUBLIC_URL + "/images/sih.png"
   },
   {
     title: "Android Developer at GDG On Campus",
-    image: "/images/android.png"
+    image: process.env.PUBLIC_URL + "/images/android.png"
   },
   {
     title: "Led Android session at GDG campus",
-    image: "/images/gdg.png"
+    image: process.env.PUBLIC_URL + "/images/gdg.png"
   },
   {
     title: "Completed Full Stack Internship at ExcelR",
-    image: "/images/internship.png"
+    image: process.env.PUBLIC_URL + "/images/internship.png"
   }
 ];
 
