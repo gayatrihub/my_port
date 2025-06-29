@@ -12,6 +12,8 @@ module.exports = {
         float: 'float 5s ease-in-out infinite',
         'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         glow: 'glow 3s ease-in-out infinite',
+        'float-bounce': 'floatBounce 6s ease-in-out infinite',
+        'fade-in-up': 'fadeInUp 1s ease-out forwards',
       },
       keyframes: {
         tilt: {
@@ -22,6 +24,14 @@ module.exports = {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
+        },
+        floatBounce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        fadeInUp: {
+          '0%': { opacity: 0, transform: 'translateY(20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
         },
         glow: {
           '0%, 100%': { textShadow: '0 0 10px rgba(255,255,255,0.3)' },
