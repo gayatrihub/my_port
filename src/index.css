@@ -30,6 +30,7 @@
   );
   animation: shimmer 2.5s infinite;
 }
+
 /* Optional: Add smooth animation and glow effect */
 @keyframes pulse-glow {
   0% {
