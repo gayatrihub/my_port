@@ -594,7 +594,7 @@ function App() {
 </section>
 
       {/* Projects */}
-      
+      <div>
       {/* Projects Section */}
       <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
         <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
@@ -651,7 +651,7 @@ function App() {
                 Close
               </button>
             </div>
-          
+          </div>
         </section>
       )}
     </div>
