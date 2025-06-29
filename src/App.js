@@ -316,29 +316,46 @@ function App() {
   </a>
 </div>
 {/* 🔢 Stats Section Inside Hero Container */}
-<div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 text-white text-center">
-  {/* Experience */}
-  <div className="border-r border-gray-500 px-4">
-    <h3 className="text-5xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-400 to-orange-400 bg-clip-text text-transparent animate-pulse">
-      10+
+{/* 🔢 Personalized Stats Section */}
+<div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-white text-center">
+  {/* Class Representative */}
+  <div className="border-r border-gray-600 px-4">
+    <h3 className="text-5xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 bg-clip-text text-transparent animate-pulse">
+      3
     </h3>
-    <p className="mt-2 text-lg font-semibold uppercase tracking-wide">Years of Experience</p>
+    <p className="mt-2 text-lg font-semibold uppercase tracking-wide">
+      Years as Class Representative
+    </p>
+  </div>
+
+  {/* Hackathons */}
+  <div className="border-r border-gray-600 px-4">
+    <h3 className="text-5xl font-extrabold bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 bg-clip-text text-transparent animate-pulse">
+      7+
+    </h3>
+    <p className="mt-2 text-lg font-semibold uppercase tracking-wide">
+      Hackathons Participated
+    </p>
+  </div>
+
+  {/* Internships */}
+  <div className="border-r border-gray-600 px-4">
+    <h3 className="text-5xl font-extrabold bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent animate-pulse">
+      6+
+    </h3>
+    <p className="mt-2 text-lg font-semibold uppercase tracking-wide">
+      Internships Completed
+    </p>
   </div>
 
   {/* Projects */}
-  <div className="border-r border-gray-500 px-4">
-    <h3 className="text-5xl font-extrabold bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-500 bg-clip-text text-transparent animate-pulse">
-      90+
-    </h3>
-    <p className="mt-2 text-lg font-semibold uppercase tracking-wide">Projects Completed</p>
-  </div>
-
-  {/* Clients */}
   <div className="px-4">
-    <h3 className="text-5xl font-extrabold bg-gradient-to-r from-purple-500 via-orange-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
-      15+
+    <h3 className="text-5xl font-extrabold bg-gradient-to-r from-green-400 via-lime-400 to-emerald-400 bg-clip-text text-transparent animate-pulse">
+      9+
     </h3>
-    <p className="mt-2 text-lg font-semibold uppercase tracking-wide">Happy Clients</p>
+    <p className="mt-2 text-lg font-semibold uppercase tracking-wide">
+      Projects Built
+    </p>
   </div>
 </div>
 
