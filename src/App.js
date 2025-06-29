@@ -594,7 +594,7 @@ function App() {
 </section>
 
       {/* Projects */}
-     <div className="bg-gradient-to-b from-black via-gray-900 to-black min-h-screen text-white p-6">
+    
       {/* Projects Section */}
      <section className="bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg mb-12 border border-white/10">
         <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
@@ -652,7 +652,7 @@ function App() {
           </div>
         </section>
       )}
-    </div>
+    
       {/* Contact */}
       <section className="bg-black bg-opacity-40 rounded-3xl p-8 shadow-lg mb-16 max-w-4xl mx-auto">
         <h2 className="text-3xl font-extrabold text-blue-400 mb-8 text-center">📬 Contact Me</h2>
