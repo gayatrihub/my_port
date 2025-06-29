@@ -188,44 +188,36 @@ const SkillCircle = ({
   );
 };
 
-function ProjectSection({ title, projects }) {
+const ProjectSection = ({ title, projects, onSelect }) => {
   return (
-    <div className="mb-12">
-      <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {projects.map((project, i) => (
+    <div className="mb-10">
+      <h3 className="text-2xl text-white font-semibold mb-6">{title}</h3>
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+        {projects.map((project, index) => (
           <motion.div
-            key={i}
-            className="bg-gray-900 bg-opacity-60 rounded-xl shadow-lg overflow-hidden"
+            key={index}
             whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            className="bg-[#1c1c1c] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:shadow-green-500/30 transition-all duration-300 group cursor-pointer"
+            onClick={() => onSelect(project)}
           >
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-40 object-cover"
+              className="w-full h-48 object-cover group-hover:opacity-90 transition duration-300"
             />
             <div className="p-4">
-              {project.link ? (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xl font-bold text-blue-400 hover:underline mb-2 block"
-                >
-                  {project.title}
-                </a>
-              ) : (
-                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-              )}
-              <p className="text-gray-300">{project.description}</p>
+              <h4 className="text-green-300 text-lg font-semibold mb-2">{project.title}</h4>
+              <p className="text-white text-sm opacity-80">{project.description}</p>
             </div>
           </motion.div>
         ))}
       </div>
     </div>
   );
-}
+};
 
 function App() {
   const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
