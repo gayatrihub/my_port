@@ -111,8 +111,12 @@ const SkillCircle = ({
   colorTo = "#7873f5",
 }) => {
   return (
-    <div className="flex flex-col items-center w-32">
-      <div className="w-28 h-28">
+    <motion.div
+      whileHover={{ scale: 1.1, rotate: 2 }}
+      transition={{ type: "spring", stiffness: 300 }}
+      className="flex flex-col items-center w-32 cursor-pointer"
+    >
+      <div className="w-28 h-28 transition-transform duration-300 ease-in-out">
         <CircularProgressbarWithChildren
           value={value}
           styles={buildStyles({
@@ -130,15 +134,13 @@ const SkillCircle = ({
             </defs>
           </svg>
 
-          {/* Centered Icon */}
           <div className="text-white text-3xl">{icon}</div>
         </CircularProgressbarWithChildren>
       </div>
       <div className="mt-2 text-white text-center text-sm font-medium">{label}</div>
-    </div>
+    </motion.div>
   );
 };
-
 function ProjectSection({ title, projects }) {
   return (
     <div className="mb-12">
