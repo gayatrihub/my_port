@@ -15,6 +15,21 @@
     0% 50%
   );
 }
+.shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2.5s infinite;
+}
 /* Optional: Add smooth animation and glow effect */
 @keyframes pulse-glow {
   0% {
@@ -25,6 +40,14 @@
   }
   100% {
     box-shadow: 0 0 0px rgba(250, 204, 21, 0.4);
+  }
+}
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
 @keyframes bounce-slow {
