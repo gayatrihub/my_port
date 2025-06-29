@@ -33,38 +33,46 @@ const androidProjects = [
     description: "Android app that lets users draw and save to gallery with description.",
     image: kalmandalImg,
     link: "https://drive.google.com/file/d/1BhXnysi7Skk9Bowd1o99t_98owC_inVr/view?usp=sharing",
+    video: "https://www.youtube.com/embed/tgbNymZ7vqY",
+    techstack: ["Java", "XML", "Android Studio"],
   },
   {
     title: "Profile Card App",
     description: "Displays photo, name, role & contact info. Built using Jetpack Compose.",
     image: appImg,
     link: "https://drive.google.com/file/d/1Xl_5E3abL-aCGYMKWLI5WFfa5hDy7FcW/view?usp=sharing",
+    video: "https://www.youtube.com/embed/7sDY4m8KNLc",
+    techstack: ["Kotlin", "Jetpack Compose"],
   },
 ];
+
 const mlProjects = [
   {
     title: "Object Detection on Railway Tracks",
-    description:
-      "YOLOv5x-based system with Gradio UI to detect obstacles on railway tracks. Includes bounding boxes, audio alerts & styled frontend.",
+    description: "YOLOv5x-based system with Gradio UI to detect obstacles on railway tracks.",
     image: odImg,
     link: "https://drive.google.com/file/d/19vF7PXVtDYfXBQa8ei3oKVotDplhPgdV/view?usp=sharing",
+    video: "https://www.youtube.com/embed/THE_VIDEO_ID",
+    techstack: ["Python", "YOLOv5", "Gradio"],
   },
 ];
 
 const webProjects = [
   {
     title: "Online Crime Reporting System",
-    description:
-      "The Online Crime Reporting System allows users to submit complaints directly through a web interface built with HTML, CSS, and JavaScript...",
+    description: "Users submit complaints directly through a web interface.",
     image: onlinereportImg,
     link: "https://drive.google.com/file/d/1Xo3XrpmN6q95TWYKFYlpAjHuwqRfS6Oo/view?usp=sharing",
+    video: "https://www.youtube.com/embed/THE_VIDEO_ID",
+    techstack: ["HTML", "CSS", "JavaScript"],
   },
   {
     title: "College Website",
-    description:
-      "The college website gives a clear and simple view of what the college stands for...",
+    description: "Website gives a clear and simple view of what the college stands for.",
     image: websiteImg,
     link: "https://drive.google.com/file/d/1MxNQ7xJeDx8Cf0Idt0JrIqexDdSFM7Ie/view?usp=sharing",
+    video: "https://www.youtube.com/embed/THE_VIDEO_ID",
+    techstack: ["HTML", "Bootstrap", "PHP"],
   },
 ];
 
@@ -569,12 +577,58 @@ function App() {
 </section>
 
       {/* Projects */}
-      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-        <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
-        <ProjectSection title="📱 Android Development Projects" projects={androidProjects} />
-        <ProjectSection title="🧠 Machine Learning Projects" projects={mlProjects} />
-        <ProjectSection title="🌐 Web Developing Projects" projects={webProjects} />
-      </section>
+     export default function App() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  return (
+    <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+      <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
+      <ProjectSection
+        title="📱 Android Development Projects"
+        projects={androidProjects}
+        onProjectClick={setSelectedProject}
+      />
+      <ProjectSection
+        title="🧠 Machine Learning Projects"
+        projects={mlProjects}
+        onProjectClick={setSelectedProject}
+      />
+      <ProjectSection
+        title="🌐 Web Developing Projects"
+        projects={webProjects}
+        onProjectClick={setSelectedProject}
+      />
+
+      {selectedProject && (
+        <div className="mt-10 p-6 bg-black bg-opacity-40 rounded-2xl shadow-xl flex flex-col md:flex-row gap-6">
+          <div className="w-full md:w-1/2">
+            <iframe
+              width="100%"
+              height="315"
+              src={selectedProject.video}
+              title={selectedProject.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="rounded-xl"
+            ></iframe>
+          </div>
+          <div className="md:w-1/2 text-white">
+            <h3 className="text-2xl font-bold text-green-300 mb-4">{selectedProject.title}</h3>
+            <p className="mb-4 text-gray-300">{selectedProject.description}</p>
+            <h4 className="font-semibold text-lg text-green-200 mb-2">🛠 Tech Stack:</h4>
+            <ul className="list-disc list-inside text-gray-200">
+              {selectedProject.techstack.map((tech, i) => (
+                <li key={i}>{tech}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
 
       {/* Contact */}
       <section className="bg-black bg-opacity-40 rounded-3xl p-8 shadow-lg mb-16 max-w-4xl mx-auto">
