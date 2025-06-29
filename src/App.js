@@ -541,21 +541,24 @@ function App() {
         viewport={{ once: true }}
         className="group relative flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-2"
       >
-        {/* ⭐ Star Container */}
-        <div className="relative w-36 h-36 bg-yellow-300 star-shape shadow-lg flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-500 animate-bounce-slow">
-          {/* 🔵 Circular Image Inside Star */}
-          <div className="w-20 h-20 rounded-full border-4 border-white bg-black flex items-center justify-center overflow-hidden shadow-md z-10">
-            <img
-              src={ach.image}
-              alt={ach.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
+        {/* ⭐ Star Background */}
+        <div className="relative w-36 h-36 star-shape bg-yellow-300 shadow-lg animate-bounce-slow">
+          {/* ✨ Decorative glowing effect */}
+          <div className="absolute inset-0 bg-yellow-300 opacity-10 blur-xl animate-ping"></div>
+        </div>
+
+        {/* 🔵 Circle Image Overlapping the Star */}
+        <div className="absolute top-1/2 left-1/2 w-20 h-20 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-black z-10 flex items-center justify-center shadow-md">
+          <img
+            src={ach.image}
+            alt={ach.title}
+            className="w-full h-full object-cover rounded-full"
+          />
         </div>
 
         {/* 🏷️ Title */}
         <motion.div
-          className="mt-3 text-yellow-100 font-semibold text-center text-sm md:text-base leading-tight group-hover:text-white transition duration-300 z-10"
+          className="mt-5 text-yellow-100 font-semibold text-sm md:text-base leading-tight group-hover:text-white transition duration-300 z-10"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.1 + 0.3, duration: 0.4 }}
@@ -563,8 +566,8 @@ function App() {
           {ach.title}
         </motion.div>
 
-        {/* ✨ Glows */}
-        <div className="absolute w-24 h-24 bg-yellow-300 opacity-10 rounded-full blur-3xl animate-ping -top-4 -right-4 z-0" />
+        {/* 🌟 Glow Circles */}
+        <div className="absolute w-24 h-24 bg-yellow-400 opacity-10 rounded-full blur-3xl animate-ping -top-4 -right-4 z-0" />
         <div className="absolute w-16 h-16 bg-yellow-500 opacity-10 rounded-full blur-2xl animate-pulse bottom-0 left-0 z-0" />
       </motion.div>
     ))}
