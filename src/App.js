@@ -12,7 +12,7 @@ import {
   buildStyles,
 } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-
+import { CircularProgressbarWithChildren, buildStyles } from "react-circular-progressbar";
 import {
   FaPython,
   FaJava,
@@ -113,22 +113,20 @@ const SkillCircle = ({
 }) => {
   return (
     <motion.div
+      className="relative flex flex-col items-center w-32 group"
       whileHover={{
-        scale: 1.15,
-        rotate: 3,
-        boxShadow: "0px 0px 20px rgba(255, 105, 180, 0.6)",
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 12,
+        scale: 1.2,
+        rotate: 2,
+        transition: { type: "spring", stiffness: 300 },
       }}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      className="flex flex-col items-center w-32 cursor-pointer hover:shadow-xl hover:shadow-pink-400/50 transition"
     >
+      {/* Glowing Aura Effect */}
+      <div className="absolute -inset-1 blur-xl bg-gradient-to-tr from-pink-400 via-fuchsia-500 to-violet-600 opacity-30 group-hover:opacity-70 rounded-full animate-pulse z-0"></div>
+
       <motion.div
-        className="w-28 h-28 rounded-full"
+        className="w-28 h-28 relative z-10"
         whileHover={{ rotate: 360 }}
         transition={{ duration: 2, ease: "linear", repeat: Infinity }}
       >
@@ -140,6 +138,7 @@ const SkillCircle = ({
             strokeLinecap: "round",
           })}
         >
+          {/* Gradient */}
           <svg style={{ height: 0 }}>
             <defs>
               <linearGradient id={gradientId} gradientTransform="rotate(90)">
@@ -148,25 +147,35 @@ const SkillCircle = ({
               </linearGradient>
             </defs>
           </svg>
+
+          {/* Floating Icon */}
           <motion.div
-            className="text-white text-3xl"
-            whileHover={{ scale: 1.4, rotate: 10 }}
-            transition={{ type: "spring", stiffness: 400 }}
+            className="text-3xl text-white"
+            animate={{
+              y: [0, -4, 0],
+              transition: { repeat: Infinity, duration: 2, ease: "easeInOut" },
+            }}
           >
             {icon}
           </motion.div>
         </CircularProgressbarWithChildren>
       </motion.div>
+
+      {/* Label */}
       <motion.div
-        className="mt-2 text-white text-center text-sm font-semibold tracking-wide"
-        whileHover={{ scale: 1.1, color: "#ff69b4" }}
+        className="mt-3 text-white font-medium text-center text-sm"
+        whileHover={{
+          scale: 1.05,
+          color: "#ff80bf",
+          textShadow: "0px 0px 8px #ff80bf",
+        }}
+        transition={{ type: "spring", stiffness: 200 }}
       >
         {label}
       </motion.div>
     </motion.div>
   );
 };
-
 
 function ProjectSection({ title, projects }) {
   return (
