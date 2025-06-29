@@ -526,42 +526,45 @@ function App() {
 
   <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
     {achievements.map((ach, i) => (
-      <motion.div
-        key={i}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: i * 0.15 }}
-        viewport={{ once: true }}
-        className="group relative bg-gradient-to-br from-yellow-800/30 to-yellow-600/10 rounded-2xl shadow-xl hover:shadow-yellow-400/40 p-6 flex flex-col items-center justify-center text-center border border-yellow-400/10 backdrop-blur-sm overflow-hidden transition-all duration-300"
-      >
-        {/* 🔄 Animated Glow Circle */}
-        <div className="absolute w-40 h-40 bg-yellow-300 opacity-10 rounded-full blur-3xl animate-ping -top-5 -right-5"></div>
+  <motion.div
+    key={i}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ delay: i * 0.15 }}
+    viewport={{ once: true }}
+    className="group relative rounded-2xl shadow-lg overflow-hidden border border-yellow-400/10 backdrop-blur-md hover:shadow-yellow-400/40 transition-all duration-500"
+  >
+    {/* 🔄 Background Glow Animation */}
+    <div className="absolute inset-0 w-full h-full bg-yellow-200 opacity-10 blur-3xl animate-pulse z-0" />
 
-        {/* 🖼️ Achievement Image */}
-        <motion.img
-          src={ach.image}
-          alt={ach.title}
-          className="w-20 h-20 object-contain rounded-full border-4 border-yellow-400 shadow-lg group-hover:scale-110 transition-transform duration-500"
-          animate={{
-            y: [0, -4, 0],
-            rotate: [0, 1, -1, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
+    {/* 🖼️ Full Background Image */}
+    <motion.img
+      src={ach.image}
+      alt={ach.title}
+      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+      animate={{
+        scale: [1, 1.02, 1],
+      }}
+      transition={{
+        duration: 5,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    />
 
-        {/* ✍️ Achievement Title */}
-        <div className="mt-4 text-yellow-100 font-semibold text-lg leading-snug group-hover:text-white transition duration-300">
-          {ach.title}
-        </div>
+    {/* 📝 Title Section */}
+    <div className="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/70 to-transparent text-yellow-100 font-semibold text-lg text-center backdrop-blur-sm group-hover:text-white transition duration-300">
+      {ach.title}
+    </div>
 
-        {/* ✨ Bottom Glow */}
-        <div className="absolute bottom-[-2rem] left-1/2 transform -translate-x-1/2 w-24 h-24 bg-yellow-500 opacity-10 rounded-full blur-3xl animate-pulse" />
-      </motion.div>
-    ))}
+    {/* 🌟 Top Left Glow */}
+    <div className="absolute w-24 h-24 bg-yellow-300 opacity-20 rounded-full blur-2xl -top-5 -left-5 animate-ping" />
+
+    {/* 🌟 Bottom Glow */}
+    <div className="absolute bottom-[-2rem] left-1/2 transform -translate-x-1/2 w-24 h-24 bg-yellow-500 opacity-10 rounded-full blur-3xl animate-pulse" />
+  </motion.div>
+))}
+
   </div>
 </section>
       {/* Projects */}
