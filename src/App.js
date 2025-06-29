@@ -594,7 +594,7 @@ function App() {
 </section>
 
       {/* Projects */}
-      <div className="bg-gradient-to-b from-black via-gray-900 to-black min-h-screen text-white p-6">
+      
       {/* Projects Section */}
       <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
         <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
@@ -683,7 +683,7 @@ function App() {
               Gayatri-linkedin-id
             </a>
           </div>
-        </div>
+        
 
         <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto text-white">
           <input
