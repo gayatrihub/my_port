@@ -33,7 +33,7 @@ const androidProjects = [
     title: "KalMandal",
     description: "Android app that lets users draw and save to gallery with description.",
     image: kalmandalImg,
-    link: "https://drive.google.com/file/d/1BhXnysi7Skk9Bowd1o99t_98owC_inVr/view?usp=sharing",
+    video: "kalmandal.mp4",
     techStack: ["Jetpack Compose", "Android SDK", "Kotlin"]
   },
   {
