@@ -7,12 +7,14 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 6s linear infinite',
         'ping-slow': 'ping 6s cubic-bezier(0, 0, 0.2, 1) infinite',
+        'pingLong': 'ping 6s cubic-bezier(0, 0, 0.2, 1) infinite',
         tilt: 'tilt 10s infinite linear',
         float: 'float 5s ease-in-out infinite',
-        pingLong: 'ping 6s cubic-bezier(0, 0, 0.2, 1) infinite',
+        pulse: 'pulse 2s ease-in-out infinite',
+        glow: 'glow 3s ease-in-out infinite',
       },
       keyframes: {
-         tilt: {
+        tilt: {
           '0%': { transform: 'rotate(0deg)' },
           '50%': { transform: 'rotate(1deg)' },
           '100%': { transform: 'rotate(0deg)' },
@@ -20,6 +22,10 @@ module.exports = {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
+        },
+        glow: {
+          '0%, 100%': { textShadow: '0 0 10px rgba(255,255,255,0.3)' },
+          '50%': { textShadow: '0 0 20px rgba(255,255,255,0.7)' },
         },
       },
     },
