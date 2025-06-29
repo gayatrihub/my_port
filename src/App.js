@@ -101,33 +101,7 @@ const achievements = [
   "Led Android session at GDG campus",
   "Completed Full Stack Internship at ExcelR",
 ];
-const SkillCircle = ({ value, label }) => {
-  return (
-    <div className="flex flex-col items-center w-32">
-      <div className="w-28 h-28">
-        <CircularProgressbarWithChildren
-          value={value}
-          styles={buildStyles({
-            pathColor: 'url(#gradient)',
-            trailColor: 'rgba(255, 255, 255, 0.1)',
-            strokeLinecap: 'round',
-          })}
-        >
-          <svg style={{ height: 0 }}>
-            <defs>
-              <linearGradient id="gradient" gradientTransform="rotate(90)">
-                <stop offset="0%" stopColor="#ff6ec4" />
-                <stop offset="100%" stopColor="#7873f5" />
-              </linearGradient>
-            </defs>
-          </svg>
-          <div className="text-white font-bold text-lg">{value}%</div>
-        </CircularProgressbarWithChildren>
-      </div>
-      <div className="mt-2 text-white text-center">{label}</div>
-    </div>
-  );
-};
+
 
 
 function ProjectSection({ title, projects }) {
