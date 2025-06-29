@@ -93,7 +93,7 @@ const softSkills = [
 const achievements = [
   {
     title: "Class Representative since 2022",
-    image: "/images/leader.png"
+    image: "leader.png"
   },
   {
     title: "Student Innovator at AIMERS Club",
