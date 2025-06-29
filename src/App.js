@@ -577,7 +577,7 @@ function App() {
 </section>
 
       {/* Projects */}
-     export default function App() {
+     export default function1 App() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
