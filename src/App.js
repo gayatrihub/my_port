@@ -7,6 +7,11 @@ import odImg from "./assets/images/Object_detection.jpg";
 import onlinereportImg from "./assets/images/online_report.jpg";
 import websiteImg from "./assets/images/website.jpg";
 import { TypeAnimation } from 'react-type-animation';
+import {
+  CircularProgressbarWithChildren,
+  buildStyles,
+} from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 import {
   FaPython,
@@ -96,6 +101,34 @@ const achievements = [
   "Led Android session at GDG campus",
   "Completed Full Stack Internship at ExcelR",
 ];
+const SkillCircle = ({ value, label }) => {
+  return (
+    <div className="flex flex-col items-center w-32">
+      <div className="w-28 h-28">
+        <CircularProgressbarWithChildren
+          value={value}
+          styles={buildStyles({
+            pathColor: 'url(#gradient)',
+            trailColor: 'rgba(255, 255, 255, 0.1)',
+            strokeLinecap: 'round',
+          })}
+        >
+          <svg style={{ height: 0 }}>
+            <defs>
+              <linearGradient id="gradient" gradientTransform="rotate(90)">
+                <stop offset="0%" stopColor="#ff6ec4" />
+                <stop offset="100%" stopColor="#7873f5" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div className="text-white font-bold text-lg">{value}%</div>
+        </CircularProgressbarWithChildren>
+      </div>
+      <div className="mt-2 text-white text-center">{label}</div>
+    </div>
+  );
+};
+
 
 function ProjectSection({ title, projects }) {
   return (
@@ -282,32 +315,29 @@ function App() {
       </section>
 
       {/* Skills */}
-      <section className="space-y-12 bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-        <h2 className="text-3xl font-bold text-teal-300 mb-6">🛠 Technical Skills</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {technicalSkills.map((skill, i) => (
-            <div key={i} className="flex items-center justify-between bg-gradient-to-r from-cyan-700 to-blue-900 bg-opacity-50 rounded-lg p-4 shadow-md">
-              <div className="flex items-center gap-3 text-lg font-semibold text-white">
-                <div className="text-2xl">{skill.icon}</div>{skill.name}
-              </div>
-              <div className="text-white">{skill.confidence}%</div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <section id="skills" className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+  <h2 className="text-3xl font-bold text-teal-300 mb-6">🛠 Technical Skills</h2>
+  <div className="flex flex-wrap gap-6 justify-center">
+    {technicalSkills.map((skill, index) => (
+      <SkillCircle key={index} value={skill.confidence} label={skill.name} />
+    ))}
+  </div>
+</section>
+
 
       {/* Soft Skills */}
       <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-        <h2 className="text-3xl font-bold text-pink-400 mb-6">🤝 Soft Skills</h2>
-        <div className="flex flex-wrap gap-6 justify-center sm:justify-start">
-          {softSkills.map((skill, i) => (
-            <div key={i} className="flex flex-col items-center gap-2 bg-pink-800 bg-opacity-30 rounded-lg p-4 w-32 text-center shadow-inner hover:bg-pink-700 transition">
-              <div className="text-4xl text-pink-400">{skill.icon}</div>
-              <div className="font-semibold text-white text-lg">{skill.name}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+  <h2 className="text-3xl font-bold text-pink-400 mb-6">🤝 Soft Skills</h2>
+  <div className="flex flex-wrap justify-center gap-8">
+    {softSkills.map((skill, index) => (
+      <div key={index} className="flex flex-col items-center gap-2 w-28">
+        <div className="text-4xl text-pink-400">{skill.icon}</div>
+        <div className="text-white font-semibold text-center">{skill.name}</div>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* Achievements */}
       <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
