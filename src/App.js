@@ -102,7 +102,14 @@ const achievements = [
   "Completed Full Stack Internship at ExcelR",
 ];
 
-const SkillCircle = ({ value, label, gradientId = "gradient", colorFrom = "#ff6ec4", colorTo = "#7873f5" }) => {
+const SkillCircle = ({
+  value,
+  label,
+  icon,
+  gradientId = "gradient",
+  colorFrom = "#ff6ec4",
+  colorTo = "#7873f5",
+}) => {
   return (
     <div className="flex flex-col items-center w-32">
       <div className="w-28 h-28">
@@ -122,14 +129,15 @@ const SkillCircle = ({ value, label, gradientId = "gradient", colorFrom = "#ff6e
               </linearGradient>
             </defs>
           </svg>
-          <div className="text-white font-bold text-lg">{value}%</div>
+
+          {/* Centered Icon */}
+          <div className="text-white text-3xl">{icon}</div>
         </CircularProgressbarWithChildren>
       </div>
-      <div className="mt-2 text-white text-center">{label}</div>
+      <div className="mt-2 text-white text-center text-sm font-medium">{label}</div>
     </div>
   );
 };
-
 
 function ProjectSection({ title, projects }) {
   return (
@@ -323,13 +331,14 @@ function App() {
     <h3 className="text-2xl font-semibold text-white mb-4">🛠 Technical Skills</h3>
     <div className="flex flex-wrap gap-10 justify-start">
       {technicalSkills.map((skill, index) => (
-        <SkillCircle
-          key={`tech-${index}`}
-          value={skill.confidence}
-          label={skill.name}
-          gradientId={`tech-gradient-${index}`}
-        />
-      ))}
+  <SkillCircle
+    key={`tech-${index}`}
+    value={skill.confidence}
+    label={skill.name}
+    icon={skill.icon} // <- add this
+    gradientId={`tech-gradient-${index}`}
+  />
+))}
     </div>
   </div>
 
@@ -338,15 +347,16 @@ function App() {
     <h3 className="text-2xl font-semibold text-pink-400 mb-4">🤝 Soft Skills</h3>
     <div className="flex flex-wrap gap-10 justify-start">
       {softSkills.map((skill, index) => (
-        <SkillCircle
-          key={`soft-${index}`}
-          value={100}
-          label={skill.name}
-          gradientId={`soft-gradient-${index}`}
-          colorFrom="#ff69b4" // pink start
-          colorTo="#ffb6c1"   // light pink end
-        />
-      ))}
+  <SkillCircle
+    key={`soft-${index}`}
+    value={100}
+    label={skill.name}
+    icon={skill.icon} // <- add this
+    gradientId={`soft-gradient-${index}`}
+    colorFrom="#ff69b4"
+    colorTo="#ffb6c1"
+  />
+))}
     </div>
   </div>
 </section>
