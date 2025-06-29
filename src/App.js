@@ -684,7 +684,7 @@ function App() {
               Gayatri-linkedin-id
             </a>
           </div>
-        
+        </div>
 
         <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto text-white">
           <input
