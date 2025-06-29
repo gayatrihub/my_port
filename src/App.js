@@ -110,34 +110,25 @@ const SkillCircle = ({
   colorFrom = "#ff6ec4",
   colorTo = "#7873f5",
 }) => {
-  return (
-    <motion.div
-      className="relative flex flex-col items-center w-32 group"
-      whileHover={{
-        scale: 1.2,
-        rotate: 2,
-        transition: { type: "spring", stiffness: 300 },
-      }}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-    >
-      {/* Glowing Aura Effect */}
-      <div className="absolute -inset-1 blur-xl bg-gradient-to-tr from-pink-400 via-fuchsia-500 to-violet-600 opacity-30 group-hover:opacity-70 rounded-full animate-pulse z-0"></div>
+  const [isHovered, setIsHovered] = useState(false);
 
-      <motion.div
-        className="w-28 h-28 relative z-10"
-        whileHover={{ rotate: 360 }}
-        transition={{ duration: 2, ease: "linear", repeat: Infinity }}
-      >
+  return (
+    <div
+      className={`flex flex-col items-center w-32 transition-transform duration-500 ${
+        isHovered ? "animate-spin-slow shadow-[0_0_15px_5px_rgba(255,255,255,0.3)]" : ""
+      }`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="w-28 h-28">
         <CircularProgressbarWithChildren
           value={value}
           styles={buildStyles({
             pathColor: `url(#${gradientId})`,
-            trailColor: "rgba(255, 255, 255, 0.1)",
-            strokeLinecap: "round",
+            trailColor: 'rgba(255, 255, 255, 0.1)',
+            strokeLinecap: 'round',
           })}
         >
-          {/* Gradient */}
           <svg style={{ height: 0 }}>
             <defs>
               <linearGradient id={gradientId} gradientTransform="rotate(90)">
@@ -147,32 +138,11 @@ const SkillCircle = ({
             </defs>
           </svg>
 
-          {/* Floating Icon */}
-          <motion.div
-            className="text-3xl text-white"
-            animate={{
-              y: [0, -4, 0],
-              transition: { repeat: Infinity, duration: 2, ease: "easeInOut" },
-            }}
-          >
-            {icon}
-          </motion.div>
+          <div className="text-white text-2xl">{icon}</div>
         </CircularProgressbarWithChildren>
-      </motion.div>
-
-      {/* Label */}
-      <motion.div
-        className="mt-3 text-white font-medium text-center text-sm"
-        whileHover={{
-          scale: 1.05,
-          color: "#ff80bf",
-          textShadow: "0px 0px 8px #ff80bf",
-        }}
-        transition={{ type: "spring", stiffness: 200 }}
-      >
-        {label}
-      </motion.div>
-    </motion.div>
+      </div>
+      <div className="mt-2 text-white text-center text-sm font-semibold">{label}</div>
+    </div>
   );
 };
 
