@@ -27,50 +27,52 @@ import {
 import { SiCplusplus } from "react-icons/si";
 import { FaUsers, FaLightbulb } from "react-icons/fa6";
 
+const androidProjects = [
+  {
+    title: "KalMandal",
+    description: "Android app that lets users draw and save to gallery with description.",
+    image: kalmandalImg,
+    link: "https://drive.google.com/file/d/1BhXnysi7Skk9Bowd1o99t_98owC_inVr/view?usp=sharing",
+    techStack: ["Jetpack Compose", "Android SDK", "Kotlin"]
+  },
+  {
+    title: "Profile Card App",
+    description: "Displays photo, name, role & contact info. Built using Jetpack Compose.",
+    image: appImg,
+    link: "https://drive.google.com/file/d/1Xl_5E3abL-aCGYMKWLI5WFfa5hDy7FcW/view?usp=sharing",
+    techStack: ["Jetpack Compose", "Material Design"]
+  },
+];
 
-  const androidProjects = [
-    {
-      title: "KalMandal",
-      description: "Android app that lets users draw and save to gallery with description.",
-      image: kalmandalImg,
-      link: "https://www.youtube.com/embed/VjJ2AAt4y18",
-      techStack: "Android Studio, Java, XML",
-    },
-    {
-      title: "Profile Card App",
-      description: "Displays photo, name, role & contact info. Built using Jetpack Compose.",
-      image: appImg,
-      link: "https://www.youtube.com/embed/XRSQHkzrQGQ",
-      techStack: "Jetpack Compose, Kotlin",
-    },
-  ];
+const mlProjects = [
+  {
+    title: "Object Detection on Railway Tracks",
+    description:
+      "YOLOv5x-based system with Gradio UI to detect obstacles on railway tracks. Includes bounding boxes, audio alerts & styled frontend.",
+    image: odImg,
+    link: "https://drive.google.com/file/d/19vF7PXVtDYfXBQa8ei3oKVotDplhPgdV/view?usp=sharing",
+    techStack: ["YOLOv5", "Gradio", "Python"]
+  },
+];
 
-  const mlProjects = [
-    {
-      title: "Object Detection on Railway Tracks",
-      description: "YOLOv5-based system with Gradio UI to detect obstacles on railway tracks.",
-      image: odImg,
-      link: "https://www.youtube.com/embed/0UoJSVM_XzY",
-      techStack: "Python, YOLOv5, Gradio",
-    },
-  ];
-
-  const webProjects = [
-    {
-      title: "Online Crime Reporting System",
-      description: "Submit complaints via a web interface with admin dashboard.",
-      image: onlinereportImg,
-      link: "https://www.youtube.com/embed/tgbNymZ7vqY",
-      techStack: "HTML, CSS, JS, PHP",
-    },
-    {
-      title: "College Website",
-      description: "College website showcasing departments and contact features.",
-      image: websiteImg,
-      link: "https://www.youtube.com/embed/bTqVqk7FSmY",
-      techStack: "HTML, CSS, JS",
-    },
-  ];
+const webProjects = [
+  {
+    title: "Online Crime Reporting System",
+    description:
+      "The Online Crime Reporting System allows users to submit complaints directly through a web interface built with HTML, CSS, and JavaScript...",
+    image: onlinereportImg,
+    link: "https://drive.google.com/file/d/1Xo3XrpmN6q95TWYKFYlpAjHuwqRfS6Oo/view?usp=sharing",
+    techStack: ["HTML", "CSS", "JavaScript"]
+  },
+  {
+    title: "College Website",
+    description:
+      "The college website gives a clear and simple view of what the college stands for...",
+    image: websiteImg,
+    link: "https://drive.google.com/file/d/1MxNQ7xJeDx8Cf0Idt0JrIqexDdSFM7Ie/view?usp=sharing",
+    techStack: ["HTML", "CSS", "JavaScript"]
+  },
+];
 
 const technicalSkills = [
   { name: "Pyhon", confidence: 90, icon: <FaPython /> },
@@ -223,6 +225,30 @@ function App() {
   const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+
+  const getIconForTech = (tech) => {
+    switch (tech.toLowerCase()) {
+      case "android sdk":
+      case "jetpack compose":
+      case "material design":
+      case "kotlin":
+        return <FaAndroid className="inline mr-2 text-green-400" />;
+      case "python":
+      case "gradio":
+      case "yolov5":
+        return <FaPython className="inline mr-2 text-yellow-400" />;
+      case "html":
+        return <FaHtml5 className="inline mr-2 text-orange-500" />;
+      case "css":
+      case "css3":
+        return <FaCss3Alt className="inline mr-2 text-blue-400" />;
+      case "javascript":
+        return <FaJsSquare className="inline mr-2 text-yellow-300" />;
+      default:
+        return null;
+    }
+  };
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -567,50 +593,65 @@ function App() {
 </section>
 
       {/* Projects */}
-      <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white p-4">
-      <h2 className="text-3xl font-bold text-green-400 mb-6 text-center">🚀 Projects</h2>
+     <div className="bg-gradient-to-b from-black via-gray-900 to-black min-h-screen text-white p-6">
+      {/* Projects Section */}
+      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+        <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
+        <ProjectSection
+          title="📱 Android Development Projects"
+          projects={androidProjects}
+          onSelect={setSelectedProject}
+        />
+        <ProjectSection
+          title="🧠 Machine Learning Projects"
+          projects={mlProjects}
+          onSelect={setSelectedProject}
+        />
+        <ProjectSection
+          title="🌐 Web Developing Projects"
+          projects={webProjects}
+          onSelect={setSelectedProject}
+        />
+      </section>
 
-      <ProjectSection
-        title="📱 Android Development Projects"
-        projects={androidProjects}
-        onSelect={setSelectedProject}
-      />
-      <ProjectSection
-        title="🧠 Machine Learning Projects"
-        projects={mlProjects}
-        onSelect={setSelectedProject}
-      />
-      <ProjectSection
-        title="🌐 Web Developing Projects"
-        projects={webProjects}
-        onSelect={setSelectedProject}
-      />
-
+      {/* Selected Project Details Container */}
       {selectedProject && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-8">
-          <div className="bg-gray-800 rounded-xl shadow-xl max-w-4xl w-full grid md:grid-cols-2 gap-6 p-6 relative">
-            <button
-              onClick={() => setSelectedProject(null)}
-              className="absolute top-2 right-4 text-white text-2xl font-bold hover:text-red-400"
-            >
-              &times;
-            </button>
-            <iframe
-              src={selectedProject.link}
-              title={selectedProject.title}
-              allowFullScreen
-              className="w-full h-64 md:h-full rounded-lg"
-            />
-            <div>
-              <h3 className="text-2xl font-bold text-green-300 mb-2">{selectedProject.title}</h3>
-              <p className="text-white opacity-80 mb-3">{selectedProject.description}</p>
-              <p className="text-sm text-gray-400"><span className="text-green-400">Tech Stack:</span> {selectedProject.techStack}</p>
+        <section className="bg-black bg-opacity-40 rounded-3xl p-6 shadow-inner mb-12">
+          <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex-1">
+              <iframe
+                src={selectedProject.link}
+                title="Project Video"
+                className="w-full h-64 md:h-96 rounded-xl border border-green-500"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="flex-1 space-y-4">
+              <h3 className="text-2xl font-bold text-green-300">
+                {selectedProject.title}
+              </h3>
+              <p className="text-green-100">{selectedProject.description}</p>
+              <div>
+                <span className="font-semibold text-green-200">Tech Stack:</span>
+                <ul className="mt-2 space-y-1">
+                  {selectedProject.techStack.map((tech, index) => (
+                    <li key={index} className="flex items-center gap-2 text-green-100">
+                      {getIconForTech(tech)} {tech}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="mt-4 px-4 py-2 bg-green-600 hover:bg-green-700 rounded-xl"
+              >
+                Close
+              </button>
             </div>
           </div>
-        </div>
+        </section>
       )}
     </div>
-
       {/* Contact */}
       <section className="bg-black bg-opacity-40 rounded-3xl p-8 shadow-lg mb-16 max-w-4xl mx-auto">
         <h2 className="text-3xl font-extrabold text-blue-400 mb-8 text-center">📬 Contact Me</h2>
