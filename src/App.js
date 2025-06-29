@@ -102,23 +102,23 @@ const achievements = [
   "Completed Full Stack Internship at ExcelR",
 ];
 
-const SkillCircle = ({ value, label }) => {
+const SkillCircle = ({ value, label, gradientId = "gradient", colorFrom = "#ff6ec4", colorTo = "#7873f5" }) => {
   return (
     <div className="flex flex-col items-center w-32">
       <div className="w-28 h-28">
         <CircularProgressbarWithChildren
           value={value}
           styles={buildStyles({
-            pathColor: 'url(#gradient)',
+            pathColor: `url(#${gradientId})`,
             trailColor: 'rgba(255, 255, 255, 0.1)',
             strokeLinecap: 'round',
           })}
         >
           <svg style={{ height: 0 }}>
             <defs>
-              <linearGradient id="gradient" gradientTransform="rotate(90)">
-                <stop offset="0%" stopColor="#ff6ec4" />
-                <stop offset="100%" stopColor="#7873f5" />
+              <linearGradient id={gradientId} gradientTransform="rotate(90)">
+                <stop offset="0%" stopColor={colorFrom} />
+                <stop offset="100%" stopColor={colorTo} />
               </linearGradient>
             </defs>
           </svg>
@@ -315,28 +315,41 @@ function App() {
         </div>
       </section>
 
-      {/* Skills */}
- <h2 className="text-3xl font-bold text-teal-300 mb-6 text-center">💼 Skills</h2>
+ <section id="skills" className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+  <h2 className="text-3xl font-bold text-teal-300 mb-6">💼 Skills</h2>
 
-{/* Technical Skills */}
-<div className="mb-8">
-  <h3 className="text-2xl font-semibold text-white mb-4 text-center">🛠 Technical Skills</h3>
-  <div className="flex flex-wrap gap-10 justify-center">
-    {technicalSkills.map((skill, index) => (
-      <SkillCircle key={`tech-${index}`} value={skill.confidence} label={skill.name} />
-    ))}
+  {/* Technical Skills */}
+  <div className="mb-10">
+    <h3 className="text-2xl font-semibold text-white mb-4">🛠 Technical Skills</h3>
+    <div className="flex flex-wrap gap-10 justify-start">
+      {technicalSkills.map((skill, index) => (
+        <SkillCircle
+          key={`tech-${index}`}
+          value={skill.confidence}
+          label={skill.name}
+          gradientId={`tech-gradient-${index}`}
+        />
+      ))}
+    </div>
   </div>
-</div>
 
-{/* Soft Skills */}
-<div>
-  <h3 className="text-2xl font-semibold text-pink-400 mb-4 text-center">🤝 Soft Skills</h3>
-  <div className="flex flex-wrap gap-10 justify-center">
-    {softSkills.map((skill, index) => (
-      <SkillCircle key={`soft-${index}`} value={100} label={skill.name} />
-    ))}
+  {/* Soft Skills */}
+  <div>
+    <h3 className="text-2xl font-semibold text-pink-400 mb-4">🤝 Soft Skills</h3>
+    <div className="flex flex-wrap gap-10 justify-start">
+      {softSkills.map((skill, index) => (
+        <SkillCircle
+          key={`soft-${index}`}
+          value={100}
+          label={skill.name}
+          gradientId={`soft-gradient-${index}`}
+          colorFrom="#ff69b4" // pink start
+          colorTo="#ffb6c1"   // light pink end
+        />
+      ))}
+    </div>
   </div>
-</div>
+</section>
 
 
 
