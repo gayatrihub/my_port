@@ -27,7 +27,6 @@ import {
 import { SiCplusplus } from "react-icons/si";
 import { FaUsers, FaLightbulb } from "react-icons/fa6";
 
-const [selectedProject, setSelectedProject] = useState(null);
 
   const androidProjects = [
     {
@@ -187,6 +186,7 @@ const SkillCircle = ({
     </div>
   );
 };
+const [selectedProject, setSelectedProject] = useState(null);
 
 const ProjectSection = ({ title, projects, onSelect }) => {
   return (
