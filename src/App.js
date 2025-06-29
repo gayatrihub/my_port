@@ -572,7 +572,7 @@ function App() {
 
       {/* Projects */}
       <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-        <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
+        <h2 className="text-3xl font-bold text-green-400 mb-6 text-center">🚀 Projects</h2>
         <ProjectSection title="📱 Android Development Projects" projects={androidProjects} />
         <ProjectSection title="🧠 Machine Learning Projects" projects={mlProjects} />
         <ProjectSection title="🌐 Web Developing Projects" projects={webProjects} />
