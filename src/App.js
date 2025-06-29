@@ -252,7 +252,7 @@ function App() {
 
   {/* 🖼 Actual Image with enhanced border and glow */}
   <img
-    src="/circle_profile.png"
+    src="circle_profile.png"
     alt="Gayatri"
     className="relative z-10 w-full h-full object-cover rounded-full border-[5px] border-white shadow-[0_0_35px_5px_rgba(255,255,255,0.25)] transition-transform duration-700 ease-in-out group-hover:scale-105"
   />
