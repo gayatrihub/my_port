@@ -102,6 +102,7 @@ const achievements = [
   "Completed Full Stack Internship at ExcelR",
 ];
 
+
 const SkillCircle = ({
   value,
   label,
@@ -112,17 +113,31 @@ const SkillCircle = ({
 }) => {
   return (
     <motion.div
-      whileHover={{ scale: 1.1, rotate: 2 }}
-      transition={{ type: "spring", stiffness: 300 }}
-      className="flex flex-col items-center w-32 cursor-pointer"
+      whileHover={{
+        scale: 1.15,
+        rotate: 3,
+        boxShadow: "0px 0px 20px rgba(255, 105, 180, 0.6)",
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 12,
+      }}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="flex flex-col items-center w-32 cursor-pointer hover:shadow-xl hover:shadow-pink-400/50 transition"
     >
-      <div className="w-28 h-28 transition-transform duration-300 ease-in-out">
+      <motion.div
+        className="w-28 h-28 rounded-full"
+        whileHover={{ rotate: 360 }}
+        transition={{ duration: 2, ease: "linear", repeat: Infinity }}
+      >
         <CircularProgressbarWithChildren
           value={value}
           styles={buildStyles({
             pathColor: `url(#${gradientId})`,
-            trailColor: 'rgba(255, 255, 255, 0.1)',
-            strokeLinecap: 'round',
+            trailColor: "rgba(255, 255, 255, 0.1)",
+            strokeLinecap: "round",
           })}
         >
           <svg style={{ height: 0 }}>
@@ -133,14 +148,26 @@ const SkillCircle = ({
               </linearGradient>
             </defs>
           </svg>
-
-          <div className="text-white text-3xl">{icon}</div>
+          <motion.div
+            className="text-white text-3xl"
+            whileHover={{ scale: 1.4, rotate: 10 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
+            {icon}
+          </motion.div>
         </CircularProgressbarWithChildren>
-      </div>
-      <div className="mt-2 text-white text-center text-sm font-medium">{label}</div>
+      </motion.div>
+      <motion.div
+        className="mt-2 text-white text-center text-sm font-semibold tracking-wide"
+        whileHover={{ scale: 1.1, color: "#ff69b4" }}
+      >
+        {label}
+      </motion.div>
     </motion.div>
   );
 };
+
+
 function ProjectSection({ title, projects }) {
   return (
     <div className="mb-12">
