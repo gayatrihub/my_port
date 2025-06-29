@@ -520,7 +520,6 @@ function App() {
 </section>
 
       {/* Achievements */}
-
 <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
   <h2 className="text-3xl font-bold text-yellow-400 mb-10 text-center">
     🏆 My Achievements
@@ -541,19 +540,28 @@ function App() {
         viewport={{ once: true }}
         className="group relative flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-2"
       >
-        {/* ⭐ Star Background */}
-        <div className="relative w-36 h-36 star-shape bg-yellow-300 shadow-lg animate-bounce-slow">
-          {/* ✨ Decorative glowing effect */}
-          <div className="absolute inset-0 bg-yellow-300 opacity-10 blur-xl animate-ping"></div>
-        </div>
+        {/* 🏆 Trophy SVG Container */}
+        <div className="relative w-36 h-36 flex items-center justify-center animate-bounce-slow">
+          <svg
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-full text-yellow-300"
+          >
+            <path
+              fill="currentColor"
+              d="M32 2C27.6 2 24 5.6 24 10V20C24 23.3 21.3 26 18 26H16C13.8 26 12 24.2 12 22V14C12 12.9 11.1 12 10 12S8 12.9 8 14V22C8 27.5 12.5 32 18 32C18 38.6 22.9 44 29 45.7V50H20C18.9 50 18 50.9 18 52S18.9 54 20 54H44C45.1 54 46 53.1 46 52S45.1 50 44 50H35V45.7C41.1 44 46 38.6 46 32C51.5 32 56 27.5 56 22V14C56 12.9 55.1 12 54 12S52 12.9 52 14V22C52 24.2 50.2 26 48 26H46C42.7 26 40 23.3 40 20V10C40 5.6 36.4 2 32 2Z"
+            />
+          </svg>
 
-        {/* 🔵 Circle Image Overlapping the Star */}
-        <div className="absolute top-1/2 left-1/2 w-20 h-20 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-black z-10 flex items-center justify-center shadow-md">
-          <img
-            src={ach.image}
-            alt={ach.title}
-            className="w-full h-full object-cover rounded-full"
-          />
+          {/* 🔵 Circular Image perfectly centered inside trophy */}
+          <div className="absolute w-16 h-16 rounded-full border-4 border-white bg-black z-10 flex items-center justify-center shadow-md">
+            <img
+              src={ach.image}
+              alt={ach.title}
+              className="w-full h-full object-cover rounded-full"
+            />
+          </div>
         </div>
 
         {/* 🏷️ Title */}
