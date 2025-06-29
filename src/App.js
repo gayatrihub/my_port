@@ -318,87 +318,81 @@ function App() {
 </section>
 
 
-<section className="p-10 rounded-3xl shadow-xl text-white mb-16 bg-black bg-opacity-30 relative overflow-hidden border border-white/10">
-  {/* Optional aesthetic blobs */}
-  <div className="absolute w-32 h-32 bg-purple-500 opacity-10 rounded-full blur-3xl top-10 left-10 animate-pulse" />
-  <div className="absolute w-24 h-24 bg-pink-400 opacity-10 rounded-full blur-2xl bottom-10 right-20 animate-ping" />
+<section className="relative bg-black bg-opacity-30 p-10 rounded-3xl shadow-2xl mb-16 text-white overflow-hidden border border-white/10">
+  {/* Animated floating blobs */}
+  <div className="absolute w-32 h-32 bg-pink-500 opacity-10 rounded-full blur-3xl top-5 left-10 animate-pulse" />
+  <div className="absolute w-24 h-24 bg-blue-400 opacity-10 rounded-full blur-2xl bottom-5 right-20 animate-ping" />
 
   <motion.div
-    className="relative flex flex-col md:flex-row justify-between items-center gap-10 z-10"
-    initial={{ opacity: 0, y: 60 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1 }}
+    className="flex flex-col md:flex-row items-center justify-between gap-12 z-10 relative"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={{
+      hidden: { opacity: 0, y: 50 },
+      visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.4 } },
+    }}
   >
-    {/* Left Text Section */}
+    {/* Text Section */}
     <div className="flex-1">
       <motion.h2
-        className="text-3xl font-bold text-white mb-6"
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.7 }}
+        className="text-4xl font-bold mb-6 tracking-wide"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
       >
         💫 About Me
       </motion.h2>
 
-      <motion.p
-        className="mb-4 text-lg leading-relaxed"
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-      >
-        I’m <span className="text-pink-400 font-semibold">Gayatri</span>, a passionate <span className="text-blue-400 font-semibold">Computer Science (AIML)</span> student who enjoys building user-focused tech with creativity.
-      </motion.p>
-
-      <motion.p
-        className="mb-4 text-lg leading-relaxed"
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.6, duration: 0.6 }}
-      >
-        My interests lie in <span className="text-teal-300 font-semibold">Android Development</span>, <span className="text-yellow-300 font-semibold">AI/ML</span>, and elegant UI design. I've developed multiple real-time apps and led sessions at <span className="text-purple-400 font-semibold">GDG Campus</span>.
-      </motion.p>
-
-      <motion.p
-        className="mb-4 text-lg leading-relaxed"
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.8, duration: 0.6 }}
-      >
-        I was a <span className="text-pink-400 font-semibold">Smart India Hackathon 2023 Finalist</span> and also selected for <span className="text-green-400 font-semibold">Tribal Welfare Hackathon</span> — solving real-world problems with my team.
-      </motion.p>
-
-      <motion.p
-        className="mb-4 text-lg leading-relaxed"
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1.0, duration: 0.6 }}
-      >
-        Beyond code, I’m also a <span className="text-pink-300 font-semibold">mandala artist</span> and enjoy expressing creativity through design & digital art.
-      </motion.p>
-
-      <motion.p
-        className="mb-4 text-lg leading-relaxed"
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-      >
-        My journey includes internships in <span className="text-orange-300 font-semibold">Full-Stack Development</span>, <span className="text-sky-300 font-semibold">Python & Networking</span>, and ongoing learning in the ever-evolving tech world.
-      </motion.p>
+      {[
+        "I’m ",
+        "<pink>Gayatri</pink>, a passionate <blue>Computer Science (AIML)</blue> student who blends logic with design.",
+        "I specialize in <teal>Android Development</teal> and <yellow>AI/ML</yellow>, and I’m proud to be part of <purple>GDG Campus</purple> as a developer.",
+        "Finalist at <pink>Smart India Hackathon 2023</pink> and selected for the <green>Tribal Welfare Hackathon</green>, I build solutions that matter.",
+        "I'm also a <pink>mandala artist</pink> and storyteller, turning creativity into code and canvas.",
+        "I’ve interned in <orange>Full-Stack Development</orange>, <sky>Python</sky>, and <sky>Networking</sky> — and I'm always learning!",
+      ].map((line, index) => (
+        <motion.p
+          key={index}
+          className="mb-4 text-lg leading-relaxed"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4 + index * 0.3 }}
+          dangerouslySetInnerHTML={{
+            __html: line
+              .replace(/<pink>(.*?)<\/pink>/g, '<span class="text-pink-400 font-semibold">$1</span>')
+              .replace(/<blue>(.*?)<\/blue>/g, '<span class="text-blue-400 font-semibold">$1</span>')
+              .replace(/<teal>(.*?)<\/teal>/g, '<span class="text-teal-300 font-semibold">$1</span>')
+              .replace(/<yellow>(.*?)<\/yellow>/g, '<span class="text-yellow-300 font-semibold">$1</span>')
+              .replace(/<purple>(.*?)<\/purple>/g, '<span class="text-purple-400 font-semibold">$1</span>')
+              .replace(/<green>(.*?)<\/green>/g, '<span class="text-green-400 font-semibold">$1</span>')
+              .replace(/<orange>(.*?)<\/orange>/g, '<span class="text-orange-300 font-semibold">$1</span>')
+              .replace(/<sky>(.*?)<\/sky>/g, '<span class="text-sky-300 font-semibold">$1</span>'),
+          }}
+        />
+      ))}
     </div>
 
-    {/* Right Photo Section */}
+    {/* Profile Image Section */}
     <motion.div
       className="md:w-[18rem] md:h-[24rem] w-52 h-64 rounded-3xl overflow-hidden border-4 border-white/10 shadow-xl"
-      initial={{ scale: 0.8, opacity: 0 }}
-      whileInView={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.8, delay: 0.5, type: "spring" }}
+      initial={{ scale: 0.7, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 1.2, delay: 0.8 }}
     >
       <motion.img
         src="profile2.jpg"
         alt="Gayatri"
         className="w-full h-full object-cover rounded-3xl"
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        animate={{
+          y: [0, -10, 0],
+          boxShadow: [
+            "0 0 0px rgba(255, 255, 255, 0.2)",
+            "0 0 25px rgba(255, 105, 180, 0.5)",
+            "0 0 0px rgba(255, 255, 255, 0.2)",
+          ],
+        }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
     </motion.div>
   </motion.div>
