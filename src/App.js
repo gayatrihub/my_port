@@ -500,22 +500,48 @@ function App() {
   </div>
 </section>
 
-
-
-
-
-
       {/* Achievements */}
-      <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-        <h2 className="text-3xl font-bold text-yellow-400 mb-6">🏆 Achievements</h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {achievements.map((ach, i) => (
-            <div key={i} className="flex items-start gap-3 p-4 bg-yellow-900 bg-opacity-30 text-yellow-100 rounded-xl hover:bg-yellow-800 hover:bg-opacity-50 transition shadow-sm">
-              <FaTrophy className="text-yellow-300 mt-1" /><span className="text-lg">{ach}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+<section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+  <h2 className="text-3xl font-bold text-yellow-400 mb-6">🏆 Achievements</h2>
+
+  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {achievements.map((ach, i) => (
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: i * 0.1 }}
+        viewport={{ once: true }}
+        className="group relative flex flex-col items-center text-center p-5 bg-gradient-to-br from-yellow-900/30 to-yellow-800/20 rounded-2xl shadow-lg hover:shadow-yellow-500/30 transition duration-300 overflow-hidden"
+      >
+        {/* 🌟 Animated Image */}
+        <motion.img
+          src={ach.image}
+          alt={ach.title}
+          className="w-16 h-16 object-contain mb-4 rounded-full drop-shadow-xl border-2 border-yellow-300 group-hover:scale-110"
+          animate={{
+            y: [0, -6, 0],
+            rotate: [0, 1, -1, 0],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* 🏅 Achievement Title */}
+        <span className="text-yellow-100 text-lg font-semibold group-hover:text-white transition-all duration-300">
+          {ach.title}
+        </span>
+
+        {/* 🎆 Optional Glow Background Element */}
+        <div className="absolute w-20 h-20 bg-yellow-400 rounded-full blur-3xl opacity-10 animate-ping bottom-[-1rem] right-[-1rem]"></div>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
 
       {/* Projects */}
       <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
