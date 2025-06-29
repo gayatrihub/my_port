@@ -594,30 +594,32 @@ function App() {
 </section>
 
       {/* Projects */}
-     <div className="bg-gradient-to-b from-black via-gray-900 to-black min-h-screen text-white p-6">
+      <div className="bg-gradient-to-b from-black via-gray-900 to-black min-h-screen text-white p-6">
       {/* Projects Section */}
       <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
         <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
-        <ProjectSection
-          title="📱 Android Development Projects"
-          projects={androidProjects}
-          onSelect={setSelectedProject}
-        />
-        <ProjectSection
-          title="🧠 Machine Learning Projects"
-          projects={mlProjects}
-          onSelect={setSelectedProject}
-        />
-        <ProjectSection
-          title="🌐 Web Developing Projects"
-          projects={webProjects}
-          onSelect={setSelectedProject}
-        />
+        <div className="bg-white/5 p-4 rounded-2xl">
+          <ProjectSection
+            title="📱 Android Development Projects"
+            projects={androidProjects}
+            onSelect={setSelectedProject}
+          />
+          <ProjectSection
+            title="🧠 Machine Learning Projects"
+            projects={mlProjects}
+            onSelect={setSelectedProject}
+          />
+          <ProjectSection
+            title="🌐 Web Developing Projects"
+            projects={webProjects}
+            onSelect={setSelectedProject}
+          />
+        </div>
       </section>
 
       {/* Selected Project Details Container */}
       {selectedProject && (
-        <section className="bg-black bg-opacity-40 rounded-3xl p-6 shadow-inner mb-12">
+        <section className="bg-white/5 backdrop-blur-md rounded-3xl p-6 shadow-inner mb-12">
           <div className="flex flex-col md:flex-row gap-6">
             <div className="flex-1">
               <iframe
