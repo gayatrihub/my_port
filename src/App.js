@@ -528,40 +528,67 @@ function App() {
     {achievements.map((ach, i) => (
   <motion.div
     key={i}
-    initial={{ opacity: 0, y: 30 }}
+    initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: i * 0.15 }}
+    transition={{ delay: i * 0.2, type: "spring", stiffness: 60 }}
     viewport={{ once: true }}
-    className="group relative rounded-2xl shadow-lg overflow-hidden border border-yellow-400/10 backdrop-blur-md hover:shadow-yellow-400/40 transition-all duration-500"
+    className="group relative bg-gradient-to-br from-yellow-800/30 to-yellow-600/10 rounded-2xl shadow-xl hover:shadow-yellow-400/40 p-6 flex flex-col items-center justify-center text-center border border-yellow-400/10 backdrop-blur-md overflow-hidden transition-all duration-500 transform hover:-translate-y-2"
   >
-    {/* 🔄 Background Glow Animation */}
-    <div className="absolute inset-0 w-full h-full bg-yellow-200 opacity-10 blur-3xl animate-pulse z-0" />
+    {/* ✨ Background Glow Effects */}
+    <div className="absolute w-32 h-32 bg-yellow-300 opacity-10 rounded-full blur-3xl animate-ping -top-6 -right-6 z-0" />
+    <div className="absolute w-20 h-20 bg-yellow-500 opacity-10 rounded-full blur-2xl animate-pulse bottom-0 left-0 z-0" />
 
-    {/* 🖼️ Full Background Image */}
-    <motion.img
-      src={ach.image}
-      alt={ach.title}
-      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
-      animate={{
-        scale: [1, 1.02, 1],
-      }}
-      transition={{
-        duration: 5,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    />
-
-    {/* 📝 Title Section */}
-    <div className="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/70 to-transparent text-yellow-100 font-semibold text-lg text-center backdrop-blur-sm group-hover:text-white transition duration-300">
-      {ach.title}
+    {/* 🖼️ Achievement Image with Glow Border */}
+    <div className="relative z-10">
+      <motion.div
+        className="rounded-full p-1 bg-gradient-to-r from-yellow-400 via-pink-300 to-yellow-300 shadow-lg group-hover:scale-110 transition-transform duration-500"
+        animate={{
+          scale: [1, 1.05, 1],
+          rotate: [0, 1, -1, 0],
+        }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <img
+          src={ach.image}
+          alt={ach.title}
+          className="w-20 h-20 object-contain rounded-full border-4 border-yellow-400"
+        />
+      </motion.div>
     </div>
 
-    {/* 🌟 Top Left Glow */}
-    <div className="absolute w-24 h-24 bg-yellow-300 opacity-20 rounded-full blur-2xl -top-5 -left-5 animate-ping" />
+    {/* ✍️ Title with animation */}
+    <motion.div
+      className="mt-4 text-yellow-100 font-semibold text-lg leading-snug group-hover:text-white transition duration-300 z-10"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: i * 0.3 + 0.3, duration: 0.5 }}
+    >
+      {ach.title}
+    </motion.div>
 
-    {/* 🌟 Bottom Glow */}
-    <div className="absolute bottom-[-2rem] left-1/2 transform -translate-x-1/2 w-24 h-24 bg-yellow-500 opacity-10 rounded-full blur-3xl animate-pulse" />
+    {/* ✨ Decorative Shimmer Border */}
+    <div className="absolute inset-0 rounded-2xl border-2 border-yellow-100/5 animate-border-glow" />
+
+    {/* Custom shimmer animation */}
+    <style>
+      {`
+        @keyframes shimmer {
+          0% {
+            border-color: rgba(255, 255, 255, 0.05);
+          }
+          50% {
+            border-color: rgba(255, 255, 255, 0.2);
+          }
+          100% {
+            border-color: rgba(255, 255, 255, 0.05);
+          }
+        }
+
+        .animate-border-glow {
+          animation: shimmer 4s infinite;
+        }
+      `}
+    </style>
   </motion.div>
 ))}
 
