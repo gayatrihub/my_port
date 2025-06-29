@@ -102,22 +102,33 @@ const achievements = [
 ];
 
 
-
 const SkillCircle = ({
   value,
   label,
   icon,
   gradientId = "gradient",
-  colorFrom = "#ff6ec4",
-  colorTo = "#7873f5",
+  colorFrom = "#38bdf8", // Tailwind's sky-400
+  colorTo = "#0ea5e9",   // Tailwind's sky-500
+  glowColor = "sky" // 'sky' or 'pink'
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const getGlowStyle = () => {
+    switch (glowColor) {
+      case "pink":
+        return "shadow-[0_0_30px_8px_rgba(255,105,180,0.8)]";
+      case "sky":
+        return "shadow-[0_0_30px_8px_rgba(56,189,248,0.9)]"; // sky blue glow
+      default:
+        return "shadow-[0_0_30px_8px_rgba(255,255,255,0.9)]";
+    }
+  };
 
   return (
     <div className="flex flex-col items-center w-32">
       <div
         className={`w-28 h-28 rounded-full transition duration-500 ${
-          isHovered ? "animate-spin-slow shadow-[0_0_20px_5px_rgba(255,255,255,0.4)]" : ""
+          isHovered ? `animate-spin-slow ${getGlowStyle()}` : ""
         }`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -344,6 +355,7 @@ function App() {
     label={skill.name}
     icon={skill.icon} // <- add this
     gradientId={`tech-gradient-${index}`}
+     glowColor="sky" 
   />
 ))}
     </div>
@@ -362,6 +374,7 @@ function App() {
     gradientId={`soft-gradient-${index}`}
     colorFrom="#ff69b4"
     colorTo="#ffb6c1"
+    glowColor="pink" 
   />
 ))}
     </div>
