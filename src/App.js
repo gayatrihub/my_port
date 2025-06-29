@@ -520,41 +520,46 @@ function App() {
       {/* Achievements */}
 
 <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
-  <h2 className="text-3xl font-bold text-yellow-400 mb-6">🏆 Achievements</h2>
+  <h2 className="text-3xl font-bold text-yellow-400 mb-10 text-center">
+    🏆 My Achievements
+  </h2>
 
-  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
     {achievements.map((ach, i) => (
       <motion.div
         key={i}
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: i * 0.1 }}
+        transition={{ delay: i * 0.15 }}
         viewport={{ once: true }}
-        className="group relative flex flex-col items-center text-center p-5 bg-gradient-to-br from-yellow-900/30 to-yellow-800/20 rounded-2xl shadow-lg hover:shadow-yellow-500/30 transition duration-300 overflow-hidden"
+        className="group relative bg-gradient-to-br from-yellow-800/30 to-yellow-600/10 rounded-2xl shadow-xl hover:shadow-yellow-400/40 p-6 flex flex-col items-center justify-center text-center border border-yellow-400/10 backdrop-blur-sm overflow-hidden transition-all duration-300"
       >
-        {/* ✨ Animated Achievement Image */}
+        {/* 🔄 Animated Glow Circle */}
+        <div className="absolute w-40 h-40 bg-yellow-300 opacity-10 rounded-full blur-3xl animate-ping -top-5 -right-5"></div>
+
+        {/* 🖼️ Achievement Image */}
         <motion.img
           src={ach.image}
           alt={ach.title}
-          className="w-16 h-16 object-contain mb-4 rounded-full border-2 border-yellow-400 drop-shadow-md group-hover:scale-110 transition duration-300"
+          className="w-20 h-20 object-contain rounded-full border-4 border-yellow-400 shadow-lg group-hover:scale-110 transition-transform duration-500"
           animate={{
             y: [0, -4, 0],
             rotate: [0, 1, -1, 0],
           }}
           transition={{
-            duration: 3,
+            duration: 4,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
 
-        {/* 🏅 Title Text */}
-        <span className="text-yellow-100 text-lg font-semibold group-hover:text-white transition">
+        {/* ✍️ Achievement Title */}
+        <div className="mt-4 text-yellow-100 font-semibold text-lg leading-snug group-hover:text-white transition duration-300">
           {ach.title}
-        </span>
+        </div>
 
-        {/* 🌟 Optional Glow Ping Effect */}
-        <div className="absolute w-20 h-20 bg-yellow-400 rounded-full blur-3xl opacity-10 animate-ping bottom-[-1rem] right-[-1rem]"></div>
+        {/* ✨ Bottom Glow */}
+        <div className="absolute bottom-[-2rem] left-1/2 transform -translate-x-1/2 w-24 h-24 bg-yellow-500 opacity-10 rounded-full blur-3xl animate-pulse" />
       </motion.div>
     ))}
   </div>
