@@ -254,7 +254,7 @@ function App() {
   {/* 🌈 Inner circular image with slight scale on hover */}
   <div className="relative z-10 w-full h-full rounded-full overflow-hidden border-4 border-transparent group-hover:scale-105 transition-transform duration-500">
     <img
-      src="/circle_profile.png"
+      src="circle_profile.png"
       alt="Gayatri"
       className="w-full h-full object-cover rounded-full shadow-[0_0_80px_rgba(255,192,203,0.2)]"
     />
@@ -263,7 +263,7 @@ function App() {
   {/* ✨ Caption below image */}
   <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 text-lg font-bold tracking-wide animate-fade-in-up">
     <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-      Gayatri 👩‍💻
+      
     </span>
   </div>
 </div>
