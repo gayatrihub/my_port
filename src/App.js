@@ -41,7 +41,6 @@ const androidProjects = [
     link: "https://drive.google.com/file/d/1Xl_5E3abL-aCGYMKWLI5WFfa5hDy7FcW/view?usp=sharing",
   },
 ];
-
 const mlProjects = [
   {
     title: "Object Detection on Railway Tracks",
