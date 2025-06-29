@@ -541,10 +541,10 @@ function App() {
         viewport={{ once: true }}
         className="group relative flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-2"
       >
-        {/* ⭐ Star-Shaped Achievement Container */}
-        <div className="relative w-32 h-32 md:w-36 md:h-36 bg-yellow-300 star-shape shadow-lg flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-500 animate-bounce-slow">
+        {/* ⭐ Star Container */}
+        <div className="relative w-36 h-36 bg-yellow-300 star-shape shadow-lg flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-500 animate-bounce-slow">
           {/* 🔵 Circular Image Inside Star */}
-          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-white bg-black flex items-center justify-center overflow-hidden shadow-md z-10">
+          <div className="w-20 h-20 rounded-full border-4 border-white bg-black flex items-center justify-center overflow-hidden shadow-md z-10">
             <img
               src={ach.image}
               alt={ach.title}
@@ -563,7 +563,7 @@ function App() {
           {ach.title}
         </motion.div>
 
-        {/* ✨ Glow Backgrounds */}
+        {/* ✨ Glows */}
         <div className="absolute w-24 h-24 bg-yellow-300 opacity-10 rounded-full blur-3xl animate-ping -top-4 -right-4 z-0" />
         <div className="absolute w-16 h-16 bg-yellow-500 opacity-10 rounded-full blur-2xl animate-pulse bottom-0 left-0 z-0" />
       </motion.div>
