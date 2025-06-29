@@ -319,10 +319,9 @@ function App() {
 
 
 <section className="p-10 rounded-3xl shadow-xl text-white mb-16 bg-black bg-opacity-30 relative overflow-hidden border border-white/10">
-  {/* Floating colored blobs (very subtle) */}
+  {/* Optional aesthetic blobs */}
   <div className="absolute w-32 h-32 bg-purple-500 opacity-10 rounded-full blur-3xl top-10 left-10 animate-pulse" />
-  <div className="absolute w-24 h-24 bg-blue-300 opacity-10 rounded-full blur-2xl bottom-10 right-20 animate-ping" />
-  <div className="absolute w-40 h-40 bg-pink-400 opacity-10 rounded-full blur-2xl bottom-0 left-1/2 animate-pulse" />
+  <div className="absolute w-24 h-24 bg-pink-400 opacity-10 rounded-full blur-2xl bottom-10 right-20 animate-ping" />
 
   <motion.div
     className="relative flex flex-col md:flex-row justify-between items-center gap-10 z-10"
@@ -330,7 +329,7 @@ function App() {
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 1 }}
   >
-    {/* Left: Colorful Animated Text */}
+    {/* Left Text Section */}
     <div className="flex-1">
       <motion.h2
         className="text-3xl font-bold text-white mb-6"
@@ -342,43 +341,52 @@ function App() {
       </motion.h2>
 
       <motion.p
-        className="mb-4 text-lg text-pink-300 leading-relaxed"
+        className="mb-4 text-lg leading-relaxed"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
       >
-        Hi, I’m Gayatri — a Computer Science (AIML) student passionate about technology, design, and innovation.
+        I’m <span className="text-pink-400 font-semibold">Gayatri</span>, a passionate <span className="text-blue-400 font-semibold">Computer Science (AIML)</span> student who enjoys building user-focused tech with creativity.
       </motion.p>
 
       <motion.p
-        className="mb-4 text-lg text-blue-300 leading-relaxed"
+        className="mb-4 text-lg leading-relaxed"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
       >
-        I enjoy building intuitive Android apps, exploring machine learning, and creating meaningful digital experiences.
+        My interests lie in <span className="text-teal-300 font-semibold">Android Development</span>, <span className="text-yellow-300 font-semibold">AI/ML</span>, and elegant UI design. I've developed multiple real-time apps and led sessions at <span className="text-purple-400 font-semibold">GDG Campus</span>.
       </motion.p>
 
       <motion.p
-        className="mb-4 text-lg text-teal-300 leading-relaxed"
+        className="mb-4 text-lg leading-relaxed"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.8, duration: 0.6 }}
       >
-        As a core GDG campus member and Android Developer, I’ve led tech workshops and mentored fellow students.
+        I was a <span className="text-pink-400 font-semibold">Smart India Hackathon 2023 Finalist</span> and also selected for <span className="text-green-400 font-semibold">Tribal Welfare Hackathon</span> — solving real-world problems with my team.
       </motion.p>
 
       <motion.p
-        className="mb-4 text-lg text-yellow-300 leading-relaxed"
+        className="mb-4 text-lg leading-relaxed"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.0, duration: 0.6 }}
       >
-        I'm also a mandala art lover and visual storyteller, blending creativity with logic in both code and design.
+        Beyond code, I’m also a <span className="text-pink-300 font-semibold">mandala artist</span> and enjoy expressing creativity through design & digital art.
+      </motion.p>
+
+      <motion.p
+        className="mb-4 text-lg leading-relaxed"
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+      >
+        My journey includes internships in <span className="text-orange-300 font-semibold">Full-Stack Development</span>, <span className="text-sky-300 font-semibold">Python & Networking</span>, and ongoing learning in the ever-evolving tech world.
       </motion.p>
     </div>
 
-    {/* Right: Animated Profile Photo */}
+    {/* Right Photo Section */}
     <motion.div
       className="md:w-[18rem] md:h-[24rem] w-52 h-64 rounded-3xl overflow-hidden border-4 border-white/10 shadow-xl"
       initial={{ scale: 0.8, opacity: 0 }}
@@ -390,7 +398,7 @@ function App() {
         alt="Gayatri"
         className="w-full h-full object-cover rounded-3xl"
         animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />
     </motion.div>
   </motion.div>
