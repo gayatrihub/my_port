@@ -103,6 +103,9 @@ const achievements = [
     title: "Team selected for Smart India Hackathon Finale",
     image: process.env.PUBLIC_URL + "/images/sih.png"
   },
+  { title: "Top 5 in Tribal Welfare Hackathon", 
+   image: process.env.PUBLIC_URL + "/images/hack.png"
+  },
   {
     title: "Android Developer at GDG On Campus",
     image: process.env.PUBLIC_URL + "/images/android.png"
