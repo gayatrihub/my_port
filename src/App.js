@@ -522,56 +522,48 @@ function App() {
 
       {/* Achievements */}
 
-<section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+<<section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
   <h2 className="text-3xl font-bold text-yellow-400 mb-10 text-center">
     🏆 My Achievements
   </h2>
 
   <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
-   {achievements.map((ach, i) => (
-  <motion.div
-    key={i}
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: i * 0.2, type: "spring", stiffness: 60 }}
-    viewport={{ once: true }}
-    className="group relative flex flex-col items-center justify-center text-center transition-all duration-500 transform hover:-translate-y-2"
-  >
-    {/* ✨ Glowing Ring Container */}
-    <div className="relative w-40 h-40 rounded-full bg-black bg-opacity-30 border-2 border-yellow-400/20 shadow-inner overflow-hidden flex items-center justify-center">
-      {/* 🎨 Outer Glow */}
+    {achievements.map((ach, i) => (
       <motion.div
-        className="absolute inset-0 rounded-full p-[3px] bg-gradient-to-tr from-yellow-400 via-pink-300 to-yellow-200 animate-spin-slow group-hover:scale-110 transition-transform duration-500"
+        key={i}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: i * 0.2, type: "spring", stiffness: 60 }}
+        viewport={{ once: true }}
+        className="group relative flex flex-col items-center justify-center text-center transition-all duration-500 transform hover:-translate-y-2"
       >
-        <div className="w-full h-full rounded-full bg-black bg-opacity-60 backdrop-blur-md" />
+        {/* 🔷 Hexagon Achievement Container */}
+        <div className="relative w-40 h-44 bg-yellow-300 hexagon-shape shadow-xl flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-500">
+          <img
+            src={ach.image}
+            alt={ach.title}
+            className="w-20 h-20 object-contain z-10"
+          />
+        </div>
+
+        {/* 🏷️ Title */}
+        <motion.div
+          className="mt-4 text-yellow-100 font-semibold text-center text-lg leading-tight group-hover:text-white transition duration-300 z-10"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.3 + 0.3, duration: 0.5 }}
+        >
+          {ach.title}
+        </motion.div>
+
+        {/* 🌟 Background Glows */}
+        <div className="absolute w-28 h-28 bg-yellow-300 opacity-10 rounded-full blur-3xl animate-ping -top-6 -right-6 z-0" />
+        <div className="absolute w-20 h-20 bg-yellow-500 opacity-10 rounded-full blur-2xl animate-pulse bottom-0 left-0 z-0" />
       </motion.div>
-
-      {/* 🖼️ Inner Circular Image */}
-      <img
-        src={ach.image}
-        alt={ach.title}
-        className="relative z-10 w-24 h-24 object-cover rounded-full border-4 border-yellow-400 shadow-md group-hover:scale-105 transition-transform duration-500"
-      />
-    </div>
-
-    {/* 🏷️ Title */}
-    <motion.div
-      className="mt-4 text-yellow-100 font-semibold text-center text-lg leading-tight group-hover:text-white transition duration-300 z-10"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: i * 0.3 + 0.3, duration: 0.5 }}
-    >
-      {ach.title}
-    </motion.div>
-
-    {/* 🌟 Background Blobs (optional extras) */}
-    <div className="absolute w-32 h-32 bg-yellow-300 opacity-10 rounded-full blur-3xl animate-ping -top-6 -right-6 z-0" />
-    <div className="absolute w-20 h-20 bg-yellow-500 opacity-10 rounded-full blur-2xl animate-pulse bottom-0 left-0 z-0" />
-  </motion.div>
-))}
-
+    ))}
   </div>
 </section>
+
       {/* Projects */}
       <section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
         <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Projects</h2>
