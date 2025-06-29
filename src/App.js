@@ -521,7 +521,7 @@ function App() {
 
       {/* Achievements */}
 
-<<section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
+<section className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
   <h2 className="text-3xl font-bold text-yellow-400 mb-10 text-center">
     🏆 My Achievements
   </h2>
