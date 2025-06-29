@@ -186,7 +186,7 @@ const SkillCircle = ({
     </div>
   );
 };
-const [selectedProject, setSelectedProject] = useState(null);
+
 
 const ProjectSection = ({ title, projects, onSelect }) => {
   return (
@@ -222,6 +222,7 @@ const ProjectSection = ({ title, projects, onSelect }) => {
 function App() {
   const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
