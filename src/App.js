@@ -51,7 +51,7 @@ const mlProjects = [
     description:
       "YOLOv5x-based system with Gradio UI to detect obstacles on railway tracks. Includes bounding boxes, audio alerts & styled frontend.",
     image: odImg,
-    video: process.env.PUBLIC_URL +"railway_yolo.mp4",
+    video: "/videos/railway_yolo.mp4",
     techStack: ["YOLOv5", "Gradio", "Python"]
   },
 ];
