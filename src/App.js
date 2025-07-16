@@ -70,7 +70,7 @@ const webProjects = [
     description:
       "The college website gives a clear and simple view of what the college stands for...",
     image: websiteImg,
-    link:"https://drive.google.com/file/d/1MxNQ7xJeDx8Cf0Idt0JrIqexDdSFM7Ie/view?usp=sharing",
+    link:"https://drive.google.com/file/d/1HT6FA8YD67Vgd6derx40yyLitkS7p17d/view?usp=sharing",
     techStack: ["HTML", "CSS", "JavaScript"]
   },
 ];
