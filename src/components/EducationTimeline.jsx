@@ -38,16 +38,17 @@ const EducationTimeline = () => {
           'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif',
       }}
     >
-      <motion.h2
+      <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl font-bold text-white mb-12 text-center"
+        className="flex justify-center items-center mb-12 gap-3"
       >
-        🎓 Education
-      </motion.h2>
+        <span className="text-4xl">🎓</span>
+        <h2 className="text-4xl font-bold text-white">Education</h2>
+      </motion.div>
 
-      <div className="bg-white/10 backdrop-blur-xl p-8 rounded-2xl border border-white/20 max-w-6xl mx-auto">
+      <div className="bg-white/10 p-10 rounded-2xl border border-white/20 max-w-7xl mx-auto">
         <div className="relative pl-12">
           {/* Vertical line on left */}
           <div className="absolute top-0 bottom-0 left-6 w-1 bg-white/30 rounded-full"></div>
@@ -59,7 +60,7 @@ const EducationTimeline = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="relative pl-14 py-6 mb-10 bg-white/10 border border-white/20 rounded-2xl shadow-lg backdrop-blur-md max-w-4xl"
+              className="relative pl-14 py-6 mb-10 bg-white/10 border border-white/20 rounded-2xl shadow-lg max-w-5xl"
             >
               {/* Dot and icon */}
               <div className="absolute left-4 top-8">
