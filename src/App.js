@@ -285,10 +285,11 @@ function App() {
     <ul className="flex flex-wrap gap-6 text-white font-medium text-lg">
       <li><a href="#hero" className="hover:text-pink-400">Home</a></li>
       <li><a href="#about" className="hover:text-pink-400">About Me</a></li>
+      <li><a href="#education" className="hover:text-green-400 transition">Education</a></li>
       <li><a href="#skills" className="hover:text-pink-400">Skills</a></li>
       <li><a href="#achievements" className="hover:text-pink-400">Achievements</a></li>
       <li><a href="#projects" className="hover:text-pink-400">Projects</a></li>
-      <li><a href="#education" className="hover:text-green-400 transition">Education</a></li>
+      
     </ul>
     <a href="#contact" className="mt-4 sm:mt-0 bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-bold py-2 px-4 rounded-full shadow hover:opacity-90 transition">
       Connect With Me
@@ -311,7 +312,7 @@ function App() {
       className="w-full h-full object-cover rounded-full shadow-[0_0_80px_rgba(255,192,203,0.2)]"
     />
   </div>
-   <EducationTimeline />
+  
   {/* ✨ Caption below image */}
   <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 text-lg font-bold tracking-wide animate-fade-in-up">
     <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
@@ -394,7 +395,7 @@ function App() {
       Years as Class Representative
     </p>
   </div>
-
+    <EducationTimeline /> 
   {/* Hackathons */}
   <div className="border-r border-gray-600 px-4">
     <h3 className="text-5xl font-extrabold bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 bg-clip-text text-transparent animate-pulse">
