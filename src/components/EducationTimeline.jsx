@@ -32,21 +32,21 @@ const educationData = [
 const EducationTimeline = () => {
   return (
     <section
-      className="min-h-screen py-16 px-4 sm:px-10 flex justify-center items-center"
+      className="min-h-screen py-16 px-4 sm:px-10 flex justify-center items-center bg-transparent"
       style={{
         fontFamily:
           'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif',
       }}
     >
       <motion.div
-        className="bg-white/10 w-full max-w-7xl rounded-2xl border border-white/20 p-10 shadow-lg"
+        className="w-full max-w-[90rem] p-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        {/* Title inside container */}
+        {/* Title */}
         <motion.div
-          className="flex items-center gap-3 mb-10"
+          className="flex items-center gap-4 mb-12"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -57,7 +57,7 @@ const EducationTimeline = () => {
 
         <div className="relative pl-12">
           {/* Vertical line on left */}
-          <div className="absolute top-0 bottom-0 left-6 w-1 bg-white/30 rounded-full"></div>
+          <div className="absolute top-0 bottom-0 left-6 w-1 bg-purple-500/50 rounded-full"></div>
 
           {educationData.map((edu, index) => (
             <motion.div
@@ -66,11 +66,11 @@ const EducationTimeline = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="relative pl-14 py-6 mb-10 bg-white/10 border border-white/20 rounded-2xl shadow-md max-w-5xl"
+              className="relative pl-14 py-6 mb-10 border-l-4 border-purple-400 max-w-6xl"
             >
               {/* Dot and icon */}
               <div className="absolute left-4 top-8">
-                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white/20 border border-white/30 shadow-md">
+                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-purple-700/30">
                   {edu.icon}
                 </div>
               </div>
