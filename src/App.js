@@ -395,7 +395,7 @@ function App() {
       Years as Class Representative
     </p>
   </div>
-    <EducationTimeline /> 
+    
   {/* Hackathons */}
   <div className="border-r border-gray-600 px-4">
     <h3 className="text-5xl font-extrabold bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 bg-clip-text text-transparent animate-pulse">
@@ -511,7 +511,7 @@ function App() {
 </section>
 
 
-
+<EducationTimeline /> 
 
  <section id="skills" className="bg-black bg-opacity-30 rounded-3xl p-6 shadow-md mb-12">
   <h2 className="text-3xl font-bold text-teal-300 mb-6">💼 Skills</h2>
