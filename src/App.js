@@ -27,6 +27,7 @@ import {
 } from "react-icons/fa";
 import { SiCplusplus } from "react-icons/si";
 import { FaUsers, FaLightbulb } from "react-icons/fa6";
+import EducationTimeline from "./components/EducationTimeline";
 
 const androidProjects = [
 {
