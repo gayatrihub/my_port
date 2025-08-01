@@ -272,7 +272,7 @@ function App() {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center bg-fixed p-6 font-sans"
+      className="min-h-screen bg-cover bg-center bg-fixed p-6 font-sans filter brightness-75"
       style={{ backgroundImage: "url('bg2.jpg')" }}
   >
 
