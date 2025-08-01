@@ -8,41 +8,43 @@ const educationData = [
     duration: "2022 - 2026",
     description:
       "Specialized in Artificial Intelligence and Machine Learning. Engaged in research, Android development, and real-world projects.",
-    icon: <FaUniversity className="text-purple-400 text-xl" />,
+    icon: <FaUniversity className="text-purple-400 text-2xl" />,
   },
   {
     title: "Intermediate (MPC)",
     institution: "Sri Chaitanya Jr College (Sai Soudha Campus)",
     duration: "2020 - 2022",
     description:
-      "Studied MPC with strong emphasis on IIT-level Physics and Vedic Math. Developed strong analytical and problem-solving skills. School projects were appreciated by faculty.",
-    icon: <FaUserGraduate className="text-yellow-400 text-xl" />,
+      "Excelled in Mathematics, Physics, and Chemistry. Built strong fundamentals in IIT-level Math and Physics. Developed mini-projects that were well appreciated.",
+    icon: <FaUserGraduate className="text-yellow-400 text-2xl" />,
   },
   {
     title: "SSC",
     institution: "Stella Maris School",
     duration: "2020",
     description:
-      "Completed 10th with distinction. Participated in Olympiads and science fairs. Excelled in Vedic Mathematics and received praise for school-level technical projects.",
-    icon: <FaSchool className="text-green-400 text-xl" />,
+      "Achieved top grades with distinction. Participated in Vedic Math and school-level science fairs. Awarded for creativity in school projects.",
+    icon: <FaSchool className="text-green-400 text-2xl" />,
   },
 ];
 
-const Education = () => {
+const EducationSection = () => {
   return (
-    <div className="outerContainer mx-auto w-[90%] md:w-[80%] lg:w-[70%] py-10 pb-20">
-      <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Education</h2>
-      <div className="space-y-6">
-        {educationData.map((item, index) => (
+    <div className="outerContainer mx-auto w-[90%] md:w-[80%] lg:w-[70%] py-10">
+      <h2 className="text-3xl font-bold mb-8 text-center text-purple-600">Education</h2>
+
+      <div className="grid gap-6">
+        {educationData.map((edu, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-300 flex items-start gap-4 hover:shadow-xl transition"
+            className="bg-white shadow-lg rounded-2xl p-6 flex items-start gap-5 transition-transform hover:scale-105"
           >
-            <div className="mt-1">{item.icon}</div>
+            <div>{edu.icon}</div>
             <div>
-              <h3 className="text-xl font-semibold text-blue-600">{item.title}</h3>
-              <p className="text-sm text-gray-500">{item.institution} | {item.duration}</p>
-              <p className="mt-2 text-gray-700">{item.description}</p>
+              <h3 className="text-xl font-semibold text-gray-800">{edu.title}</h3>
+              <p className="text-sm text-gray-600 font-medium">{edu.institution}</p>
+              <p className="text-xs text-gray-500 italic mb-2">{edu.duration}</p>
+              <p className="text-gray-700 text-sm">{edu.description}</p>
             </div>
           </div>
         ))}
@@ -51,4 +53,4 @@ const Education = () => {
   );
 };
 
-export default Education;
+export default EducationSection;
