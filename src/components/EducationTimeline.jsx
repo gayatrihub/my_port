@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-
 const educationData = [
   {
     degree: "B.Tech in CSE (AI & ML)",
