@@ -31,7 +31,7 @@ const educationData = [
 
 const EducationTimeline = () => {
   return (
-    <section className="min-h-screen py-16 px-4 sm:px-10">
+    <section className="min-h-screen py-16 px-4 sm:px-10 font-[ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif]">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ const EducationTimeline = () => {
       </motion.h2>
 
       <div className="relative max-w-3xl mx-auto pl-10">
-        {/* Vertical line on left */}
+        {/* Vertical timeline line */}
         <div className="absolute top-0 bottom-0 left-6 w-1 bg-white/30 rounded-full"></div>
 
         {educationData.map((edu, index) => (
@@ -54,7 +54,6 @@ const EducationTimeline = () => {
             viewport={{ once: true }}
             className="relative pl-14 py-6 mb-10 bg-white/10 border border-white/20 rounded-2xl backdrop-blur-md shadow-lg"
           >
-            {/* Dot and icon */}
             <div className="absolute left-4 top-8">
               <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white/20 border border-white/30 shadow-md">
                 {edu.icon}
