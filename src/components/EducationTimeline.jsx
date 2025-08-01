@@ -26,66 +26,76 @@ const educationData = [
   },
 ];
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 50 },
-  visible: (i) => ({
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const fadeUpCard = {
+  hidden: { opacity: 0, y: 60 },
+  show: {
     opacity: 1,
     y: 0,
-    transition: {
-      delay: i * 0.2,
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  }),
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
 };
 
 const EducationTimeline = () => {
   return (
     <section
       id="education"
-      className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 py-16"
+      className="w-full py-16 px-4 md:px-8 bg-gradient-to-b from-transparent to-gray-100 dark:to-gray-900"
     >
-      <div className="max-w-5xl mx-auto px-6">
-        <motion.h2
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-4xl font-bold text-center text-indigo-600 dark:text-indigo-400 mb-12"
-        >
-          Education Timeline
-        </motion.h2>
+      <motion.h2
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-4xl font-bold text-center text-indigo-600 dark:text-indigo-400 mb-12"
+      >
+        Education Timeline
+      </motion.h2>
 
-        <div className="relative border-l-4 border-indigo-300 dark:border-indigo-500">
-          {educationData.map((edu, index) => (
+      <motion.div
+        className="relative border-l-4 border-indigo-400 dark:border-indigo-500 ml-4 max-w-4xl mx-auto"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+        {educationData.map((edu, index) => (
+          <motion.div
+            key={index}
+            variants={fadeUpCard}
+            className="mb-14 ml-6 relative group"
+          >
+            {/* Icon dot */}
+            <div className="absolute -left-6 top-3 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+              <FaGraduationCap className="text-lg" />
+            </div>
+
+            {/* Glassmorphic card */}
             <motion.div
-              key={index}
-              custom={index}
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="mb-12 ml-6 relative"
+              whileHover={{ scale: 1.03 }}
+              className="bg-white/20 dark:bg-gray-800/40 backdrop-blur-md border border-white/30 dark:border-gray-700 shadow-2xl rounded-2xl p-6 transition-all duration-300"
             >
-              <div className="absolute -left-4 top-1 bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
-                <FaGraduationCap size={16} />
-              </div>
-
-              <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-md p-6 rounded-2xl">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                  {edu.degree}
-                </h3>
-                <p className="text-sm text-indigo-600 dark:text-indigo-400 font-medium mt-1">
-                  {edu.institution} &middot; {edu.year}
-                </p>
-                <p className="text-sm text-gray-700 dark:text-gray-300 mt-3 leading-relaxed">
-                  {edu.details}
-                </p>
-              </div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">
+                {edu.degree}
+              </h3>
+              <p className="text-sm text-indigo-700 dark:text-indigo-300 font-medium">
+                {edu.institution} &middot; {edu.year}
+              </p>
+              <p className="text-sm mt-3 text-gray-800 dark:text-gray-300 leading-relaxed">
+                {edu.details}
+              </p>
             </motion.div>
-          ))}
-        </div>
-      </div>
+          </motion.div>
+        ))}
+      </motion.div>
     </section>
   );
 };
