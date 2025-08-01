@@ -29,13 +29,15 @@ import { SiCplusplus } from "react-icons/si";
 import { FaUsers, FaLightbulb } from "react-icons/fa6";
 
 const androidProjects = [
-  {
-    title: "KalMandal",
-    description: "Android app that lets users draw and save to gallery with description.",
-    image: kalmandalImg,
-    video: "kalmandal_v (1).mp4",
-    techStack: ["Jetpack Compose", "Android SDK", "Kotlin"]
-  },
+{
+  title: "KalMandal",
+  description: "Android app that lets users draw and save to gallery with description.",
+  image: kalmandalImg,
+  videoType: "drive",
+  video: "1HT6FA8YD67Vgd6derx40yyLitkS7p17d", // ← Only the Drive file ID
+  techStack: ["Jetpack Compose", "Android SDK", "Kotlin"]
+}
+,
   {
     title: "Profile Card App",
     description: "Displays photo, name, role & contact info. Built using Jetpack Compose.",
@@ -623,25 +625,31 @@ function App() {
       {/* 🎬 Project Preview */}
       <div className="flex-1">
         <div className="overflow-hidden rounded-2xl border-2 border-green-500 shadow-lg">
-          {selectedProject.video ? (
-            <video
-              controls
-              className="w-full h-64 md:h-96 rounded-xl"
-              poster="/thumbnails/project_thumb.jpg" // Optional thumbnail
-            >
-              <source src={`/videos/${selectedProject.video}`} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          ) : selectedProject.link ? (
-            <iframe
-              src={selectedProject.link}
-              title="Project Video"
-              className="w-full h-64 md:h-96"
-              allowFullScreen
-            ></iframe>
-          ) : (
-            <p className="text-white text-center p-4">⚠️ No video or link available for this project.</p>
-          )}
+          {selectedProject.videoType === "drive" ? (
+  <iframe
+    src={`https://drive.google.com/file/d/${selectedProject.video}/preview`}
+    width="100%"
+    height="400"
+    allow="autoplay"
+    allowFullScreen
+    className="rounded-xl w-full h-64 md:h-96"
+    title="Project Drive Video"
+  />
+) : selectedProject.videoType === "local" ? (
+  <video
+    controls
+    className="w-full h-64 md:h-96 rounded-xl"
+    poster="/thumbnails/project_thumb.jpg"
+  >
+    <source src={`/videos/${selectedProject.video}`} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+) : (
+  <p className="text-white text-center p-4">
+    ⚠️ No video available for this project.
+  </p>
+)}
+
         </div>
 
         {/* 🔗 Optional Link Display Below Video */}
