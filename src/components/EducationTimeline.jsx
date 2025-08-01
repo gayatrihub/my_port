@@ -39,12 +39,12 @@ const EducationTimeline = () => {
       }}
     >
       <motion.div
-        className="w-full max-w-[90rem] p-10"
+        className="w-full max-w-[95rem] p-10 bg-black/20 rounded-2xl border border-purple-300/30 shadow-lg"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        {/* Title */}
+        {/* Title inside container */}
         <motion.div
           className="flex items-center gap-4 mb-12"
           initial={{ opacity: 0, y: -20 }}
@@ -56,7 +56,7 @@ const EducationTimeline = () => {
         </motion.div>
 
         <div className="relative pl-12">
-          {/* Vertical line on left */}
+          {/* Vertical timeline line */}
           <div className="absolute top-0 bottom-0 left-6 w-1 bg-purple-500/50 rounded-full"></div>
 
           {educationData.map((edu, index) => (
