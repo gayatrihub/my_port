@@ -32,23 +32,29 @@ const educationData = [
 const EducationTimeline = () => {
   return (
     <section
-      className="min-h-screen py-16 px-4 sm:px-10"
+      className="min-h-screen py-16 px-4 sm:px-10 flex justify-center items-center"
       style={{
         fontFamily:
           'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif',
       }}
     >
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
+        className="bg-white/10 w-full max-w-7xl rounded-2xl border border-white/20 p-10 shadow-lg"
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="flex justify-center items-center mb-12 gap-3"
       >
-        <span className="text-4xl">🎓</span>
-        <h2 className="text-4xl font-bold text-white">Education</h2>
-      </motion.div>
+        {/* Title inside container */}
+        <motion.div
+          className="flex items-center gap-3 mb-10"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="text-4xl">🎓</span>
+          <h2 className="text-4xl font-bold text-white tracking-wide">Education</h2>
+        </motion.div>
 
-      <div className="bg-white/10 p-10 rounded-2xl border border-white/20 max-w-7xl mx-auto">
         <div className="relative pl-12">
           {/* Vertical line on left */}
           <div className="absolute top-0 bottom-0 left-6 w-1 bg-white/30 rounded-full"></div>
@@ -60,7 +66,7 @@ const EducationTimeline = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="relative pl-14 py-6 mb-10 bg-white/10 border border-white/20 rounded-2xl shadow-lg max-w-5xl"
+              className="relative pl-14 py-6 mb-10 bg-white/10 border border-white/20 rounded-2xl shadow-md max-w-5xl"
             >
               {/* Dot and icon */}
               <div className="absolute left-4 top-8">
@@ -76,7 +82,7 @@ const EducationTimeline = () => {
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
