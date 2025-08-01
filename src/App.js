@@ -42,7 +42,8 @@ const androidProjects = [
     title: "Profile Card App",
     description: "Displays photo, name, role & contact info. Built using Jetpack Compose.",
     image: appImg,
-    video: "app_v.mp4",
+    videoType: "drive",
+    video: "1vVEcP_Hzyq777Gg0YUshJlIpIr8Z57io",
     techStack: ["Jetpack Compose", "Material Design"]
   },
 ];
@@ -53,7 +54,8 @@ const mlProjects = [
     description:
       "YOLOv5x-based system with Gradio UI to detect obstacles on railway tracks. Includes bounding boxes, audio alerts & styled frontend.",
     image: odImg,
-    video: "/videos/railway_yolo.mp4",
+    videoType: "drive",
+    video: "1aBE1htEE8RKXD90aJvCly_cmfuhWKySg",
     techStack: ["YOLOv5", "Gradio", "Python"]
   },
 ];
@@ -64,7 +66,8 @@ const webProjects = [
     description:
       "The Online Crime Reporting System allows users to submit complaints directly through a web interface built with HTML, CSS, and JavaScript...",
     image: onlinereportImg,
-    link: "https://drive.google.com/file/d/1Xo3XrpmN6q95TWYKFYlpAjHuwqRfS6Oo/view?usp=sharing",
+    videoType: "drive",
+    video: "1I1ktvn0C_kz6FbD8ead-bOq7BVHLOI7h",
     techStack: ["HTML", "CSS", "JavaScript"]
   },
   {
@@ -72,7 +75,8 @@ const webProjects = [
     description:
       "The college website gives a clear and simple view of what the college stands for...",
     image: websiteImg,
-    link:"https://drive.google.com/file/d/1HT6FA8YD67Vgd6derx40yyLitkS7p17d/view?usp=sharing",
+    videoType: "drive",
+    video: "1Vq9LIqTS-AO-nPkvTHu7gXM6juwVaRln",
     techStack: ["HTML", "CSS", "JavaScript"]
   },
 ];
@@ -283,6 +287,7 @@ function App() {
       <li><a href="#skills" className="hover:text-pink-400">Skills</a></li>
       <li><a href="#achievements" className="hover:text-pink-400">Achievements</a></li>
       <li><a href="#projects" className="hover:text-pink-400">Projects</a></li>
+      <li><a href="#education" className="hover:text-green-400 transition">Education</a></li>
     </ul>
     <a href="#contact" className="mt-4 sm:mt-0 bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-bold py-2 px-4 rounded-full shadow hover:opacity-90 transition">
       Connect With Me
@@ -305,7 +310,7 @@ function App() {
       className="w-full h-full object-cover rounded-full shadow-[0_0_80px_rgba(255,192,203,0.2)]"
     />
   </div>
-
+   <EducationTimeline />
   {/* ✨ Caption below image */}
   <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 text-lg font-bold tracking-wide animate-fade-in-up">
     <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
