@@ -30,26 +30,22 @@ const educationData = [
 
 const Education = () => {
   return (
-    <div className="outerContainer mx-auto w-[95%] py-10 pb-20">
-      <div className="bg-white rounded-xl shadow-lg px-6 py-8">
-        <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Education</h2>
-        <div className="space-y-6">
-          {educationData.map((item, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 rounded-xl shadow p-6 border-l-4 border-blue-300 flex items-start gap-4 hover:shadow-md transition"
-            >
-              <div className="mt-1">{item.icon}</div>
-              <div>
-                <h3 className="text-xl font-semibold text-blue-600">{item.title}</h3>
-                <p className="text-sm text-gray-500">
-                  {item.institution} | {item.duration}
-                </p>
-                <p className="mt-2 text-gray-700">{item.description}</p>
-              </div>
+    <div className="outerContainer mx-auto w-[90%] md:w-[80%] lg:w-[70%] py-10 pb-20">
+      <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Education</h2>
+      <div className="space-y-6">
+        {educationData.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-300 flex items-start gap-4 hover:shadow-xl transition"
+          >
+            <div className="mt-1">{item.icon}</div>
+            <div>
+              <h3 className="text-xl font-semibold text-blue-600">{item.title}</h3>
+              <p className="text-sm text-gray-500">{item.institution} | {item.duration}</p>
+              <p className="mt-2 text-gray-700">{item.description}</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
